@@ -1,0 +1,1457 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="sql, Tech Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>sql | Tech Blog</title>
+    <link rel="icon" type="image/jpeg" href="/Blog/medias/teemo.jpeg">
+
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/my.css">
+
+    <script src="/Blog/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/Blog/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/Blog/" class="waves-effect waves-light">
+                    
+                    <img src="/Blog/medias/teemo.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Tech Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/Blog/medias/teemo.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Tech Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/csy99/Blog" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork My Blog
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/csy99/Blog" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork My Blog" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Blog/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">sql</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/Blog/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/Blog/tags/sql/">
+                                <span class="chip bg-color">sql</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/Blog/categories/Programming/" class="post-category">
+                                Programming
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-02-16
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="General-Hints"><a href="#General-Hints" class="headerlink" title="General Hints"></a><strong>General Hints</strong></h1><ol>
+<li><p>Case insensitive, except folders in Linux</p>
+</li>
+<li><p>Double quote and single quote does not matter, prefer single quote</p>
+</li>
+<li><p>White space can concatenate different string</p>
+</li>
+</ol>
+<h1 id="Select-data-from-tables"><a href="#Select-data-from-tables" class="headerlink" title="Select data from tables"></a><strong>Select data from tables</strong></h1><ol>
+<li><p>AS can be used to rename the chosen column, can be omitted</p>
+</li>
+<li><p>ORDER BY is used to sort the list, ORDER BY <em>column name</em> DESC means<br>in descending order</p>
+<p>NULL&gt;空格&gt;数字&gt;大写字母&gt;小写字母</p>
+<p>非字母字符出现在数字的前面或后面</p>
+<p>Eg: SELECT school, COUNT(1) quantity from test GROUP BY school ORDER<br>BY quantity desc;</p>
+<p>以学校分组统计数量，降序排列</p>
+</li>
+<li><p>Count(*) is used to count the row return</p>
+</li>
+<li><p>SELECT <em>column/*</em> FROM <em>table name</em> WHERE <em>condition</em> OR<br><em>condition</em> ORDER BY <em>column name</em>;</p>
+<p>SELECT <em>*</em> FROM <em>table name</em> WHERE <em>column</em> in (SELECT…) subselect</p>
+</li>
+<li><p>Multi column is separated by comma</p>
+</li>
+<li><p>– is inline comment, /* */ is multiline comment</p>
+</li>
+<li><p>Condition: used = to judge if it is equal</p>
+</li>
+<li><p>BETWEEN 30 AND 60 means &gt;= 30 and &lt;= 60, and smaller number<br>should be the first</p>
+</li>
+<li><p>LIKE ‘%asdf%’ match 0 or more characters as long as it contains<br>‘asdf’, _ means there is only one character</p>
+</li>
+<li><p>IN is used to sub-select in certain columns</p>
+</li>
+<li><p>NOT should be immediately after WHERE unless it is NOT IN or NOT<br>NULL</p>
+</li>
+<li><p>WHERE <em>column name</em> REGEXP ‘^.[a-e].*$’ select all data that<br>the second character is a to e, [aeiou] means find aeiou in the<br>specified position, [:space:] means white space, ^ means the<br>starting and $ means the ending, . means any one character(just<br>like _), d+ means one or more d, c* means zero or more c, p? means<br>zero or one p</p>
+<p>[^..]匹配不包含在[]之内的字符。a|b匹配a或者b.</p>
+</li>
+<li><p>WHERE <em>column name</em> IS (NOT) NULL works, but WHERE <em>column name</em> =<br>NULL does not</p>
+</li>
+<li><p>DESCRIBE <em>table name</em> we can use DESC for short</p>
+</li>
+<li><p>SHOW CREATE TABLE <em>table</em> returns the statement of creating this<br>table</p>
+</li>
+<li><p>SHOW COLUMNS FROM <em>table</em></p>
+</li>
+<li><p>SHOW TABLE STATUS (LIKE ’<em>table name</em>’);</p>
+<p>括号内容无法在Navicat上编译，前半句将db中所有表的信息列出。</p>
+</li>
+<li><p>INNER/ LEFT/ RIGHT/ OUTER JOIN ON join two tables</p>
+<p>Eg: SELECT * from wtest LEFT JOIN rtest ON wtest.id = rtest.id;</p>
+<p>怎么JOIN就是看以那张表为基础，整合后的表只显示所有基础表的信息和符号搜索条件的另一张表的信息。</p>
+<p>Navicat 不支持FULL OUTER JOIN.想达到此效果可使用一下语句：</p>
+<p>SELECT * from wtest LEFT OUTER JOIN rtest ON wtest.id = rtest.id;</p>
+<p>UNION ALL</p>
+<p>SELECT * from wtest RIGHT OUTER JOIN rtest ON wtest.id = rtest.id;</p>
+</li>
+<li><p>VIEW create a new view which meets certain conditions of a table</p>
+<p>Eg:</p>
+<p>CREATE VIEW designers AS</p>
+<p>SELECT …</p>
+<p>以后可以用SELECT * FROM designers;来查看视图内容。</p>
+<p>好处是讲复杂查询简化为一个命令，并且隐藏读者无需看到的东西。</p>
+</li>
+<li><p>LIMIT<br>一个参数表示选取多少个。两个参数时，第一个表示从哪一条记录开始（0-based），第二个表示选多少条记录。</p>
+</li>
+</ol>
+<h1 id="Create-and-modify-tables"><a href="#Create-and-modify-tables" class="headerlink" title="Create and modify tables"></a><strong>Create and modify tables</strong></h1><ol>
+<li><p>CREATE TABLE <em>table name</em>(<em>variable name TYPE</em>);<br>Eg: </p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">table</span> test <span class="token punctuation">(</span>
+    id <span class="token keyword">BIGINT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> AUTO\_INCREMENT<span class="token punctuation">,</span> 
+    name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    school <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> ‘na’<span class="token punctuation">,</span> 
+    phone <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token keyword">UNIQUE</span><span class="token punctuation">(</span><span class="token punctuation">`</span>phone<span class="token punctuation">`</span><span class="token punctuation">)</span> 
+<span class="token punctuation">)</span> <span class="token keyword">CHARSET</span> <span class="token operator">=</span> UTF8<span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>INSERT INTO <em>table name</em> <em>(column name)</em> VALUES(<em>value of the<br>type</em>); column name is not necessary</p>
+<p>注释：三种插入数据的方法。上面那种是最普通的，如果原来存在一条关键字相同的数据，<br>将会抛出异常。第二种是INSERT<br>IGNORE，若是原来存在一条关键字相同的数据，则新数据将不会被插入。第三种是REPLACE<br>INTO，无论如何将会用新数据替换掉老数据。</p>
+</li>
+<li><p>UPDATE <em>table name</em> SET <em>column name</em> = ‘<em>content’</em> WHERE<br><em>condition</em></p>
+</li>
+<li><p>DELETE FROM <em>table name</em> WHERE <em>condition</em></p>
+</li>
+<li><p>DROP TABLE (IF EXISTS) <em>table name</em> will delete the whole table from<br>database, if statement is not necessary but we will get an error if<br>there is no such table in the database</p>
+</li>
+<li><p>ALTER TABLE <em>table name</em> DROP/ADD COLUMN <em>column name</em><br>给表格删除/增添列，也可以对主键等进行操作。进行ADD操作时不需要COLUMN.</p>
+</li>
+<li><p>BEFORE <em>column</em> /AFTER <em>column</em> /FIRST/LAST 可用来确定新增列的位置</p>
+</li>
+<li><p>ALTER TABLE <em>table</em> RENAME TO (new)<em>table</em> 重新命名表名</p>
+</li>
+<li><p>ALTER TABLE <em>table</em> CHANGE COLUMN <em>column</em> (new)<em>column</em> (INT NOT<br>NULL)重新命名列名顺便修改数据类型</p>
+</li>
+<li><p>ALTER TABLE <em>table</em> MODIFY COLUMN <em>column</em> (new)<em>type</em>只修改数据类型</p>
+</li>
+<li><p>NOT NULL initiate variables another default value rather than null</p>
+</li>
+<li><p>DEFAULT used to give default value</p>
+</li>
+<li><p>UNIQUE define variable to be the only one to have that value</p>
+</li>
+<li><p>PRIMARY KEY<br>一条记录的唯一标识，主键可以是一个字段，或者多个字段联合。大概意<br>思是not null + unique</p>
+</li>
+<li><p>CHECK 约束限定允许插入某列的值，与where子句语法类似</p>
+<p>Eg:</p>
+<p>CREATE TABLE BANK(</p>
+<p>id INT PRIMARY KEY,</p>
+<p>coin CHAR(1) CHECK (coin IN (‘P’, ‘N’, ‘D’))</p>
+<p>);</p>
+<p>ALTER TABLE contacts</p>
+<p>ADD CONSTRAINT CHECK gender IN (‘M’, ‘F’);</p>
+</li>
+<li><p>ALL, ANY, SOME</p>
+</li>
+<li><p>CREATE TEMPORARY TABLE <em>table</em>创建临时表</p>
+</li>
+</ol>
+<h1 id="Create-and-modify-Databases"><a href="#Create-and-modify-Databases" class="headerlink" title="Create and modify Databases"></a><strong>Create and modify Databases</strong></h1><ol>
+<li><p>CREATE DATABASE <em>database name</em>;</p>
+</li>
+<li><p>USE <em>database name</em>;</p>
+</li>
+<li><p>DROP DATABASE <em>database name</em>;</p>
+</li>
+<li><p>DEFAULT CHARSET utf8</p>
+</li>
+<li><p>PRIMARY KEY ensure the value is unique</p>
+</li>
+<li><p>SERIAL auto increment the number</p>
+</li>
+<li><p>LAST_INSERT_ID() return the last id we entered</p>
+</li>
+<li><p>FOREIGN KEY (<em>column name</em>) REFERENCES <em>column name</em></p>
+</li>
+</ol>
+<h1 id="Variable-Type"><a href="#Variable-Type" class="headerlink" title="Variable Type"></a><strong>Variable Type</strong></h1><ol>
+<li><p>DECIMAL(length, # of bits after decimal point)</p>
+</li>
+<li><p>FLOAT do not guarantee the precision</p>
+</li>
+<li><p>CHAR(#) is like array which always use # bytes, while VARCHAR(#)<br>is like linked list which use up to (#+1) bytes</p>
+</li>
+<li><p>TIMESTAMP auto display the latest updated time</p>
+</li>
+<li><p>ENUM use number to store a string</p>
+</li>
+<li><p>SET can have more than one element in the list, and number can stand<br>for a combination of elements</p>
+</li>
+</ol>
+<h1 id="General-function"><a href="#General-function" class="headerlink" title="General function"></a><strong>General function</strong></h1><ol>
+<li><p>GROUP BY <em>column name</em> put results in groups</p>
+</li>
+<li><p>DISTINCT <em>column name</em> does not count duplicate value</p>
+</li>
+<li><p>GROUP_CONCAT(<em>column name</em> SEPARATOR ‘<em>separation sign</em>’)</p>
+</li>
+<li><p>AVG(), MIN(), MAX(), STD(), SUM()</p>
+</li>
+<li><p>CASE WHEN <em>condition1</em> THEN ‘value1’</p>
+<p>WHEN <em>condition2</em> THEN ‘value2’</p>
+<p>ELSE ‘value*’</p>
+<p>END;</p>
+<p>Be aware that it will immediately execute the clause and then reach<br>the end when it finds the first true condition.</p>
+</li>
+<li><p>START TRANSACTION (at the beginning) + COMMIT (in the end) used when<br>there is a long list of updates or inserts</p>
+</li>
+</ol>
+<p>ROLLBACK related performance will not be executed</p>
+<p>在commit之前数据库不会发生任何改变。Rollback会将数据回滚到start<br>transaction 之前，以保证原子性。</p>
+<p>存储引擎必须是BDB或者InnoDB（两种支持事务的引擎）。</p>
+<p>改变引擎语法ALTER TABLE <em>table</em> TYPE = InnoDB;</p>
+<ol>
+<li><p>(CREATE TRIGGER <em>table name</em> AFTER INSERT ON <em>table name</em></p>
+<p>FOR EACH ROW</p>
+<p>BEGIN</p>
+<p>UPDATE <em>table name</em> SET <em>operations</em> WHERE <em>conditions</em></p>
+<p>END) begin, end block enables more than one statement can be<br>executed, trigger will update one table automatically if another is<br>updated</p>
+</li>
+<li><p>SIGNAL SQLSTATE’#’ SET MESSAGE_TEXT = ‘ERROR’ throw exceptions</p>
+</li>
+<li><p>functions of string</p>
+</li>
+<li><p>LEFT(<em>column name, length</em>), RIGHT (<em>column name, length</em>),<br>MID(<em>column name, starting index, length</em>) return according<br>substring</p>
+</li>
+<li><p>SUBSTR(<em>column name, start index, length</em>) 1-based, not end before<br>but end after</p>
+</li>
+<li><p>SELECT SUBSTRING_INDEX (<em>column</em>, ‘<em>str</em>’, 1) FROM <em>table</em>;</p>
+<p>表示从该列取出指定str前所有内容。1表示寻找第一次出现的指定str</p>
+</li>
+<li><p>UPPER(<em>column name</em>) , LOWER(<em>column name</em>), REVERSE(<em>column name</em>)<br>transformation</p>
+</li>
+<li><p>CONCAT_WS(‘<em>separation sign</em>’, <em>column name</em>, <em>column name</em>)<br>concatenate string using separation sign</p>
+</li>
+<li><p>LPAD(<em>column name</em>, <em>fixed</em> <em>length</em>, <em>char</em>) left append a char if<br>length is not enough. If length is longer than fixed length,<br>truncate it to the fixed length.</p>
+</li>
+<li><p>LOCATE(‘<em>string</em>’, <em>column name</em>) find string in certain column,<br>return 1 or 0.</p>
+</li>
+<li><p>drop trigger first, and then drop associated table</p>
+</li>
+</ol>
+<h1 id="Functions-of-numeric"><a href="#Functions-of-numeric" class="headerlink" title="**Functions of numeric **"></a>**Functions of numeric **</h1><ol>
+<li><p>int/ int return float</p>
+</li>
+<li><p>int DIV int return int</p>
+</li>
+<li><p>SIGN(#) return 1 if positive, 0 if negative</p>
+</li>
+<li><p>CONV(# to be change, original base, new base) return # changed<br>into the new base</p>
+</li>
+<li><p>RAND(<em>seed</em>) return random number, seed can be omitted</p>
+</li>
+</ol>
+<h1 id="Functions-of-numeric-1"><a href="#Functions-of-numeric-1" class="headerlink" title="**Functions of numeric **"></a>**Functions of numeric **</h1><ol>
+<li><p>NOW() return local time</p>
+</li>
+<li><p>DAYOFMONTH(), MONTHNAME()</p>
+</li>
+<li><p>TIME_TO_SEC(), SEC_TO_TIME()</p>
+</li>
+<li><p>ADDTIME(), SUBTIME()</p>
+</li>
+<li><p>DATE_FORMAT(NOW(), ‘%Y-%m-%d %T’); standard time format</p>
+</li>
+</ol>
+<h1 id="Connection-between-tables"><a href="#Connection-between-tables" class="headerlink" title="Connection between tables"></a><strong>Connection between tables</strong></h1><ol>
+<li><p>CREATE TABLE interests (newID INT PRIMARY KEY,</p>
+<p>Interest VARCHAR(20) NOT NULL,</p>
+<p>iPhone VARCHAR(20) UNIQUE,</p>
+<p>CONSTRAINT test_phone_fk //命名方式：来源表_键字段_fk（外键）</p>
+<p>FOREIGN KEY (iPhone) //外键字段名</p>
+<p>REFERENCES test (phone) //来源表（键字段）</p>
+<p>) CHARSET = utf8;</p>
+<p>外键不一定必须是父表的主键，<br>但必须有唯一性。创建外键需要注意四个问题。（1）关联字段的类型和长度要一致（2）关联的表编码要一致（3）删除时和更新时的设置要相同（4）某个表中是否已经有记录。</p>
+</li>
+<li><p>自引用外键是出于其他目的而用于同一张表的主键。</p>
+</li>
+<li><p>Junction table<br>存储两个要产生关联性的表的主键，解决多对多的关系问题。</p>
+</li>
+<li><p>关联子查询</p>
+</li>
+</ol>
+<blockquote>
+<p>需要先运行外部查询，后运行内部查询</p>
+<p>SELECT mc.first_name firstname, mc.last_name, mc.email email</p>
+<p>FROM my_contacts mc</p>
+<p>WHERE NOT EXISTS<br>//从my_contacts表中选出未列入job_current表的人的姓名和邮箱</p>
+<p>(SELECT * FROM job_current jc</p>
+<p>WHERE mc.contact_id = jc.contact_id);</p>
+</blockquote>
+<ol>
+<li>交叉连接：cross join</li>
+</ol>
+<blockquote>
+<p>Cross join syntax:</p>
+<p>SELECT b.boy, t.toy</p>
+<p>FROM boys AS b</p>
+<p>CROSS JOIN</p>
+<p>toys AS t;</p>
+<p>返回两张表的每一行相乘的结果</p>
+</blockquote>
+<ol>
+<li>内连接：equijoin, non-equijoin, natural join</li>
+</ol>
+<blockquote>
+<p>Equijoin syntax:</p>
+<p>SELECT b.boy, t.toy</p>
+<p>FROM boys AS b</p>
+<p>INNER JOIN</p>
+<p>toys AS t</p>
+<p>ON boys.toy_id = toys.toy_id</p>
+<p>ORDER BY boys.boy;</p>
+<p>Natural join syntax:</p>
+<p>SELECT boys.boy, toys.toy</p>
+<p>FROM boys</p>
+<p>NATURAL JOIN</p>
+<p>toys</p>
+<p>ORDER BY boys.boy;</p>
+<p>//自然联接识别每个表中的相同名称并返回相符的记录(表中有同名列)</p>
+<p>//使用内连接时，两张表的顺序并无影响</p>
+</blockquote>
+<ol>
+<li>外联接: left outer join, right outer join, full outer<br>join（部分RDBMS不支持）</li>
+</ol>
+<blockquote>
+<p>//外联接一定会提供数据行，如果没有找到相符的记录则在结果集中显示null</p>
+</blockquote>
+<ol>
+<li>自联接：self-join</li>
+</ol>
+<blockquote>
+<p>SELECT c1.name, c2.name AS boss</p>
+<p>FROM clown_info c1</p>
+<p>INNER JOIN clown_info c2</p>
+<p>ON c1.boss_id = c2.id; //找出每个小丑的老板是谁</p>
+<p>//自联接能把单一表当成两张具有完全相同的信息的表来进行查询。</p>
+<p>//使用该表两次分别设定成不同的别名。</p>
+</blockquote>
+<ol>
+<li>联合：Union</li>
+</ol>
+<blockquote>
+<p>//把多张表的查询结果合并至一个表中。</p>
+<p>//每个select语句必须返回数量相同的列，且列的类型相同或可以互相转换。</p>
+<p>//默认清除重复值。 如果想看到重复值，使用UNION ALL</p>
+<p>//可采用新建表的方式捕获联合后数据的类型</p>
+<p>CREATE TABLE my-union AS</p>
+<p>SELECT title FROM job-1 UNION SELECT title FROM job-2;</p>
+</blockquote>
+<ol>
+<li>交集Intersect和差集Except</li>
+</ol>
+<blockquote>
+<p>//使用方式同上。Except返回只出现在第一个查询而不在第二个查询中的列。</p>
+<p>//MySQL中无法使用。</p>
+</blockquote>
+<h1 id="Stored-Routines"><a href="#Stored-Routines" class="headerlink" title="Stored Routines"></a><strong>Stored</strong> <strong>Routines</strong></h1><ol>
+<li><p>CREATE FUNCTION <em>function name</em> (<em>variable name variable type</em>)</p>
+<p>RETURNS <em>variable name variable type</em> // determine what to return</p>
+<p>RETURN … // the real thing that is returned</p>
+</li>
+<li><p>DELIMITER <em>sign</em> reset the delimiter to the sign</p>
+<p>BEGIN</p>
+<p>…</p>
+<p>END <em>sign</em></p>
+</li>
+</ol>
+<h1 id="User-Authority"><a href="#User-Authority" class="headerlink" title="User Authority"></a><strong>User Authority</strong></h1><ol>
+<li><p>设定根用户密码</p>
+<p>SET PASSWORD FOR ‘root’@’localhost’ = PASSWORD(‘<em>code</em>’);</p>
+</li>
+<li><p>新增用户</p>
+<p>CREATE USER <em>username</em> IDENTIFIED BY ‘<em>code</em>’;</p>
+</li>
+<li><p>授予权限</p>
+<p>GRANT <em>SELECT</em> ON <em>table</em> TO <em>username</em>;</p>
+<p>SELECT可替换为ALL, INSERT, DELETE,<br>UPDATE等关键词。这些关键词与ON之间可插入括号，在括号内列举该表的某些列，表示用户只可对限定列进行操作。</p>
+<p>在TO <em>username</em> 后面加上WITH GRANT OPTION表示该用户可授权给别人。</p>
+<p>使用<em>database</em>.*可把权限运用到该数据库的每一张表上。</p>
+</li>
+<li><p>撤销权限</p>
+<p>REVOKE SELECT ON <em>table</em> FROM <em>username</em>;<br>副作用是同时撤销该用户授权用户的权限</p>
+<p>REVOKE SELECT OPTION ON <em>table</em> FROM <em>username</em>;<br>只撤销授予他人这一权限</p>
+<p>REVOKE SELECT ON <em>table</em> FROM <em>username</em> CASCADE;<br>cascade表示权限的撤销具有连锁反应,通常情况下为默认值</p>
+<p>REVOKE SELECT ON <em>table</em> FROM <em>username</em><br>RESTRICT;若有其他用户受到影响，返回错误信息，且不执行撤销权限操作</p>
+</li>
+<li><p>角色功能（Mysql中暂未纳入）</p>
+<p>CREATE ROLE <em>role</em>;创建角色</p>
+<p>GRANT SELECT, INSERT ON <em>table</em> TO <em>role</em>;赋予角色一些功能</p>
+<p>GRANT <em>role</em> TO <em>user</em>;用户将拥有角色拥有的功能</p>
+<p>WITH ADMIN OPTION允许用户把角色授予其他人</p>
+</li>
+</ol>
+<h1 id="Navicat-for-Mysql-快捷键"><a href="#Navicat-for-Mysql-快捷键" class="headerlink" title="Navicat for Mysql 快捷键"></a><strong>Navicat for Mysql 快捷键</strong></h1><p>Ctrl+q 打开查询窗口</p>
+<p>Ctrl+/ 注释语句</p>
+<p>Ctrl+shift+/ 取消注释</p>
+<p>Ctrl+r 运行语句</p>
+<p>Ctrl+shift+r 运行选中语句</p>
+<p>F6 打开一个命令行窗口</p>
+<p>Ctrl+l 删除一行</p>
+<p>Ctrl+n 打开一个新的查询窗口</p>
+<p>Ctrl+w 关闭一个查询窗口</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/Blog/about" rel="external nofollow noreferrer">csy99</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://csy99.github.io/Blog/2020/02/16/sql/">http://csy99.github.io/Blog/2020/02/16/sql/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/Blog/about" target="_blank">csy99</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/Blog/tags/sql/">
+                                    <span class="chip bg-color">sql</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/Blog/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/Blog/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/Blog/2020/02/26/type-conversion/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/22.jpg" class="responsive-img" alt="type conversion">
+                        
+                        <span class="card-title">type conversion</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            int to String有三种方法，其中第二种第三种效率差不多，要比第一种更快。 
+a+""
+String.valueOf(a)
+Integer.toString(a)
+String to int int a = Integer.pars
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/Blog/2020/02/16/sql/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/0.jpg" class="responsive-img" alt="sql">
+                        
+                        <span class="card-title">sql</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            General Hints
+Case insensitive, except folders in Linux
+
+Double quote and single quote does not matter, prefer single qu
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/Programming/" class="post-category">
+                                    Programming
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/sql/">
+                        <span class="chip bg-color">sql</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/Blog/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/Blog/about" target="_blank">csy99</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/csy99" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1264629690@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1264629690" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1264629690" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/Blog/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/Blog/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/Blog/libs/materialize/materialize.min.js"></script>
+    <script src="/Blog/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/Blog/libs/aos/aos.js"></script>
+    <script src="/Blog/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/Blog/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/Blog/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/Blog/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/Blog/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/Blog/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1265 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="hands on: 11 training, Tech Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>hands on: 11 training | Tech Blog</title>
+    <link rel="icon" type="image/jpeg" href="/Blog/medias/teemo.jpeg">
+
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/my.css">
+
+    <script src="/Blog/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/Blog/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/Blog/" class="waves-effect waves-light">
+                    
+                    <img src="/Blog/medias/teemo.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Tech Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/Blog/medias/teemo.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Tech Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/csy99/Blog" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork My Blog
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/csy99/Blog" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork My Blog" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Blog/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">hands on: 11 training</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/Blog/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/Blog/tags/DL/">
+                                <span class="chip bg-color">DL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                Deep Learning
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-06-17
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Vanishing-Exploding-Gradients"><a href="#Vanishing-Exploding-Gradients" class="headerlink" title="Vanishing/Exploding Gradients"></a>Vanishing/Exploding Gradients</h1><p><strong>vanishing gradients</strong></p>
+<p>Gradients often get smaller and smaller as the algorithm progresses down to the lower layers, and this may leave the lower layers’ connection weights unchanged. </p>
+<p><strong>exploding gradients</strong></p>
+<p>Layers get insanely large weight updates and the algorithm diverges. </p>
+<h2 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h2><p>By default, Keras uses Glorot initialization with a uniform distribution. We can change by setting <strong>kernel_initalizer</strong> parameter.</p>
+<pre class=" language-python"><code class="language-python">Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> kernel_initializer<span class="token operator">=</span><span class="token string">"he_normal"</span><span class="token punctuation">)</span></code></pre>
+<h4 id="Xavier-initialization-Glorot-Initialization"><a href="#Xavier-initialization-Glorot-Initialization" class="headerlink" title="Xavier initialization / Glorot Initialization"></a>Xavier initialization / Glorot Initialization</h4><p>The variance of the outputs of each layer to be equal to the variance of its inputs, and need to guarantee equal variance before and after flowing through a layer in the reverse direction. Actually, it is not possible unless the layer has an equal number of inputs and neurons (fan-in = fan-out). A good compromise will be the connection weights of each layer must be initialized randomly where $fan_{avg} = (fan_{in} + fan_{out})/2$.   </p>
+<p>前一层节点数越多，设定为目标节点的初始值的权重尺度越小。Xavier初始值是以激活函数是线性函数为前提而推导出来的。因为sigmoid函数和tanh函数左右对称，且中央附近可以视作线性函数，所以适合使用Xavier初始值。</p>
+<p>If using logistic activation function:</p>
+<p>Normal distribution with mean 0 and variance $\sigma^2 = 1/fan_{avg}$</p>
+<p>Uniform distribution between -r and r, with $r = \sqrt{\frac{3}{fan_{avg}}}$. </p>
+<h4 id="LeCun-initialization"><a href="#LeCun-initialization" class="headerlink" title="LeCun initialization"></a>LeCun initialization</h4><p>If we replace $fan_{avg}$ with $fan_{in}$ for the formula above, we get LeCun initialization. </p>
+<h4 id="He-Initialization"><a href="#He-Initialization" class="headerlink" title="He Initialization"></a>He Initialization</h4><p>The initialization strategy for ReLU activation function and its variants. </p>
+<h2 id="Nonsaturating-Activation-Function"><a href="#Nonsaturating-Activation-Function" class="headerlink" title="Nonsaturating Activation Function"></a>Nonsaturating Activation Function</h2><h4 id="ReLU-Variants"><a href="#ReLU-Variants" class="headerlink" title="ReLU Variants"></a>ReLU Variants</h4><p>ReLU activation function may suffer from dying ReLUs: keep outputting 0. Instead, we can use leaky ReLU (a small slope for negative values). Setting $\alpha$ to be 0.2 is a good default. Other similar variants include randomized leaky ReLU (where  $\alpha$ is picked randomly), and parametric leaky ReLU ($\alpha$ no longer a hyperparameter, learnt during BP). </p>
+<p>To use leaky ReLU, create a LeakyReLU layer after the layer to be applied</p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> kernel_initializer<span class="token operator">=</span><span class="token string">"he_normal"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    LeakyReLU<span class="token punctuation">(</span>alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<h4 id="Exponential-Linear-Unit-ELU"><a href="#Exponential-Linear-Unit-ELU" class="headerlink" title="Exponential Linear Unit (ELU)"></a>Exponential Linear Unit (ELU)</h4><p>$ ELU(z) = \alpha(exp(z)-1)$, if z &lt; 0. </p>
+<p>It takes on negative values when z&lt;0, which allows the unit to have an average output closer to 0 and helps alleviate the vanishing gradients problem. If $\alpha$ is 1, then the curve is smooth everywhere. </p>
+<h4 id="Scaled-ELU-SELU"><a href="#Scaled-ELU-SELU" class="headerlink" title="Scaled ELU (SELU)"></a>Scaled ELU (SELU)</h4><p>If all hidden layers use the SELU activation function, then the NN will self-normalize, which solves the vanishing/exploding gradients. </p>
+<p>Criteria to use</p>
+<ul>
+<li>input must be standardized</li>
+<li>hidden layers’ weights init with LeCun normal initialization</li>
+<li>architecture is sequential </li>
+<li>all layers are dense</li>
+</ul>
+<p>To use SELU</p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"selu"</span><span class="token punctuation">,</span> kernel_initializer<span class="token operator">=</span><span class="token string">"lecun_normal"</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>In general, SELU &gt; ELU &gt; leaky ReLU &gt; ReLU &gt; tanh &gt; logistic. Many libraries and hardware accelerators provide ReLU-specific optimizations. Therefore, if speed is priority, choose ReLU. </p>
+<h2 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h2><p>The technique adds an operation in the model just before or after the activation function of each hidden layer. It lets the model learn the optimal scale and mean of each of the layer’s inputs. </p>
+<p>During test time, we will have no way to compute each input’s mean and standard deviation. One solution is to wait until the end of training, then run the whole training set through the NN and compute the mean and std of each input of the BN layer, which can be used during testing. Another solution is to estimate these final statistics by using a moving average. </p>
+<p>In addition, it acts like a regularizer, reducing the need for other regularization techniques. </p>
+<p>Runtime is a little bit slow, but there is some trick to improve the runtime. </p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    Flatten<span class="token punctuation">(</span>input_shape<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Dense<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"elu"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"softmax"</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>If adding the BN layers before the activation functions rather than after (shown above), we must remove the activation function from the hidden layers and add them as separate layers after the BN layers. Moreover, since BN layer includes one offset per input, we can remove bias term from previous layer. </p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    Flatten<span class="token punctuation">(</span>input_shape<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Dense<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> kernel_initalizer<span class="token operator">=</span><span class="token string">"he_normal"</span><span class="token punctuation">,</span> use_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Activation<span class="token punctuation">(</span><span class="token string">"elu"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Dense<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> kernel_initalizer<span class="token operator">=</span><span class="token string">"he_normal"</span><span class="token punctuation">,</span> use_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Activation<span class="token punctuation">(</span><span class="token string">"elu"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"softmax"</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>For hyperparameter, we can tweak momentum. The value should be close to 1. Higher for larger datasets and smaller mini-batches. We can also tweak axis, which determines which axis to be normalized. </p>
+<h2 id="Gradient-Clipping"><a href="#Gradient-Clipping" class="headerlink" title="Gradient Clipping"></a>Gradient Clipping</h2><p>Clip the gradients during backpropagation so that they never exceed some threshold. Often used in RNN. </p>
+<p>We need to set the <strong>clipvalue</strong> or <strong>clipnorm</strong> argument when creating an optimizer. </p>
+<pre class=" language-python"><code class="language-python">optm <span class="token operator">=</span> SGD<span class="token punctuation">(</span>clipvalue<span class="token operator">=</span><span class="token number">1.0</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">"mse"</span><span class="token punctuation">,</span> optimizer<span class="token operator">=</span>optm<span class="token punctuation">)</span></code></pre>
+<p>Clip by value may change the direction, even though this works well in practice. For example, a gradient vector is [0.9, 100], and we will get [0.9, 1.0] after clipping shown above. If we do not want to change direction, we need to clip by norm. </p>
+<h1 id="Reusing-Pretrained-Layers"><a href="#Reusing-Pretrained-Layers" class="headerlink" title="Reusing Pretrained Layers"></a>Reusing Pretrained Layers</h1><p>Transfer Learning: speed up training considerably and require significantly less training data. It works best when the inputs have similar low-level features, especially in deep CNN, which tend to learn feature detectors that are much more general in the lower layers. </p>
+<p>The output layer and some upper hidden layers of the original model are less likely to be as useful as the lower layers. The more training data we have, the more layers we can unfreeze. It is useful to reduce the learning rate when we unfreeze reused layers. </p>
+<pre class=" language-python"><code class="language-python">modelA <span class="token operator">=</span> keras<span class="token punctuation">.</span>models<span class="token punctuation">.</span>load_model<span class="token punctuation">(</span><span class="token string">"modelA.h5"</span><span class="token punctuation">)</span>
+modelB <span class="token operator">=</span> Sequential<span class="token punctuation">(</span>modelA<span class="token punctuation">.</span>layers<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+modelB<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Dense<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"sigmoid"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>In the code shown above, two models share some layers. So when we train one of them, it will also affect the other. To address the issue, clone the model and then copy the weights. </p>
+<pre><code>copyA = keras.models.clone_model(modelA)
+copyA.set_weights(modelA.get_weights())</code></pre>
+<p>Since the new output layer was initialized randomly, it will make large errors, and large error gradients may wreck the reused weights. To avoid this, we can freeze the reused layers during the first few epochs. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> layer <span class="token keyword">in</span> modelB<span class="token punctuation">.</span>layers<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+    layer<span class="token punctuation">.</span>trainable <span class="token operator">=</span> <span class="token boolean">False</span>
+modelB<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>We can train the model for a few epochs and then unfreeze the reused layers (which requires compiling the model again).  </p>
+<h3 id="Unsupervised-Pretraining"><a href="#Unsupervised-Pretraining" class="headerlink" title="Unsupervised Pretraining"></a>Unsupervised Pretraining</h3><p>If it is cheap to gather unlabeled training data but expensive to label, we can use them to train an unsupervised model, such as an autoencoder or a generative adversarial network (GAN). </p>
+<h3 id="Pretrain-on-an-Auxiliary-Task"><a href="#Pretrain-on-an-Auxiliary-Task" class="headerlink" title="Pretrain on an Auxiliary Task"></a>Pretrain on an Auxiliary Task</h3><p>Train a first NN on an auxiliary task for which we can easily obtain training data.</p>
+<h1 id="Faster-Optimizers"><a href="#Faster-Optimizers" class="headerlink" title="Faster Optimizers"></a>Faster Optimizers</h1><h3 id="Momentum-Optimization"><a href="#Momentum-Optimization" class="headerlink" title="Momentum Optimization"></a>Momentum Optimization</h3><p>It cares about what previous gradients were. The gradient is used for acceleration, not for speed. Momentum is like friction with 0 being high and 1 being low (no friction). Usually, the value is set to 0.9. </p>
+<blockquote>
+<p>Alg: </p>
+<p>$m = \beta m - \eta \nabla_\theta J(\theta)$</p>
+<p>$\theta = \theta + m$</p>
+</blockquote>
+<p>Gradient descent goes down the steep slope quite fast, but it takes a long time to go through valley. Momentum optimization will roll down the valley faster. </p>
+<pre class=" language-python"><code class="language-python">optm <span class="token operator">=</span> SGD<span class="token punctuation">(</span>lr<span class="token operator">=</span><span class="token number">0.001</span><span class="token punctuation">,</span> momentm<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Nesterov-Accelerated-Gradient"><a href="#Nesterov-Accelerated-Gradient" class="headerlink" title="Nesterov Accelerated Gradient"></a>Nesterov Accelerated Gradient</h3><p>Also called Nesterov momentum optimization. </p>
+<blockquote>
+<p>Alg: </p>
+<p>$m = \beta m - \eta \nabla_\theta J(\theta + \beta m)$</p>
+<p>$\theta = \theta + m$</p>
+</blockquote>
+<p>The tweak works because in general the momentum vector will point towards the optimum, so it will be slightly more accurate to use the gradient measured a bit farther in that direction. It helps reduce the oscillations and thus NAG converges faster. </p>
+<pre class=" language-python"><code class="language-python">optm <span class="token operator">=</span> SGD<span class="token punctuation">(</span>momentum<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span> nesterov<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
+<h3 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h3><blockquote>
+<p>Alg:</p>
+<p>$s = s + \nabla_\theta J(\theta) \odot \nabla_\theta J(\theta)$</p>
+<p>$ \theta = \theta - \eta\nabla_\theta J(\theta) \oslash \sqrt{s+\epsilon}$</p>
+</blockquote>
+<p>The first step accumulates the square of the gradients into the vector s. The second step is almost identical to GD, but the gradient vector is scaled down by a factor. This algorithm decays the learning rate, but it does so faster for steep rather than gentler slops. It is an adaptive learning rate.  It often stops too early when training NN. </p>
+<h3 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h3><p>The algorithm fixes the problem of AdaGrad by accumulating only the gradients from the most recent iterations. </p>
+<blockquote>
+<p>Alg:</p>
+<p>$s = \beta s + (1-\beta)\nabla_\theta J(\theta) \odot \nabla_\theta J(\theta)$</p>
+<p>$ \theta = \theta - \eta\nabla_\theta J(\theta) \oslash \sqrt{s+\epsilon}$</p>
+</blockquote>
+<p>The decay rate $\beta$ is typically set to 0.9. </p>
+<pre class=" language-python"><code class="language-python">optm <span class="token operator">=</span> keras<span class="token punctuation">.</span>optimizers<span class="token punctuation">.</span>RMSprop<span class="token punctuation">(</span>lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> rho<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Adam-and-Nadam"><a href="#Adam-and-Nadam" class="headerlink" title="Adam and Nadam"></a>Adam and Nadam</h3><p>Adam is similar to both momentum optimization and RMSProp. </p>
+<pre class=" language-python"><code class="language-python">optm <span class="token operator">=</span> keras<span class="token punctuation">.</span>optimizers<span class="token punctuation">.</span>Adam<span class="token punctuation">(</span>lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> beta_1<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span> beta_2<span class="token operator">=</span><span class="token number">0.999</span><span class="token punctuation">)</span></code></pre>
+<p>AdaMax replaces the l2 norm with $l_{\infty}$. </p>
+<p>Nadam is Adam optimization plus the Nesterov trick. </p>
+<h3 id="Learning-Rate-Sceduling"><a href="#Learning-Rate-Sceduling" class="headerlink" title="Learning Rate Sceduling"></a>Learning Rate Sceduling</h3><h4 id="Power-scheduling"><a href="#Power-scheduling" class="headerlink" title="Power scheduling"></a>Power scheduling</h4><p>The learning rate drops at each step, and it reduces the lr more and more slowly. </p>
+<pre class=" language-python"><code class="language-python">optm <span class="token operator">=</span> SGD<span class="token punctuation">(</span>lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> decay<span class="token operator">=</span><span class="token number">1e</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span></code></pre>
+<h4 id="Exponential-scheduling"><a href="#Exponential-scheduling" class="headerlink" title="Exponential scheduling"></a>Exponential scheduling</h4><p>Set the lr to $\eta(t)=\eta_00.1^{t/s}$. The lr will gradually drop by a factor of 10 every s steps. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">exponential_decay</span><span class="token punctuation">(</span>lr0<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">exponential_decay_fn</span><span class="token punctuation">(</span>epoch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> lr0<span class="token operator">*</span><span class="token number">0.1</span><span class="token operator">**</span><span class="token punctuation">(</span>epoch<span class="token operator">/</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> exponential_decay_fn
+exp_decay_fn <span class="token operator">=</span> exponential_decay<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
+lr_scheduler <span class="token operator">=</span> keras<span class="token punctuation">.</span>callbacks<span class="token punctuation">.</span>LearningRateScheduler<span class="token punctuation">(</span>exp_decay_fn<span class="token punctuation">)</span>
+hist <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>xtrain<span class="token punctuation">,</span> ytrain<span class="token punctuation">,</span> callbacks<span class="token operator">=</span><span class="token punctuation">[</span>lr_scheduler<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<h4 id="Piecewise-constant-scheduling"><a href="#Piecewise-constant-scheduling" class="headerlink" title="Piecewise constant scheduling"></a>Piecewise constant scheduling</h4><p>Use a constant lr for a number of epochs, then a smaller learning rate for another number of epochs. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">piecewise_fn</span><span class="token punctuation">(</span>epoch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> epoch <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0.01</span>
+    <span class="token keyword">elif</span> epoch <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0.005</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0.001</span></code></pre>
+<h4 id="Performance-scheduling"><a href="#Performance-scheduling" class="headerlink" title="Performance scheduling"></a>Performance scheduling</h4><p>Measure the validation error every N steps, and reduce the lr by a factor of $\lambda$ when the error stops dropping.</p>
+<pre class=" language-python"><code class="language-python">lr_scheduler <span class="token operator">=</span> keras<span class="token punctuation">.</span>callbacks<span class="token punctuation">.</span>ReduceLROnPlateau<span class="token punctuation">(</span>factor<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> patience<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span></code></pre>
+<h4 id="1cycle-scheduling"><a href="#1cycle-scheduling" class="headerlink" title="1cycle scheduling"></a>1cycle scheduling</h4><p> Starts by increasing the initial lr, growing linearly up to maximum learning rate, and then decreases linearly down to initial learning rate, finishing the last few epochs by dropping the rate down by several orders of magnitude. </p>
+<h1 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h1><h3 id="l1-and-l2-norm"><a href="#l1-and-l2-norm" class="headerlink" title="l1 and l2 norm"></a>l1 and l2 norm</h3><p>We often want to apply the same regularizer to all layers. To reduce repeating codes, we can create a thin wrapper for any callable. </p>
+<pre class=" language-python"><code class="language-python">fro functools <span class="token keyword">import</span> partial
+RegDense <span class="token operator">=</span> partial<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">,</span> 
+                  activation<span class="token operator">=</span><span class="token string">"elu"</span><span class="token punctuation">,</span> 
+                  kernel_regularizer<span class="token operator">=</span>keras<span class="token punctuation">.</span>regularizers<span class="token punctuation">.</span>l2<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    RegDense<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    RegDense<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    RegDense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"softmax"</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p>At training step, every neuron has a probability p of being temporarily dropped out (may be active during next step). After training, neurons don’t get dropped anymore. </p>
+<p>Understand it in this way. A unique NN is generated at each training step, and there are a total of 2^N possible networks. These NN are not independent but different. The resulting NN can be seen as an averaging ensemble of all these smaller NN. In practice, we can apply dropout only to the neurons in the top one to three layers (excluding output layer). </p>
+<p>One important technical detail. We need to multiply each input connection weight by the keep probability (1-p) after training. Alternatively, we can divide each neuron’s output by the keep probability during training. </p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    Flatten<span class="token punctuation">(</span>input_shape<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Dropout<span class="token punctuation">(</span>rate<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Dense<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Dropout<span class="token punctuation">(</span>rate<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"softmax"</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Since dropout is only active during training, comparing the training loss and the validation loss can be misleading. Make sure to evaluate the training loss w/o dropout (after training). </p>
+<h4 id="Monte-Carlo-MC-Dropout"><a href="#Monte-Carlo-MC-Dropout" class="headerlink" title="Monte Carlo (MC) Dropout"></a>Monte Carlo (MC) Dropout</h4><ol>
+<li>connects dropout networks and approximate Bayesian inference, giving solid math justification</li>
+<li>MC dropout boosts the performance of any trained dropout model w/o having to modify it</li>
+</ol>
+<pre class=" language-python"><code class="language-python">y_probas <span class="token operator">=</span> np<span class="token punctuation">.</span>stack<span class="token punctuation">[</span>model<span class="token punctuation">(</span>xtest<span class="token punctuation">,</span> training<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token keyword">for</span> sample <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+y_prob <span class="token operator">=</span> y_probas<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+<p>Averaging over multiple predictions with dropout on gives us a MC estimate that is generally more reliable. </p>
+<p>If our model contains other layers that behave in a special way during training (e.g.: BatchNormalization), then we should not force training mode like above. Instead, use code below. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MCDropout</span><span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dropout<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">call</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> inputs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>call<span class="token punctuation">(</span>inputs<span class="token punctuation">,</span> training<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Max-Norm-Regularization"><a href="#Max-Norm-Regularization" class="headerlink" title="Max-Norm Regularization"></a>Max-Norm Regularization</h3><p>For each neuron, it constrains the weights of the incoming connections s.t. $||w||_2 \le r$, where r is the max-norm hyperparameter. </p>
+<pre class=" language-python"><code class="language-python">Dense<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> kernel_initializer<span class="token operator">=</span><span class="token string">"he_normal"</span><span class="token punctuation">,</span> 
+    kernel_contraint<span class="token operator">=</span>keras<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span>max_norm<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/Blog/about" rel="external nofollow noreferrer">csy99</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://csy99.github.io/Blog/2020/06/17/hands-on-11-training/">http://csy99.github.io/Blog/2020/06/17/hands-on-11-training/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/Blog/about" target="_blank">csy99</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/Blog/tags/DL/">
+                                    <span class="chip bg-color">DL</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/Blog/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/Blog/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/Blog/2020/06/18/hands-on-12-custom/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/2.jpg" class="responsive-img" alt="hands on: 12 custom">
+                        
+                        <span class="card-title">hands on: 12 custom</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Using TF like NumpyA tensor is very similar to a numpy ndarray: usually a multidimensional array, but can also hold a sc
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/DL/">
+                        <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/Blog/2020/06/16/computational-biology/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/15.jpg" class="responsive-img" alt="Computational Biology">
+                        
+                        <span class="card-title">Computational Biology</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            References
+https://towardsdatascience.com/tagged/stats-ml-life-sciences
+
+ClusteringGenreHACSensitive to noise. 
+Centroid
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/algorithm/" class="post-category">
+                                    algorithm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/Blog/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/Blog/about" target="_blank">csy99</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/csy99" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1264629690@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1264629690" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1264629690" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/Blog/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/Blog/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/Blog/libs/materialize/materialize.min.js"></script>
+    <script src="/Blog/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/Blog/libs/aos/aos.js"></script>
+    <script src="/Blog/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/Blog/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/Blog/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/Blog/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/Blog/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/Blog/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

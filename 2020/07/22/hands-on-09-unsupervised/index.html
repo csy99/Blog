@@ -1,0 +1,1351 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="hands on: 09 unsupervised, Tech Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>hands on: 09 unsupervised | Tech Blog</title>
+    <link rel="icon" type="image/jpeg" href="/Blog/medias/teemo.jpeg">
+
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/my.css">
+
+    <script src="/Blog/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/Blog/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/Blog/" class="waves-effect waves-light">
+                    
+                    <img src="/Blog/medias/teemo.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Tech Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/Blog/medias/teemo.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Tech Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/csy99/Blog" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork My Blog
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/csy99/Blog" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork My Blog" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Blog/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">hands on: 09 unsupervised</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/Blog/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/Blog/tags/DL/">
+                                <span class="chip bg-color">DL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                Deep Learning
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-07-22
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h1><p>Identify similar instances and assign them to clusters. </p>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><ul>
+<li><p>customer segmentation</p>
+<p>Cluster customers based on their purchases. Recommender system. </p>
+</li>
+<li><p>data analysis</p>
+<p>Analyze each cluster separately. </p>
+</li>
+<li><p>dimensionality reduction</p>
+<p>See prev article. </p>
+</li>
+<li><p>anomaly detection</p>
+<p>Unusual behavior. For example, fraud detection.  </p>
+</li>
+<li><p>semi-supervised learning</p>
+<p>If we only have a few labels, we can perform clustering and propagate the labels to all the instances in the same cluster. </p>
+</li>
+<li><p>search engines</p>
+<p>Search for images that are similar to a reference image. </p>
+</li>
+<li><p>segment an image</p>
+<p>By clustering pixels according to color and replacing each pixel’s color with the mean color of its cluster, we can reduce the number of different colors in the image. We can detect the contour of each object. </p>
+</li>
+</ul>
+<h3 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h3><p>Find each blob’s center and assign each instance to the closest blob.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>cluster <span class="token keyword">import</span> KMeans
+k <span class="token operator">=</span> <span class="token number">5</span>
+kmeans <span class="token operator">=</span> KMeans<span class="token punctuation">(</span>n_clusters<span class="token operator">=</span>k<span class="token punctuation">)</span>
+y_pred <span class="token operator">=</span> kmeans<span class="token punctuation">.</span>fit_predict<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+kmeans<span class="token punctuation">.</span>cluster_centers_</code></pre>
+<p>Instead of assigning each instance to a single cluster, which is called hard clustering, it can be useful to give each instance a score per cluster (soft clustering). The score can be the distance between the instance and the centroid, or can be a similarity score. </p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># measures distance</span>
+kmeans<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
+<p>If we have a high dimensional dataset, we end up with a k-dim dataset. </p>
+<h4 id="Alg"><a href="#Alg" class="headerlink" title="Alg"></a>Alg</h4><p>The computational complexity is generally linear with respect to the number of instances m, the number of clusters k, and the number of dimensions n, if data has a clustering structure. Complexity if O(m*n*k*l). l is number of iteration. </p>
+<h4 id="Centroid-Init"><a href="#Centroid-Init" class="headerlink" title="Centroid Init"></a>Centroid Init</h4><p>If we happen to know approximately where the centroids should be, we can set the <strong>init</strong> hyperparam to a numpy array. </p>
+<pre class=" language-python"><code class="language-python">good_init <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+kmeans <span class="token operator">=</span> KMeans<span class="token punctuation">(</span>n_clusters<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> init<span class="token operator">=</span>good_init<span class="token punctuation">,</span> n_init<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre>
+<p>Besides, we can run the alg multiple times with different random init and keep the best solution. The number of random init is controlled by <strong>n_init</strong> hyperparam: by default is 10. The metric to measure how good the model is is inertia: mean squared distance between each instance and its closest centroid. </p>
+<h4 id="Accelerated-K-Means-and-mini-batch-k-Means"><a href="#Accelerated-K-Means-and-mini-batch-k-Means" class="headerlink" title="Accelerated K-Means and mini-batch k-Means"></a>Accelerated K-Means and mini-batch k-Means</h4><p>It accelerate the alg by avoiding many unnecessary distance calculations. It achieved this by using triangle inequality. This is used by default, unless we set <strong>algorithm</strong> to “full”.</p>
+<p>Moreover, we can use mini-batches, moving the centroids just slightly  at each iteration. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>cluster <span class="token keyword">import</span> MiniBatchKMeans
+minibatch_km <span class="token operator">=</span> MiniBatchKMeans<span class="token punctuation">(</span>n_clusters<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>
+minibatch_km <span class="token operator">=</span> fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
+<h4 id="Find-optimal-number-of-clusters"><a href="#Find-optimal-number-of-clusters" class="headerlink" title="Find optimal number of clusters"></a>Find optimal number of clusters</h4><p>The inertia decreases when k increases, and thus is not a good measurement for choosing good k. A solution is to plot the inertia as a function of the number of clusters k, and choose the elbow point. This tech for choosing best k is rather coarse. </p>
+<pre class=" language-python"><code class="language-python">kmeans_per_k <span class="token operator">=</span> <span class="token punctuation">[</span>KMeans<span class="token punctuation">(</span>n_clusters<span class="token operator">=</span>k<span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span> <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+inertias <span class="token operator">=</span> <span class="token punctuation">[</span>model<span class="token punctuation">.</span>inertia_ <span class="token keyword">for</span> model <span class="token keyword">in</span> kmeans_per_k<span class="token punctuation">]</span>
+
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">3.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> inertias<span class="token punctuation">,</span> <span class="token string">"bo-"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"$k$"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">14</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"Inertia"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">14</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>annotate<span class="token punctuation">(</span><span class="token string">'Elbow'</span><span class="token punctuation">,</span> xy<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> inertias<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+             xytext<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0.55</span><span class="token punctuation">,</span> <span class="token number">0.55</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+             textcoords<span class="token operator">=</span><span class="token string">'figure fraction'</span><span class="token punctuation">,</span>
+             fontsize<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">,</span>
+             arrowprops<span class="token operator">=</span>dict<span class="token punctuation">(</span>facecolor<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">,</span> shrink<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8.5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1300</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"inertia_vs_k_plot"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>A more precise approach (computationally expensive) is to use the silhouette score, which is the mean silhouette coefficient over all the instances. The coefficient is (b-a)/max(a,b); a is the mean distance to the other instances in the same cluster, and b is the mean nearest cluster distance. The coefficient varies between -1 and +1. Close to +1 means that the instance is well inside its own cluster and far from other clusters, 0 means close to cluster boundary, -1 means may have been assigned wrongly. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> silhouette_score
+silhouette_score<span class="token punctuation">(</span>X<span class="token punctuation">,</span> kmeans<span class="token punctuation">.</span>labels_<span class="token punctuation">)</span>
+
+scores <span class="token operator">=</span> <span class="token punctuation">[</span>silhouette_score<span class="token punctuation">(</span>X<span class="token punctuation">,</span> model<span class="token punctuation">.</span>labels_<span class="token punctuation">)</span> <span class="token keyword">for</span> model <span class="token keyword">in</span> kmeans_per_k<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> silhouette_scores<span class="token punctuation">,</span> <span class="token string">"bo-"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"$k$"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">14</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"Silhouette score"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">14</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1.8</span><span class="token punctuation">,</span> <span class="token number">8.5</span><span class="token punctuation">,</span> <span class="token number">0.55</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"silhouette_score_vs_k_plot"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>Furthermore, we can plot every instances’ silhouette coefficient, sorted by the cluster they are assigned to and by the value of the coefficient. This is called a silhouette diagram. The vertical dashed lines represent the silhouette score for each number of clusters. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> silhouette_samples
+<span class="token keyword">from</span> matplotlib<span class="token punctuation">.</span>ticker <span class="token keyword">import</span> FixedLocator<span class="token punctuation">,</span> FixedFormatter
+
+<span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> k <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+    y_pred <span class="token operator">=</span> kmeans_per_k<span class="token punctuation">[</span>k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>labels_
+    silhouette_coefficients <span class="token operator">=</span> silhouette_samples<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+
+    padding <span class="token operator">=</span> len<span class="token punctuation">(</span>X<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">30</span>
+    pos <span class="token operator">=</span> padding
+    ticks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        coeffs <span class="token operator">=</span> silhouette_coefficients<span class="token punctuation">[</span>y_pred <span class="token operator">==</span> i<span class="token punctuation">]</span>
+        coeffs<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        color <span class="token operator">=</span> mpl<span class="token punctuation">.</span>cm<span class="token punctuation">.</span>Spectral<span class="token punctuation">(</span>i <span class="token operator">/</span> k<span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>fill_betweenx<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>pos<span class="token punctuation">,</span> pos <span class="token operator">+</span> len<span class="token punctuation">(</span>coeffs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> coeffs<span class="token punctuation">,</span>
+                          facecolor<span class="token operator">=</span>color<span class="token punctuation">,</span> edgecolor<span class="token operator">=</span>color<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
+        ticks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>pos <span class="token operator">+</span> len<span class="token punctuation">(</span>coeffs<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        pos <span class="token operator">+=</span> len<span class="token punctuation">(</span>coeffs<span class="token punctuation">)</span> <span class="token operator">+</span> padding
+
+    plt<span class="token punctuation">.</span>gca<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>yaxis<span class="token punctuation">.</span>set_major_locator<span class="token punctuation">(</span>FixedLocator<span class="token punctuation">(</span>ticks<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>gca<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>yaxis<span class="token punctuation">.</span>set_major_formatter<span class="token punctuation">(</span>FixedFormatter<span class="token punctuation">(</span>range<span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> k <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"Cluster"</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> k <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        plt<span class="token punctuation">.</span>gca<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_xticks<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"Silhouette Coefficient"</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        plt<span class="token punctuation">.</span>tick_params<span class="token punctuation">(</span>labelbottom<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+    plt<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x<span class="token operator">=</span>silhouette_scores<span class="token punctuation">[</span>k <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"red"</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">"--"</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"$k=&amp;#123;&amp;#125;$"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"silhouette_analysis_plot"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="Limits-of-K-Means"><a href="#Limits-of-K-Means" class="headerlink" title="Limits of K-Means"></a>Limits of K-Means</h4><p>We need to run the alg several times to avoid suboptimal, and we need to specify the number of clusters. Moreover, it does not behave well when the clusters have varying sizes, different densities or nonspherical shapes. </p>
+<p>It is important to scale the input features before we run K-Means. It does not guarantee that all the clusters will be nice and spherical, but it generally improves things. </p>
+<h3 id="Usage-for-Image-Segmentation"><a href="#Usage-for-Image-Segmentation" class="headerlink" title="Usage for Image Segmentation"></a>Usage for Image Segmentation</h3><p>Color segmentation. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> matplotlib<span class="token punctuation">.</span>image <span class="token keyword">import</span> imread
+image <span class="token operator">=</span> imread<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">"images"</span><span class="token punctuation">,</span> <span class="token string">"unsupervised_learning"</span><span class="token punctuation">,</span> <span class="token string">"ladybug.png"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+image<span class="token punctuation">.</span>shape
+<span class="token comment" spellcheck="true"># there are RGB channels</span>
+X <span class="token operator">=</span> image<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+kmeans <span class="token operator">=</span> KMeans<span class="token punctuation">(</span>n_clsters<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+segmented_img <span class="token operator">=</span> kmeans<span class="token punctuation">.</span>cluster_centers_<span class="token punctuation">[</span>kmeans<span class="token punctuation">.</span>labels_<span class="token punctuation">]</span>
+segmented_img <span class="token operator">=</span> segmented_img<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>image<span class="token punctuation">.</span>shape<span class="token punctuation">)</span></code></pre>
+<h3 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h3><p>An efficient approach to dim reduction. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> load_digits
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>pipeline <span class="token keyword">import</span> Pipeline
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> GridSearchCV
+
+X_digits<span class="token punctuation">,</span> y_digits <span class="token operator">=</span> load_digits<span class="token punctuation">(</span>return_X_y<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+xtrain<span class="token punctuation">,</span> xtest<span class="token punctuation">,</span> ytrain<span class="token punctuation">,</span> ytest <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>X_digits<span class="token punctuation">,</span> y_digits<span class="token punctuation">)</span>
+pipeline <span class="token operator">=</span> Pipeline<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">(</span><span class="token string">"kmeans"</span><span class="token punctuation">,</span> KMeans<span class="token punctuation">(</span>n_clusters<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">"log_reg"</span><span class="token punctuation">,</span> LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+pipeline<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>xtrain<span class="token punctuation">,</span> ytrain<span class="token punctuation">)</span>
+pipeline<span class="token punctuation">.</span>score<span class="token punctuation">(</span>xtest<span class="token punctuation">,</span> ytest<span class="token punctuation">)</span>
+
+param_grid <span class="token operator">=</span> dict<span class="token punctuation">(</span>kmeans_n_clusters<span class="token operator">=</span>range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+grid_clf <span class="token operator">=</span> GridSearchCV<span class="token punctuation">(</span>pipeline<span class="token punctuation">,</span> param_grid<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+grid_clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>xtrain<span class="token punctuation">,</span> ytrain<span class="token punctuation">)</span>
+grid_clf<span class="token punctuation">.</span>best_params_
+grid_clf<span class="token punctuation">.</span>score<span class="token punctuation">(</span>xtest<span class="token punctuation">,</span> ytest<span class="token punctuation">)</span></code></pre>
+<h3 id="Semi-Supervised-Learning"><a href="#Semi-Supervised-Learning" class="headerlink" title="Semi-Supervised Learning"></a>Semi-Supervised Learning</h3><p>We can find the image closest to the centroid (representative images).</p>
+<pre class=" language-python"><code class="language-python">k <span class="token operator">=</span> <span class="token number">50</span>
+kmeans <span class="token operator">=</span> KMeans<span class="token punctuation">(</span>n_clusters<span class="token operator">=</span>k<span class="token punctuation">)</span>
+X_digits_dist <span class="token operator">=</span> kmenas<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>xtrain<span class="token punctuation">)</span>
+representative_digit_idx <span class="token operator">=</span> np<span class="token punctuation">.</span>argmin<span class="token punctuation">(</span>X_digits_dist<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+X_representative_digits <span class="token operator">=</span> xtrain<span class="token punctuation">[</span>representative_digit_idx<span class="token punctuation">]</span></code></pre>
+<p>We can look at each image and manually label it, and then fit these representative images. </p>
+<pre class=" language-python"><code class="language-python">y_representative_digits <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+log_reg<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_representative_digits<span class="token punctuation">,</span> y_representative_digits<span class="token punctuation">)</span></code></pre>
+<p>Furthermore, we can use label propagation. </p>
+<pre class=" language-python"><code class="language-python">y_train_propagated <span class="token operator">=</span> np<span class="token punctuation">.</span>empty<span class="token punctuation">(</span>len<span class="token punctuation">(</span>xtrain<span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>int32<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    y_train_propagated<span class="token punctuation">[</span>kmeans<span class="token punctuation">.</span>labels_<span class="token operator">==</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> y_representative_digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+log_reg<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>xtrain<span class="token punctuation">,</span> ytrain_propagated<span class="token punctuation">)</span></code></pre>
+<p>The problem is that we propagated each representative instances’ label to all the instances in the same cluster, including those located close to the cluster boundaries. We should try only propagate the labels to instances that are closest to the centroids. </p>
+<pre class=" language-python"><code class="language-python">percentile_closest <span class="token operator">=</span> <span class="token number">20</span>
+X_cluster_dist <span class="token operator">=</span> X_digits_dist<span class="token punctuation">[</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>len<span class="token punctuation">(</span>xtrain<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> kmeans<span class="token punctuation">.</span>labels_<span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    in_cluster <span class="token operator">=</span><span class="token punctuation">(</span>kmeans<span class="token punctuation">.</span>labels_ <span class="token operator">==</span> i<span class="token punctuation">)</span>
+    cluster_dist <span class="token operator">=</span> X_cluster_dist<span class="token punctuation">[</span>in_cluster<span class="token punctuation">]</span>
+    cutoff_dist <span class="token operator">=</span> np<span class="token punctuation">.</span>percentile<span class="token punctuation">(</span>cluster_dist<span class="token punctuation">,</span> percentile_closest<span class="token punctuation">)</span>
+    above_cutoff <span class="token operator">=</span> <span class="token punctuation">(</span>X_cluster_dist <span class="token operator">></span> cutoff_distance<span class="token punctuation">)</span>
+    X_cluster_dist<span class="token punctuation">[</span>in_cluster <span class="token operator">&amp;</span> above_cutoff<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+
+partially_propagated <span class="token operator">=</span> <span class="token punctuation">(</span>X_cluster_dist <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+Xtrain_partial <span class="token operator">=</span> xtrain<span class="token punctuation">[</span>partially_propagated<span class="token punctuation">]</span>
+ytrain_partial <span class="token operator">=</span> ytrain<span class="token punctuation">[</span>partally_propagated<span class="token punctuation">]</span></code></pre>
+<h4 id="Active-Learning"><a href="#Active-Learning" class="headerlink" title="Active Learning"></a>Active Learning</h4><p>When a human expert interacts with the learning algorithm, providing labels for specific instances when the alg requests them. </p>
+<p>The model is trained on the labeled instances gathered so far, and makes predictions on all unlabeled instances. Then the instances for which the model is most uncertain are given to the expert to be labeled. Iterate until the performance improvement stops being worth the labeling effort. </p>
+<h3 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h3><p>Defines clusters as continuous regions of high density. </p>
+<h4 id="Alg-1"><a href="#Alg-1" class="headerlink" title="Alg"></a>Alg</h4><p>For each instance, the alg counts how many instances are located within a small distance $\epsilon$ from it, and the region is called the instance’s $\epsilon-neighborhood$. </p>
+<p>If an instance has at least <strong>min_samples</strong> instances in its $\epsilon-neighborhood$, then it is considered a core instance. </p>
+<p>All instances in the neighborhood of a core instance belong to the same cluster. This neighborhood may include other core instances; therefore, a long sequence of neighboring core instances forms a single cluster. </p>
+<p>Other instances are considered an anomaly. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>cluster <span class="token keyword">import</span> DBSCAN
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> make_moons
+
+X<span class="token punctuation">,</span> y <span class="token operator">=</span> make_moons<span class="token punctuation">(</span>n_samples<span class="token operator">=</span><span class="token number">600</span><span class="token punctuation">,</span> noise<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">)</span>
+dbscan <span class="token operator">=</span> DBSCAN<span class="token punctuation">(</span>eps<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> min_samples<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+dbscan<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># idx of core instance</span>
+dbscan<span class="token punctuation">.</span>core_sample_indices
+<span class="token comment" spellcheck="true"># core instances </span>
+dbscan<span class="token punctuation">.</span>componenets_</code></pre>
+<p>However, the DBSCAN class does not have a predict() method, only a fit_predict() method. So we need to choose appropriate classification alg. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword">import</span> KNeighborsClassifier
+knn <span class="token operator">=</span> KneighborsClassifier<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span>
+knn<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>dbscan<span class="token punctuation">.</span>components_<span class="token punctuation">,</span> dbscan<span class="token punctuation">.</span>labels_<span class="token punctuation">[</span>dbscan<span class="token punctuation">.</span>core_sample_indices_<span class="token punctuation">]</span><span class="token punctuation">)</span>
+knn<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>xtest<span class="token punctuation">)</span>
+knn<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>xtest<span class="token punctuation">)</span></code></pre>
+<p>We only trained the classifier on the core instances, but we could also trained it on all instances (includes/excludes the anomalies).</p>
+<p>We can introduce a max distance so that instances that are far away from clusters are classified as anomalies. </p>
+<pre class=" language-python"><code class="language-python">y_dist<span class="token punctuation">,</span> y_pred_idx <span class="token operator">=</span> knn<span class="token punctuation">.</span>kneighbors<span class="token punctuation">(</span>X_new<span class="token punctuation">,</span> n_neighbors<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+y_pred <span class="token operator">=</span> dbscan<span class="token punctuation">.</span>labels_<span class="token punctuation">[</span>dbscan<span class="token punctuation">.</span>core_sample_indices_<span class="token punctuation">]</span><span class="token punctuation">[</span>y_pred_idx<span class="token punctuation">]</span>
+y_pred<span class="token punctuation">[</span>y_dist <span class="token operator">></span> <span class="token number">0.2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+y_pred<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>DBSCAN is robust to outliers and has just two hyperparams. </p>
+<p>However, if the density varies significantly across the clusters, it can be impossible for it to capture all clusters. Its computational complexity is $O(m log m)$.</p>
+<h1 id="Other-Clustering-Alg"><a href="#Other-Clustering-Alg" class="headerlink" title="Other Clustering Alg"></a>Other Clustering Alg</h1><h3 id="Agglomerative-clustering"><a href="#Agglomerative-clustering" class="headerlink" title="Agglomerative clustering"></a>Agglomerative clustering</h3><p>At each iteration, it connects the nearest pair of clusters. If we draw a tree with a branch of every pair of clusters that merged, we can get a binary tree of clusters. </p>
+<h3 id="BIRCH"><a href="#BIRCH" class="headerlink" title="BIRCH"></a>BIRCH</h3><p>Balanced Iterative Reducing and Clustering using Hierarchies. Designed specifically for very large datasets. During training, it builds a tree structure containing enough info to quickly assign each new instance to a cluster, w/o storing all the instances in the tree: only use limited memory. </p>
+<h3 id="Mean-Shift"><a href="#Mean-Shift" class="headerlink" title="Mean-Shift"></a>Mean-Shift</h3><p>The alg starts by placing a circle centered on each instance; then for each circle it computes the mean of all instances located within it, and it shifts the circle so that it is centered on the mean. It shifts the circles in the direction of higher density, until each of them find a local density max. Unlike DBSCAN, mean-shift tends to chop clusters into pieces when they have internal density variations. The time complexity is $O(m^2)$.</p>
+<h3 id="Affinity-Propagation"><a href="#Affinity-Propagation" class="headerlink" title="Affinity Propagation"></a>Affinity Propagation</h3><p>Uses a voting system, where instances vote for similar instances to be their representatives. Can detect any number of clusters of different sizes. The time complexity is $O(m^2)$.</p>
+<h3 id="Spectral-Clustering"><a href="#Spectral-Clustering" class="headerlink" title="Spectral Clustering"></a>Spectral Clustering</h3><p>Takes a similarity matrix between the instances and creates a low-dimensional embedding from it. Then, it use another clustering alg in this low-dim space. It can capture complex cluster structures, and it can also be used to cut graphs. It does not scale well to large numbers of instances, and it does not behave well when the clusters have very different size. </p>
+<h1 id="Gaussian-Mixtures"><a href="#Gaussian-Mixtures" class="headerlink" title="Gaussian Mixtures"></a>Gaussian Mixtures</h1><p>A probabilistic model that assumes that the instances were generated from a mixture of several Gaussian distributions whose params are unknow. All instances generated from a single Gaussian dist form a cluster that typically looks like an ellipsoid. </p>
+<p>In the simplest GMM, we must know in advance the number k of Gaussian distributions. For each instance, a cluster is picked randomly from among k clusters. The probability of choosing the j-th cluster is defined by the cluster’s weight $\phi^{(j)}$. The index of the cluster chosen for the i-th instance is noted $z^{(i)}$. If this index equals j, meaning assigned to the j-th cluster, the location $x^{(i)}$ of this instance is sampled randomly from Gaussian distribution with mean $\mu^{(j)}$ and covariance matrix $\Sigma^{(j)}$. </p>
+<p>We want to start by estimating the weights $\Phi$ and all the distribution params. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>mixture <span class="token keyword">import</span> GaussianMixture
+gm <span class="token operator">=</span> GaussianMixture<span class="token punctuation">(</span>n_components<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> n_init<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+gm<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+gm<span class="token punctuation">.</span>weights_
+gm<span class="token punctuation">.</span>means_
+gm<span class="token punctuation">.</span>covariances_</code></pre>
+<p>This class relies on the Expectation-Maximization alg, which can be treated as an extension of K-Means: not only finds cluster centers, but also their size, shape, and orientation, as well as their relative weights ($\phi$). EM uses soft cluster assignments. </p>
+<p>We can check whether the alg converged and how many iterations it took. </p>
+<pre class=" language-python"><code class="language-python">gm<span class="token punctuation">.</span>converged_
+gm<span class="token punctuation">.</span>n_iter_</code></pre>
+<p>We can then assign instance to cluster. </p>
+<pre class=" language-python"><code class="language-python">gm<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+gm<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
+<p>GMM is a generative model, so we can sample new instances from it (ordered by cluster index). </p>
+<pre class=" language-python"><code class="language-python">xnew<span class="token punctuation">,</span> ynew <span class="token operator">=</span> gm<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span></code></pre>
+<p>We can estimate the density of the model at any given location using score_samples(). </p>
+<pre class=" language-python"><code class="language-python">gm<span class="token punctuation">.</span>score_samples<span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
+<p>These are probability densities: take on any positive value. To estimate the prob that an instance will fall within a region, we have to integrate the PDF over that region. </p>
+<p>For higher-dim data, we want to limit the number of params that the alg has to learn. One way is to limit the range of shapes and orientations that the clusters can have. </p>
+<p>Set <strong>covariance_type</strong> hyperparam.</p>
+<p>“spherical”: all clusters must be spherical, but they can have different diameters. </p>
+<p>“diag”: clusters can take on any ellipsoidal shape of any size, but the axes must be parallel to the coordinate axes. </p>
+<p>“tied”: all clusters must have the same ellipsoidal shape, size and orientation. </p>
+<p>If the param is “tied” or “full”, the time complexity is $O(kmn^2+kn^3)$.</p>
+<h3 id="Anomaly-Detection-using-GM"><a href="#Anomaly-Detection-using-GM" class="headerlink" title="Anomaly Detection using GM"></a>Anomaly Detection using GM</h3><p>We need to define what density threshold we want to use. IN manufacturing, the ratio of defective products is usually know. </p>
+<pre class=" language-python"><code class="language-python">densities <span class="token operator">=</span> gm<span class="token punctuation">.</span>score_samples<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+density_threshold <span class="token operator">=</span> np<span class="token punctuation">.</span>percentile<span class="token punctuation">(</span>densities<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+anomalies <span class="token operator">=</span> X<span class="token punctuation">[</span>densities <span class="token operator">&lt;</span> density_threshold<span class="token punctuation">]</span></code></pre>
+<p>A closely related task is novelty detection: it differs from anomaly detection in that the algorithm is assumed to be trained on a clean dataset, uncontaminated by outliers, whereas anomaly detection does not make this assumption. </p>
+<h3 id="Select-the-number-of-clusters"><a href="#Select-the-number-of-clusters" class="headerlink" title="Select the number of clusters"></a>Select the number of clusters</h3><p>We should find the model that minimizes a theoretical information criterion, such as the Bayesian info criterion or the Akaike info criterion. </p>
+<p>$BIC = log(m)p - 2 log(\hat{L})$</p>
+<p>$AIC = 2p - 2 log(\hat{L})$</p>
+<p>m is the # instances, p is the # parameters learned by the model, L is the maximized value of the likelihood function of the model. </p>
+<p>Both BIC and AIC penalize models that have more params to learn and reward models that fit the data well. </p>
+<pre class=" language-python"><code class="language-python">gm<span class="token punctuation">.</span>bic<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+gm<span class="token punctuation">.</span>aic<span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
+<h3 id="Bayesian-Gaussian-Mixture-Models"><a href="#Bayesian-Gaussian-Mixture-Models" class="headerlink" title="Bayesian Gaussian Mixture Models"></a>Bayesian Gaussian Mixture Models</h3><p>Gives weights equal (or close) to zero to unnecessary clusters. So, we set the number of clusters to a value greater than the optimal number of clusters. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>mixture <span class="token keyword">import</span> BayesianGaussianMixture
+bgm <span class="token operator">=</span> BayesianGaussianMixture<span class="token punctuation">(</span>n_components<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> n_init<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+bgm<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>round<span class="token punctuation">(</span>bgm<span class="token punctuation">.</span>weights_<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span></code></pre>
+<p>In this model, the cluster params are treated as latent random variables. So $z$ now includes both the cluster parameters and the cluster assignments. </p>
+<p>The beta distribution is commonly used to model random variables whose values lie within a fixed range. In this case, the range is from 0 to 1. The Stick-Breaking Process is best explained through an example. This process is good when new instances are more likely to join large clusters. </p>
+<p>Prior knowledge about the latent variables $z$ can be encoded in a prob dist $p(z)$ called the prior. We can set the <strong>weight_concentration_prior</strong> param. </p>
+<p>For Bayes’ rule, posterior = likelihood*prior/evidence. In GM, evidence p(X) is intractable, since it requires considering all possible combo of cluster param and cluster assignments. </p>
+<p>One solution is variational inference. It picks a family of distributions $q(z;\lambda)$ with its own variational param $\lambda$, then optimize these params to make $q(z)$ a good approx of p(z|X). This is achieved by finding the value of lambda that minimizes the KL divergence from  $q(z)$ to $p(z|X)$.  The KL divergence equation can be written as the log of the evidence minus the evidence lower bound (ELBO). In the end, we want to maximize ELBO. </p>
+<h1 id="Other-Alg-for-Anomaly-and-Novelty-Detection"><a href="#Other-Alg-for-Anomaly-and-Novelty-Detection" class="headerlink" title="Other Alg for Anomaly and Novelty Detection"></a>Other Alg for Anomaly and Novelty Detection</h1><h3 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h3><p>If we compare the reconstruction error of a normal instance with the reconstruction error of an anomaly, the latter will usually be much larger. </p>
+<h3 id="Fast-MCD"><a href="#Fast-MCD" class="headerlink" title="Fast  - MCD"></a>Fast  - MCD</h3><p>It assumes that the normal instances are generated from a single Gaussian distribution (not a mixture). It also assumes that he dataset is contaminated with outliers that were not generated from this Gaussian distribution.</p>
+<h3 id="Isolation-Forest"><a href="#Isolation-Forest" class="headerlink" title="Isolation Forest"></a>Isolation Forest</h3><p>Works well in hi-dim. It builds a RF in which each DT is grown randomly: each node picks a feature randomly, then it picks a random threshold value to split the dataset in two. Anomalies are usually far from other instances, so tend to get isolated in fewer steps than normal instances. </p>
+<h3 id="Local-Outlier-Factor"><a href="#Local-Outlier-Factor" class="headerlink" title="Local Outlier Factor"></a>Local Outlier Factor</h3><p>Compares the density of instances around a given instance to the density around its neighbors. An anomaly is often more isolated than its k nearest neighbors.</p>
+<h3 id="One-class-SVM"><a href="#One-class-SVM" class="headerlink" title="One class SVM"></a>One class SVM</h3><p>Better suit for novelty detection. A kernelized SVM classifier separates two classes by first mapping all the instances to a hi-dim space, then separating the two classes using a linear SVM. Since we have one class only, this alg separates the instances in hi-dim from the origin. In the original space, this corresponds to finding a small region that encompasses all the instances. If a new instance does not fall within the region, it is an anomaly. </p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/Blog/about" rel="external nofollow noreferrer">csy99</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://csy99.github.io/Blog/2020/07/22/hands-on-09-unsupervised/">http://csy99.github.io/Blog/2020/07/22/hands-on-09-unsupervised/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/Blog/about" target="_blank">csy99</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/Blog/tags/DL/">
+                                    <span class="chip bg-color">DL</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/Blog/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/Blog/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/Blog/2020/07/22/hands-on-08-dimension-reduction/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/1.jpg" class="responsive-img" alt="hands on: 08 dimension reduction">
+                        
+                        <span class="card-title">hands on: 08 dimension reduction</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            In some cases, reducing the dimensionality of the training data may filter out some noise and unnecessary details and th
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/DL/">
+                        <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/Blog/2020/07/22/hands-on-14-cnn/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/11.jpg" class="responsive-img" alt="hands on: 14 cnn">
+                        
+                        <span class="card-title">hands on: 14 cnn</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Conv LayersIn turn, each neuron in the second conv layer is connected only to neurons located within a small rectangle i
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/DL/">
+                        <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/Blog/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/Blog/about" target="_blank">csy99</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/csy99" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1264629690@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1264629690" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1264629690" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/Blog/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/Blog/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/Blog/libs/materialize/materialize.min.js"></script>
+    <script src="/Blog/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/Blog/libs/aos/aos.js"></script>
+    <script src="/Blog/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/Blog/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/Blog/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/Blog/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/Blog/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/Blog/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

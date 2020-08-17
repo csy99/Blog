@@ -350,6 +350,13 @@
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
+        <div id="prev-cover" class="left waves-effect carousel-control">
+            <i class="icon fa fa-angle-left"></i>
+        </div>
+        <div id="next-cover" class="right waves-effect carousel-control">
+            <i class="icon fa fa-angle-right"></i>
+        </div>
+    
 
     <div class="carousel-item red white-text bg-cover about-cover">
         <div class="container">
@@ -434,6 +441,87 @@
     </div>
 
     
+        
+
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/Blog/medias/featureimages/9.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">hands on: 02 e2e ml</div>
+                            <div class="description center-align">
+                                
+                                    A piece of info fed to a ML system is called a signal. We want a high signal-to-noise ratio. 
+A sequence of data process
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/Blog/2020/07/16/hands-on-02-e2e-ml/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>Read more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/Blog/images/prcurve.png');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">ml basic: 01 problem modeling</div>
+                            <div class="description center-align">
+                                
+                                    问题建模1.1 评估指标线下使用机器学习评估指标，线上使用的是业务指标。需要进行多轮模型迭代使两个指标变化趋势相同。  
+1.1.1 分类指标精确率和召回率  
+用于二分类问题，结合混淆矩阵。   
+精确率 P = $\frac{TP}{T
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/Blog/2020/07/21/ml-basic-01-problem-modeling/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>Read more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/Blog/images/jvm.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">jvm</div>
+                            <div class="description center-align">
+                                
+                                    JVM体系架构java是跨平台的语言，JVM是跨语言的平台（Kotlin,Scala, Jython, JRuby, JavaScript…)。JVM不关心运行在其内部的程序的编程语言，只关心字节码文件。
+特点：
+
+一次编译，到处运行
+自动
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/Blog/2020/07/28/jvm/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>Read more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    
 </div>
 
 <script>
@@ -454,7 +542,7 @@
         }
 
         coverSlider.carousel({
-            duration: Number('120'),
+            duration: Number('200'),
             fullWidth: true,
             indicators: 'true' === 'true',
             onCycleTo() {
@@ -472,7 +560,7 @@
         let autoCarousel = function () {
             carouselIntervalId = setInterval(function () {
                 coverSlider.carousel('next');
-            }, 500);
+            }, 10000);
         };
         autoCarousel();
         
@@ -533,6 +621,125 @@
 
 
 
+
+
+<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;Recommended Posts</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/Blog/medias/featureimages/17.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/Blog/categories/Machine-Learning/" class="category">Machine Learning</a>
+                        
+                    
+                </div>
+                <a href="/Blog/2020/07/21/ml-basic-01-problem-modeling/">
+                    <h3 class="post-title">ml basic: 01 problem modeling</h3>
+                </a>
+                <p class="post-description">
+                    
+                        问题建模1.1 评估指标线下使用机器学习评估指标，线上使用的是业务指标。需要进行多轮模型迭代使两个指标变化趋势相同。  
+1.1.1 分类指
+                    
+                </p>
+                <a href="/Blog/2020/07/21/ml-basic-01-problem-modeling/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>Read more
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/Blog/medias/featureimages/19.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/Blog/categories/Deep-Learning/" class="category">Deep Learning</a>
+                        
+                    
+                </div>
+                <a href="/Blog/2020/06/16/tf/">
+                    <h3 class="post-title">tf</h3>
+                </a>
+                <p class="post-description">
+                    
+                        References
+https://classroom.udacity.com/courses/ud187
+
+TensorFlow Int
+                    
+                </p>
+                <a href="/Blog/2020/06/16/tf/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>Read more
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/Blog/medias/featureimages/20.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/Blog/categories/algorithm/" class="category">algorithm</a>
+                        
+                    
+                </div>
+                <a href="/Blog/2020/08/16/nlp-industrial-application/">
+                    <h3 class="post-title">nlp industrial application</h3>
+                </a>
+                <p class="post-description">
+                    
+                        Brief HistoryNNLMneural network probabilistic language model. Bengio, 
+                    
+                </p>
+                <a href="/Blog/2020/08/16/nlp-industrial-application/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>Read more
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/Blog/medias/featureimages/18.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/Blog/categories/Java/" class="category">Java</a>
+                        
+                    
+                </div>
+                <a href="/Blog/2020/07/28/jvm/">
+                    <h3 class="post-title">jvm</h3>
+                </a>
+                <p class="post-description">
+                    
+                        JVM体系架构java是跨平台的语言，JVM是跨语言的平台（Kotlin,Scala, Jython, JRuby, JavaScript…
+                    
+                </p>
+                <a href="/Blog/2020/07/28/jvm/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>Read more
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
                     </div>
                     
                 </div>
@@ -549,36 +756,34 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/07/21/greedy/">
+                    <a href="/Blog/2020/08/16/sleep-wait-yield/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/13.jpg" class="responsive-img" alt="greedy">
+                            <img src="/Blog/medias/featureimages/17.jpg" class="responsive-img" alt="sleep wait yield">
                             
-                            <span class="card-title">greedy</span>
+                            <span class="card-title">sleep wait yield</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                贪心算法
-排序！如果是内置数据结构，直接使用自定义排序。排序之后考虑能否使用binary search。
-
-Arrays.sort(arr, new Comparator&lt;int[]>() &amp;#123;
-    public 
+                                sleep、wait和yield都是暂停线程的方法。
+定义的类sleep()和yield()方法是定义在Thread类中，而wait()方法是定义在Object类中。
+sleep在Java中Sleep方法有两个，一个只有一个毫秒参数，另一个
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                                <a href="/Blog/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                                 
                                 
@@ -589,16 +794,8 @@ Arrays.sort(arr, new Comparator&lt;int[]>() &amp;#123;
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/greedy/">
-                            <span class="chip bg-color">greedy</span>
+                        <a href="/Blog/tags/thread/">
+                            <span class="chip bg-color">thread</span>
                         </a>
                         
                     </div>
@@ -608,37 +805,33 @@ Arrays.sort(arr, new Comparator&lt;int[]>() &amp;#123;
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/07/21/list/">
+                    <a href="/Blog/2020/08/16/hands-on-15-sequence/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/10.jpg" class="responsive-img" alt="list">
+                            <img src="/Blog/medias/featureimages/0.jpg" class="responsive-img" alt="hands on: 15 sequence">
                             
-                            <span class="card-title">list</span>
+                            <span class="card-title">hands on: 15 sequence</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                链表概况链表存储空间不一定连续，是临时分配的，所以不能像数组一样用索引提取元素。
-大量链表问题可以使用额外数据结构简化。但是最优解一般不使用额外数据结构。
-解题要点
-单向/双向？有环/无环？
-翻转链表、交换两个节点是基础
-头节点有可能发生变
+                                RNNRN: recurrent neuron
+RNN has connections pointing backward. At time step t, RN receives the inputs $x_t$ as well as i
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                                <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
                                 </a>
                                 
                                 
@@ -649,16 +842,8 @@ Arrays.sort(arr, new Comparator&lt;int[]>() &amp;#123;
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/%E9%93%BE%E8%A1%A8/">
-                            <span class="chip bg-color">链表</span>
+                        <a href="/Blog/tags/DL/">
+                            <span class="chip bg-color">DL</span>
                         </a>
                         
                     </div>
@@ -668,43 +853,32 @@ Arrays.sort(arr, new Comparator&lt;int[]>() &amp;#123;
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/07/21/graph/">
+                    <a href="/Blog/2020/08/16/hands-on-03-classification/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/2.jpg" class="responsive-img" alt="graph">
+                            <img src="/Blog/medias/featureimages/15.jpg" class="responsive-img" alt="hands on: 03 classification">
                             
-                            <span class="card-title">graph</span>
+                            <span class="card-title">hands on: 03 classification</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                图 Graph
-图形题不一定需要建图
-如果需要建图，考虑边是否具有方向
-考虑节点到本身是否有边
-
-建图方式  
-
-邻接矩阵 Adjacency matrix  
-space: O(|V|^2)  
-search: O(1)
-
-邻接表 Adj
+                                
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                                <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
                                 </a>
                                 
                                 
@@ -715,16 +889,8 @@ search: O(1)
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/graph/">
-                            <span class="chip bg-color">graph</span>
+                        <a href="/Blog/tags/DL/">
+                            <span class="chip bg-color">DL</span>
                         </a>
                         
                     </div>
@@ -734,29 +900,26 @@ search: O(1)
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/07/19/dp/">
+                    <a href="/Blog/2020/08/16/nlp-industrial-application/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/16.jpg" class="responsive-img" alt="dp">
+                            <img src="/Blog/medias/featureimages/20.jpg" class="responsive-img" alt="nlp industrial application">
                             
-                            <span class="card-title">dp</span>
+                            <span class="card-title">nlp industrial application</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                动态规划 Dynamic Programming
-检查能不能拆分成子问题，且是否会被求解多次  
-四大要素：状态，初始化，状态转移方程，结果  
-优化空间，规律交错的题目尝试声明两个变量来存（一维DP两种状态）  
-优化时间主要看内层循环的
+                                Brief HistoryNNLMneural network probabilistic language model. Bengio, 2003. 
+简介：三层神经网络模型。用前n-1个词来预测当前词。该模型会学习到（1）词汇的分布式表
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
                             </span>
                             <span class="publish-author">
                                 
@@ -774,16 +937,12 @@ search: O(1)
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
+                        <a href="/Blog/tags/DL/">
+                            <span class="chip bg-color">DL</span>
                         </a>
                         
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/dynamic-programming/">
-                            <span class="chip bg-color">dynamic programming</span>
+                        <a href="/Blog/tags/NLP/">
+                            <span class="chip bg-color">NLP</span>
                         </a>
                         
                     </div>
@@ -793,40 +952,35 @@ search: O(1)
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/07/19/combination-permutation/">
+                    <a href="/Blog/2020/08/16/ipc/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/1.jpg" class="responsive-img" alt="combination permutation">
+                            <img src="/Blog/medias/featureimages/11.jpg" class="responsive-img" alt="ipc">
                             
-                            <span class="card-title">combination permutation</span>
+                            <span class="card-title">ipc</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Combination
-如果需要返回的组合长度不一样，则需要在外层调用dfs时加循环
-
-注意去重
-time: O(2^n)
-
-
-int[] nums;
-List&lt;List&lt;Integer>> res = new ArrayLis
+                                进程通信。Inter Process Communication. 
+管道 Pipe实质：内核缓冲区。
+进程以先进先出的方式从缓冲区存取数据，管道一端的进程顺序的将数据写入缓冲区，另一端的进程则顺序的读出数据。  
+当缓冲区读空或者写满时，
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                                <a href="/Blog/categories/OS/" class="post-category">
+                                    OS
                                 </a>
                                 
                                 
@@ -837,20 +991,12 @@ List&lt;List&lt;Integer>> res = new ArrayLis
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
+                        <a href="/Blog/tags/OS/">
+                            <span class="chip bg-color">OS</span>
                         </a>
                         
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/combination/">
-                            <span class="chip bg-color">combination</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/permutation/">
-                            <span class="chip bg-color">permutation</span>
+                        <a href="/Blog/tags/IPC/">
+                            <span class="chip bg-color">IPC</span>
                         </a>
                         
                     </div>
@@ -860,37 +1006,34 @@ List&lt;List&lt;Integer>> res = new ArrayLis
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/06/14/math/">
+                    <a href="/Blog/2020/08/13/hashmap/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/5.jpg" class="responsive-img" alt="math">
+                            <img src="/Blog/medias/featureimages/20.jpg" class="responsive-img" alt="hashmap">
                             
-                            <span class="card-title">math</span>
+                            <span class="card-title">hashmap</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                数学
-考虑int溢出，除数为0，数字不能以0开头（0除外）等特殊情况。
-考虑gcd，lcm
-考虑二分搜索
-
-Fast Power$x =  a * b^n$, n is a positive integer, a and b can be 
+                                hashmap数据结构和构造在jdk1.8之前是数组加链表，之后是数组加链表加红黑树。
+数组中存放对象Node，包含key, value, hash value, next指针。
+参数DEFAULT_INITIAL_CAPACITY=16，
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                                <a href="/Blog/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                                 
                                 
@@ -901,16 +1044,8 @@ Fast Power$x =  a * b^n$, n is a positive integer, a and b can be
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/math/">
-                            <span class="chip bg-color">math</span>
+                        <a href="/Blog/tags/hashmap/">
+                            <span class="chip bg-color">hashmap</span>
                         </a>
                         
                     </div>
@@ -920,38 +1055,35 @@ Fast Power$x =  a * b^n$, n is a positive integer, a and b can be
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/05/19/arr/">
+                    <a href="/Blog/2020/08/02/juc/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/13.jpg" class="responsive-img" alt="arr">
+                            <img src="/Blog/medias/featureimages/23.jpg" class="responsive-img" alt="juc">
                             
-                            <span class="card-title">arr</span>
+                            <span class="card-title">juc</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                数组
-考虑双向遍历数组
-
-快慢指针应用：原数组上删除 
-用法：实质是快慢指针，其中一个做iterator，另一个做counter
-双向双指针应用：原数组上rotate或者reverse，in place交换，求和
-用法：前后两个指针分别向中
+                                内存可见性JVM为每一个线程分配一个独立的缓存，以提高效率。
+内存可见性问题：两个线程对于共享数据的操作，彼此不可见。
+下面这段代码主线程的循环会一直执行。因为根本没有重新从堆内存获取flag的取值。
+public class TestVo
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                                <a href="/Blog/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                                 
                                 
@@ -962,16 +1094,12 @@ Fast Power$x =  a * b^n$, n is a positive integer, a and b can be
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
+                        <a href="/Blog/tags/juc/">
+                            <span class="chip bg-color">juc</span>
                         </a>
                         
-                        <a href="/Blog/tags/array/">
-                            <span class="chip bg-color">array</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
+                        <a href="/Blog/tags/multi-thread/">
+                            <span class="chip bg-color">multi-thread</span>
                         </a>
                         
                     </div>
@@ -981,36 +1109,35 @@ Fast Power$x =  a * b^n$, n is a positive integer, a and b can be
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/05/16/binary-search/">
+                    <a href="/Blog/2020/08/02/rpc/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/18.jpg" class="responsive-img" alt="binary search">
+                            <img src="/Blog/medias/featureimages/12.jpg" class="responsive-img" alt="rpc">
                             
-                            <span class="card-title">binary search</span>
+                            <span class="card-title">rpc</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                二分搜索 Binary Search
-注意int溢出。
-一种是根据index二分，一种是根据值二分。根据值二分的，要统计小于mid的个数，另外要注意mid到底是不是一个在范围之内的数。  
-返回之前最好再检测一遍是否符合要求。  
-如果不是
+                                RPC远程方法调用 Remote Procedure Call
+分布式的通信方式。这是一个概念，具体有很多实现。必须要实现序列化。
+分布式通信最基本是二进制数据传输TCP/IP。也可以用http或者webservice等其他通讯协议。
+e.
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                                <a href="/Blog/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                                 
                                 
@@ -1021,16 +1148,8 @@ Fast Power$x =  a * b^n$, n is a positive integer, a and b can be
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/Blog/tags/binary-search/">
-                            <span class="chip bg-color">binary search</span>
+                        <a href="/Blog/tags/RPC/">
+                            <span class="chip bg-color">RPC</span>
                         </a>
                         
                     </div>
@@ -1040,55 +1159,34 @@ Fast Power$x =  a * b^n$, n is a positive integer, a and b can be
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/Blog/2020/05/10/nowcode/">
+                    <a href="/Blog/2020/08/02/ml-basic-04-nn/">
                         <div class="card-image">
                             
                             
-                            <img src="/Blog/medias/featureimages/15.jpg" class="responsive-img" alt="nowcode">
+                            <img src="/Blog/medias/featureimages/11.jpg" class="responsive-img" alt="ml basic: 04 NN">
                             
-                            <span class="card-title">nowcode</span>
+                            <span class="card-title">ml basic: 04 NN</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                目录排序 3
-字符串 5
-算法/数据结构 5
-队列和栈 8
-链表 11
-二分搜索 15
-二叉树 17
-动态规划 22
-位运算 25
-排列组合 27
-大数据 31
-排序概况
-
-
-名称
-时间复杂度
-空间复杂度
-稳定排序
-备注
-
-
-
-冒泡
-O(n
+                                神经网络4.1 全连接网络4.1.1 简介给定训练集，权重$w_i$以及阈值$\theta$可通过学习得到。
+$w_i = w_i + \eta(y-\hat{y})x_i$
+常见的神经网络是每层神经元与下一层全互连，不存在同层或者跨层连接
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                                <a href="/Blog/categories/Machine-Learning/" class="post-category">
+                                    Machine Learning
                                 </a>
                                 
                                 
@@ -1099,12 +1197,162 @@ O(n
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/Blog/tags/algorithm/">
-                            <span class="chip bg-color">algorithm</span>
+                        <a href="/Blog/tags/ML/">
+                            <span class="chip bg-color">ML</span>
                         </a>
                         
-                        <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
+                        <a href="/Blog/tags/NN/">
+                            <span class="chip bg-color">NN</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/Blog/2020/08/02/ml-basic-03-models/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/Blog/medias/featureimages/23.jpg" class="responsive-img" alt="ml basic: 03 models">
+                            
+                            <span class="card-title">ml basic: 03 models</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                常用模型3.1 线性回归3.1.1 原理输入训练集数据$T = {(x_1,y_1) … (x_M,y_M)}$，$x_i \in \mathcal{X} \subseteq R^n$，$y_i \in  R$
+$f(x) = w^Tx+b
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/Blog/categories/Machine-Learning/" class="post-category">
+                                    Machine Learning
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/Blog/tags/ML/">
+                            <span class="chip bg-color">ML</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/Blog/2020/07/28/jvm/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/Blog/medias/featureimages/18.jpg" class="responsive-img" alt="jvm">
+                            
+                            <span class="card-title">jvm</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                JVM体系架构java是跨平台的语言，JVM是跨语言的平台（Kotlin,Scala, Jython, JRuby, JavaScript…)。JVM不关心运行在其内部的程序的编程语言，只关心字节码文件。
+特点：
+
+一次编译，到处运行
+自动
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-28
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/Blog/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/Blog/tags/java/">
+                            <span class="chip bg-color">java</span>
+                        </a>
+                        
+                        <a href="/Blog/tags/jvm/">
+                            <span class="chip bg-color">jvm</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/Blog/2020/07/22/hands-on-16-nlp/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/Blog/medias/featureimages/15.jpg" class="responsive-img" alt="hands on: 16 nlp">
+                            
+                            <span class="card-title">hands on: 16 nlp</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Generate Text with Character RNNEncode every character as an integer. Encode the full text so each character is represen
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/Blog/tags/DL/">
+                            <span class="chip bg-color">DL</span>
                         </a>
                         
                     </div>
@@ -1116,6 +1364,30 @@ O(n
     </article>
 
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 5</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/Blog/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
 
 
 

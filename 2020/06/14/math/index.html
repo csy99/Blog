@@ -585,7 +585,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/Blog/libs/share/js/social-share.min.js"></script>
     
 
@@ -682,6 +682,11 @@
         color: #fff !important;
         background-color: #019FE8 !important;
     }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
 
     .reward-tabs .reward-img {
         width: 210px;
@@ -696,18 +701,22 @@
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">您的认可会让我加倍努力！</h4>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
                         <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
                     </ul>
                     <div id="alipay">
                         <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
                         <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
                     </div>
                 </div>
             </div>
@@ -746,39 +755,34 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/Blog/2020/07/19/combination-permutation/">
+                <a href="/Blog/2020/06/16/tf/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/1.jpg" class="responsive-img" alt="combination permutation">
+                        <img src="/Blog/medias/featureimages/19.jpg" class="responsive-img" alt="tf">
                         
-                        <span class="card-title">combination permutation</span>
+                        <span class="card-title">tf</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Combination
-如果需要返回的组合长度不一样，则需要在外层调用dfs时加循环
+                            References
+https://classroom.udacity.com/courses/ud187
 
-注意去重
-time: O(2^n)
-
-
-int[] nums;
-List&lt;List&lt;Integer>> res = new ArrayLis
+TensorFlow IntroductionTransfer LearningLoad Data Setimport tens
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
                                 </a>
                             
                             
@@ -788,20 +792,12 @@ List&lt;List&lt;Integer>> res = new ArrayLis
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
+                    <a href="/Blog/tags/DL/">
+                        <span class="chip bg-color">DL</span>
                     </a>
                     
-                    <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/Blog/tags/combination/">
-                        <span class="chip bg-color">combination</span>
-                    </a>
-                    
-                    <a href="/Blog/tags/permutation/">
-                        <span class="chip bg-color">permutation</span>
+                    <a href="/Blog/tags/Tensorflow/">
+                        <span class="chip bg-color">Tensorflow</span>
                     </a>
                     
                 </div>
@@ -815,37 +811,34 @@ List&lt;List&lt;Integer>> res = new ArrayLis
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Blog/2020/05/19/arr/">
+                <a href="/Blog/2020/06/11/linux/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/13.jpg" class="responsive-img" alt="arr">
+                        <img src="/Blog/medias/featureimages/19.jpg" class="responsive-img" alt="linux">
                         
-                        <span class="card-title">arr</span>
+                        <span class="card-title">linux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数组
-考虑双向遍历数组
-
-快慢指针应用：原数组上删除 
-用法：实质是快慢指针，其中一个做iterator，另一个做counter
-双向双指针应用：原数组上rotate或者reverse，in place交换，求和
-用法：前后两个指针分别向中
+                            Cmdlsls -l # list mode  
+ls -la # list + all hidden filesls -lh # human readable size  
+helpman pwd  # open manual  
+man
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                            <a href="/Blog/categories/app/" class="post-category">
+                                    app
                                 </a>
                             
                             
@@ -855,16 +848,12 @@ List&lt;List&lt;Integer>> res = new ArrayLis
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
+                    <a href="/Blog/tags/app/">
+                        <span class="chip bg-color">app</span>
                     </a>
                     
-                    <a href="/Blog/tags/array/">
-                        <span class="chip bg-color">array</span>
-                    </a>
-                    
-                    <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/Blog/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>

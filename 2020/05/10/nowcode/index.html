@@ -1422,7 +1422,7 @@ a <span class="token operator">=</span> a<span class="token operator">^</span>b<
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/Blog/libs/share/js/social-share.min.js"></script>
     
 
@@ -1519,6 +1519,11 @@ a <span class="token operator">=</span> a<span class="token operator">^</span>b<
         color: #fff !important;
         background-color: #019FE8 !important;
     }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
 
     .reward-tabs .reward-img {
         width: 210px;
@@ -1533,18 +1538,22 @@ a <span class="token operator">=</span> a<span class="token operator">^</span>b<
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">您的认可会让我加倍努力！</h4>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
                         <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
                     </ul>
                     <div id="alipay">
                         <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
                         <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
                     </div>
                 </div>
             </div>
@@ -1583,35 +1592,38 @@ a <span class="token operator">=</span> a<span class="token operator">^</span>b<
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/Blog/2020/05/16/binary-search/">
+                <a href="/Blog/2020/05/10/hbase/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/18.jpg" class="responsive-img" alt="binary search">
+                        <img src="/Blog/medias/featureimages/22.jpg" class="responsive-img" alt="hbase">
                         
-                        <span class="card-title">binary search</span>
+                        <span class="card-title">hbase</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二分搜索 Binary Search
-注意int溢出。
-一种是根据index二分，一种是根据值二分。根据值二分的，要统计小于mid的个数，另外要注意mid到底是不是一个在范围之内的数。  
-返回之前最好再检测一遍是否符合要求。  
-如果不是
+                            在cmd运行的指令
+list  
+list all the tables
+
+!describe `*table*`  
+return attributes related to the table
+
+create `*table*`, `*
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                            <a href="/Blog/categories/app/" class="post-category">
+                                    app
                                 </a>
                             
                             
@@ -1621,16 +1633,12 @@ a <span class="token operator">=</span> a<span class="token operator">^</span>b<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
+                    <a href="/Blog/tags/app/">
+                        <span class="chip bg-color">app</span>
                     </a>
                     
-                    <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/Blog/tags/binary-search/">
-                        <span class="chip bg-color">binary search</span>
+                    <a href="/Blog/tags/hbase/">
+                        <span class="chip bg-color">hbase</span>
                     </a>
                     
                 </div>
@@ -1641,73 +1649,50 @@ a <span class="token operator">=</span> a<span class="token operator">^</span>b<
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Blog/2020/05/10/nowcode/">
+                <a href="/Blog/2020/05/01/python/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/15.jpg" class="responsive-img" alt="nowcode">
+                        <img src="/Blog/medias/featureimages/1.jpg" class="responsive-img" alt="python">
                         
-                        <span class="card-title">nowcode</span>
+                        <span class="card-title">python</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目录排序 3
-字符串 5
-算法/数据结构 5
-队列和栈 8
-链表 11
-二分搜索 15
-二叉树 17
-动态规划 22
-位运算 25
-排列组合 27
-大数据 31
-排序概况
-
-
-名称
-时间复杂度
-空间复杂度
-稳定排序
-备注
-
-
-
-冒泡
-O(n
+                            变量类型及基本操作赋值方式单个赋值x=1
+y=2
+多个赋值x, y = 1,2
+用列表赋值x, y = [1, 2]
+用字符串赋值字符个数需要与对象个数相等，且赋值后对象类型为字符串x, y = ‘12’
+打印调用print()方法时，相当
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                            <a href="/Blog/categories/Programming/" class="post-category">
+                                    Programming
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
-                    </a>
-                    
-                    <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/Blog/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>

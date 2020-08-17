@@ -640,7 +640,7 @@ List<span class="token operator">&lt;</span>List<span class="token operator">&lt
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/Blog/libs/share/js/social-share.min.js"></script>
     
 
@@ -737,6 +737,11 @@ List<span class="token operator">&lt;</span>List<span class="token operator">&lt
         color: #fff !important;
         background-color: #019FE8 !important;
     }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
 
     .reward-tabs .reward-img {
         width: 210px;
@@ -751,18 +756,22 @@ List<span class="token operator">&lt;</span>List<span class="token operator">&lt
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">您的认可会让我加倍努力！</h4>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
                         <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
                     </ul>
                     <div id="alipay">
                         <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
                         <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
                     </div>
                 </div>
             </div>
@@ -862,36 +871,33 @@ List<span class="token operator">&lt;</span>List<span class="token operator">&lt
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Blog/2020/06/14/math/">
+                <a href="/Blog/2020/07/19/hands-on-13-preprocess/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/5.jpg" class="responsive-img" alt="math">
+                        <img src="/Blog/medias/featureimages/10.jpg" class="responsive-img" alt="hands on: 13 preprocess">
                         
-                        <span class="card-title">math</span>
+                        <span class="card-title">hands on: 13 preprocess</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数学
-考虑int溢出，除数为0，数字不能以0开头（0除外）等特殊情况。
-考虑gcd，lcm
-考虑二分搜索
-
-Fast Power$x =  a * b^n$, n is a positive integer, a and b can be 
+                            Data APILoad data from disk. 
+dataset = tf.data.Dataset.from_tensor_slices((df.values, target.values))
+Just use the belo
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
                                 </a>
                             
                             
@@ -901,16 +907,8 @@ Fast Power$x =  a * b^n$, n is a positive integer, a and b can be
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
-                    </a>
-                    
-                    <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/Blog/tags/math/">
-                        <span class="chip bg-color">math</span>
+                    <a href="/Blog/tags/DL/">
+                        <span class="chip bg-color">DL</span>
                     </a>
                     
                 </div>

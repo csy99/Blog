@@ -1,0 +1,1351 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="hands on: 14 cnn, Tech Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>hands on: 14 cnn | Tech Blog</title>
+    <link rel="icon" type="image/jpeg" href="/Blog/medias/teemo.jpeg">
+
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/my.css">
+
+    <script src="/Blog/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/Blog/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/Blog/" class="waves-effect waves-light">
+                    
+                    <img src="/Blog/medias/teemo.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Tech Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/Blog/medias/teemo.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Tech Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/csy99/Blog" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork My Blog
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/csy99/Blog" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork My Blog" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Blog/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">hands on: 14 cnn</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/Blog/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/Blog/tags/DL/">
+                                <span class="chip bg-color">DL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                Deep Learning
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-07-22
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Conv-Layers"><a href="#Conv-Layers" class="headerlink" title="Conv Layers"></a>Conv Layers</h1><p>In turn, each neuron in the second conv layer is connected only to neurons located within a small rectangle in the first layer. </p>
+<h3 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a>Filters</h3><p>Also called convolution kernels. </p>
+<p>A layer full of neurons using the same filters outputs a feature map. </p>
+<p>During training, the conv layer will automatically learn the most useful filters for its task, and the layers above will learn to combine them into more complex patterns. </p>
+<h3 id="Stacking-Multiple-Feature-Maps"><a href="#Stacking-Multiple-Feature-Maps" class="headerlink" title="Stacking Multiple Feature Maps"></a>Stacking Multiple Feature Maps</h3><p>It has one neuron per pixel in each feature map, and all neurons within a given feature map share the same parameters. (dramatically reduces the number of parameters)</p>
+<p>Input images are composed of multiple sublayers: one per color channel (RGB). </p>
+<p>A neuron located in $(i, j)$ in feature map $k$ in a given conv layer $l$ is connected to the outputs of the neurons in the previous layer $l-1$, located in rows $i<em>s_h$ to $i</em>s_h+f_h-1$ and columns  $i<em>s_w$ to $i</em>s_w+f_w-1$ across all feature maps. </p>
+<h3 id="TensorFlow-Implementation"><a href="#TensorFlow-Implementation" class="headerlink" title="TensorFlow Implementation"></a>TensorFlow Implementation</h3><p>Each input image is represented as a 3D tensor of shape [height, width, channels]. A mini-batch is represented as a 4D tensor [mini-batch size, height, width, channels]. The weights of a conv layer are represented as a 4D tensor of shape $[f_h, f_w, f_{n’}, f_n]$. </p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># loads two color image</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> load_sample_image
+china <span class="token operator">=</span> load_sample_image<span class="token punctuation">(</span><span class="token string">"china.jpg"</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">255</span>
+flower <span class="token operator">=</span> load_sample_image<span class="token punctuation">(</span><span class="token string">"flower.jpg"</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">255</span>
+images <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>china<span class="token punctuation">,</span> flower<span class="token punctuation">]</span><span class="token punctuation">)</span>
+batch_size<span class="token punctuation">,</span> height<span class="token punctuation">,</span> width<span class="token punctuation">,</span> channels <span class="token operator">=</span> images<span class="token punctuation">.</span>shape
+
+<span class="token comment" spellcheck="true"># create 2 filters</span>
+filters <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span>channels<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+filters<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true"># vertical line</span>
+filters<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true"># horizontal line</span>
+
+outputs <span class="token operator">=</span> tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>conv2d<span class="token punctuation">(</span>images<span class="token punctuation">,</span> filters<span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># plot 1st image's 2nd feature map </span>
+plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>outputs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> cmap<span class="token operator">=</span><span class="token string">"gray"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>The pixel intensity for each color channel is represented as byte from 0 to 255, so we scale these features by dividing 255 to get flats ranging from 0 to 1.</p>
+<p>We create two 7*7 filters.  The tf.nn.conv2d() is part of TF’s low-level deep learning API. Images is the input mini-batch. <strong>strides</strong> can also be a 1D array with four elements, where the two central elements are the vertical and horizontal strides, and the first and last elements must be equal to 1. </p>
+<p>In a real CNN, we normally define filters as trainable variables. </p>
+<pre class=" language-python"><code class="language-python">conv <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Conv2D<span class="token punctuation">(</span>filters<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Mem-Requirements"><a href="#Mem-Requirements" class="headerlink" title="Mem Requirements"></a>Mem Requirements</h3><p>Requires a huge amount of RAM. During inference the RAM occupied by one layer can be released as soon as the next layer has been computed, so we only need as much RAM as required by two consecutive layers. But during training everything computed during the FP needs to preserved for the reverse pass. If training crashes because of an out-of-mem error, we can try reducing mini-batch size. Alternatively, we can try reducing dimensionality using a stride, or removing a  few layers. </p>
+<h1 id="Pooling-Layers"><a href="#Pooling-Layers" class="headerlink" title="Pooling Layers"></a>Pooling Layers</h1><p>Goal is to subsample the input image to reduce the computational load, the mem usage, and the number of parameters. </p>
+<p>A pooling neuron has no weights. A pooling layer typically works on every input channel independently, so the output depth is the same as the input depth. </p>
+<p><strong>Down side</strong></p>
+<ol>
+<li>even with a 2*2 kernel and a stride of 2, the output will be 2 times smaller in both direction (dropping 75% of the input values in total)</li>
+<li>Invariance to small translations is not desirable sometimes</li>
+</ol>
+<h3 id="TF-Implementation"><a href="#TF-Implementation" class="headerlink" title="TF Implementation"></a>TF Implementation</h3><pre class=" language-python"><code class="language-python">max_pool <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>MaxPool2D<span class="token punctuation">(</span>pool_size<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span></code></pre>
+<p>To create an average pooling layer, just use AvgPool2D instead of MaxPool2D.  </p>
+<p>MaxPooling preserves only the strongest features, getting rid of all the meaningless ones, so the next layers get a cleaner signal to work with. </p>
+<p>Pooling can also be performed along the depth dimension rather than the spatial dimensions, although this is not as common. This allows the CNN to learn to be invariant to various features. For example, it could learn multiple filters, each detecting a different rotation of the same pattern (e.g.: hand-written digits), and the depthwise max pooling layer would ensure that the output is the same regardless of the rotation. The CNN could similarly learn to be invariant to anything else: thickness, brightness, skew, color, and so on. </p>
+<p>Keras does not include a depthwise max pooling layer, but TF’s low-level API does. </p>
+<pre class=" language-python"><code class="language-python">output <span class="token operator">=</span> tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>max_pool<span class="token punctuation">(</span>images<span class="token punctuation">,</span> ksize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+                       strides<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                       padding<span class="token operator">=</span><span class="token string">"valid"</span><span class="token punctuation">)</span></code></pre>
+<p>The first three values of kernel size and strides should be 1. The last value should be whatever kernel size and stride we want along the depth dimension (must be a divisor of the input depth). </p>
+<p>We can wrap this in our Keras models using Lambda layer. </p>
+<pre class=" language-python"><code class="language-python">depth_pool <span class="token operator">=</span> keras<span class="token punctuation">.</span>Layers<span class="token punctuation">.</span>Lambda<span class="token punctuation">(</span><span class="token keyword">lambda</span> X<span class="token punctuation">:</span> tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>max_pool<span class="token punctuation">(</span>X<span class="token punctuation">,</span> ksize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"valid"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>One last type of pooling layer is global average pooling layer. It computes the mean of each entire feature map (outputs a single number per feature map and per instance). </p>
+<pre class=" language-python"><code class="language-python">global_avg_pool <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>GlobalAvgPool2D<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>It is equivalent to the following Lambda layer. </p>
+<pre class=" language-python"><code class="language-python">global_avg_pool <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Lambda<span class="token punctuation">(</span><span class="token keyword">lambda</span> X<span class="token punctuation">:</span> tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>X<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h1 id="CNN-Architectures"><a href="#CNN-Architectures" class="headerlink" title="CNN Architectures"></a>CNN Architectures</h1><p>The image gets smaller and smaller as it progresses through the network, but also deeper (with more feature maps).</p>
+<p>A common mistake is to use conv kernels that are too large. </p>
+<p>The following code can be used to tackle Fashion MNIST. </p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    Conv2D<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">,</span> input_shape<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    MaxPooling2D<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Conv2D<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Conv2D<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    MaxPooling2D<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Conv2D<span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">)</span> 
+    Conv2D<span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    MaxPooling2D<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Dense<span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Dropout<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Dense<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Dropout<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"softmax"</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>The first layer uses 64 large filters but no stride, because the input images are not very large. The input shape is [28,28,1] because the images are 28*28 pixels, with a single color channel. </p>
+<p>We repeat the same structure twice: two conv layers followed by a max pooling layer. For larger images, we could repeat this structure several more times. </p>
+<p>The number of filters grows as we climb up the CNN toward the output layer. The number of low-level features is often fairly low, but there are many different ways to combine them into higher level  features. It is a common practice to double the number of filters after each pooling layer, since a pooling layer divides each spatial dimension by a factor of 2, we can afford to double the number of feature maps in the next layer without fear of exploding the number of parameters, mem usage, or computational load. </p>
+<h3 id="LeNet-5"><a href="#LeNet-5" class="headerlink" title="LeNet-5"></a>LeNet-5</h3><p>Most widely known CNN architecture. It is used to tackle MNIST handwritten number. </p>
+<img src="1401.PNG" height="200" width="400">
+
+<p>MNIST images are 28*28 pixels, but they are zero-padded to 32*32 pixels and normalized before being fed to the network. The rest of the network does not use padding. </p>
+<p>The average pooling layers are slightly more complex than usual: each neuron computes the mean of its inputs, then multiplies the result by a learnable coefficient (one per map) and adds a learnable bias term. </p>
+<p>Most neurons in C3 maps are connected to neurons in only three or four S2 maps. </p>
+<p>The output layer is a bit special: instead of computing the matrix multiplication of the inputs and the weight vector, each neuron outputs the square of the Euclidian distance between its input vector and its weight vector. Each output measures how much the image belongs to a particular digit class. </p>
+<h3 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h3><p>Similar to LeNet-5, but larger and deeper. The first to stack conv layers directly on top of one another, instead of stacking a pooling layer on top of each conv layer. </p>
+<img src="1402.PNG" height="300" width="500">
+
+<p>To reduce overfitting, the authors used reg tech. First, they applied dropout during training to the outputs of layers F9 and F10. Second, they performed data augmentation by randomly shifting the training images by various offset, flipping and changing the lighting conditions. </p>
+<p><strong>data aug</strong></p>
+<p>The generated instances should be as realistic as possible: human should not be able to tell whether it augmented. Simply adding white noise will not help; the modifications should be learnable. </p>
+<p>ALexNet also uses a competitive normalization step immediately after the ReLU step of layers C1 and C3, called local response normalization (LRN): the most strongly activated neurons inhibit other neurons located at the same position in neighboring feature maps. This encourages different feature maps to specialize, pushing them apart and forcing them to explore a wider range of features. </p>
+<p>$b_i = a_i(k+\alpha\sum_{j=j_{low}}^{j_{high}}\alpha_j^2)^{-\beta}$. </p>
+<p>$j_{low} = max(0, i-r/2)$</p>
+<p>$j_{high} = min(i+r/2, f_n - 1)$</p>
+<p>In the equation, $b_i$ is the normalized output of the neuron located in feature map i, at some row u and column v. $a_i$ is the activation of that neuron after the ReLU step, but before normalization. $k$ is bias, $r$ is depth radius, $f_n$ is the number of feature maps.  </p>
+<p>This step can be implemented using the tf.nn.local_response_normalization() function. </p>
+<h3 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h3><p>The network was much deeper than previous CNNs, which was made possible by subnetworks called inception modules, which allow GoogLeNet to use parameters much more efficiently than previous architectures (has 10 times fewer param than AlexNet). </p>
+<p>Below is the arch for inception modules. The notation “3*3+1(S)” means that the layer uses a 3*3 kernel, stride 1, and same padding. The input signal is first copied and fed to four different layers. All conv layers use ReLU activation function. The second set of conv layers uses different kernel sizes, allowing them to capture patterns at different scales. Every single layer uses a stride of 1 and same padding (even the max pooling layer), so their outputs all have the same height and width as their inputs. </p>
+<img src="1403.PNG" height="300" width="500">
+
+<p>There are some 1*1 kernel conv layer. First, although they cannot capture spatial patterns, they can capture patterns along the depth dimension. Second, they are configured to output fewer feature maps than their inputs, so they serve as bottleneck layers, meaning they reduce dimensionality. Third, each pair of conv layers acts like a single powerful conv layer, capable of capturing more complex patterns. </p>
+<p>The architecture is so deep that it has to be represented in three columns, but GoogLeNet is actually one tall stack, including nine inception modules. The six numbers in the inception modules represent the number of feature maps output by each conv layer in the module. </p>
+<img src="1404.PNG" height="400" width="500">
+
+<p>Input images are typically expected to be 224*224 pixels. </p>
+<p>The first two layers divide the image’s height and width by 4 (so area is divided by 16) to reduce the computational load. The first layer uses a large kernel size so that much of the info is preserved. </p>
+<p>The local response normalization layer ensures that the previous layers learn a wide variety of features. </p>
+<p>Two conv layers follows, where the first acts like a bottleneck layer. Think of this pair as a single smarter conv layer. </p>
+<p>Max pooling layer reduces the image height and width by 2, again to speed up computations. </p>
+<p>Tall stack of nine inception modules. </p>
+<p>The global average pooling layer outputs the mean of each feature map. This drops any remaining spatial info (not much is left at that point). Moreover, it is a classification task, not localization, so it does not matter where the object is. Thanks to the dim reduction brought by this layer, there is no need to have several fully connected layers at the top of the CNN. </p>
+<p>The original GoogLeNet  architecture also included two auxiliary classifiers plugged on top of the third and sixth inception modules. They were composed of one average pooling layer, one conv layer, two fully connected layers, and a softmax activation layer. During training, their loss scaled down by 70% was added to the overall loss. The goal was to fight the vanishing gradients problem and regularize the network. (Later shown that their effect was relatively minor). </p>
+<h3 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h3><p>Developed Karen Simonyan and Andrew Zisserman from the Visual Geometry Group (VGG) research lab at Oxford Univ. </p>
+<p>Architecture: 2 or 3 conv layers and a pooling layer, then again 2 or 3 conv layers and a pooling layer, and so on. Plus a final dense network with 2 hidden layers and the output layer. It used only 3*3 filters, but many filters. </p>
+<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><p>It confirmed the general trend: models are getting deeper and deeper, with fewer and fewer params. The key is to use skip connections. </p>
+<p>When training a neural network, the goal is target function h(x). If you add the input x to the output of the network, then the network will be forced to model f(x) = h(x) - x rather than h(x). This is called residual learning. If the target function is fairly close to the identity function (which is often the case), this will speed up training considerably.  </p>
+<img src="1405.PNG" height="200" width="400">
+
+<p>Moreover, if we add many skip connections, the network can start making progress even if several layers have not started learning yet. The deep residual network can be seen as a stack of residual units(RUs), where each RU is a small NN with a skip connection. </p>
+<p>Each RU is composed of two conv layers (no pooling), with Batch Normalization and ReLU activation, using 3*3 and preserving spatial dimensions. </p>
+<img src="1406.PNG" height="300" width="500">
+
+<p>Note that the number of feature maps is doubled every few RN, at the same time as their height and width are halved. The inputs cannot be added directly to the outputs of the RU because they don’t have the same shape. To solve this problem, the inputs are passed through a 1*1 conv layer with stride 2 and the right number of output feature maps. </p>
+<h3 id="Xception"><a href="#Xception" class="headerlink" title="Xception"></a>Xception</h3><p>Extreme Inception. It replaces the inception modules with a special type of layer called a depthwise separable conv layer. While a regular conv layer uses filters that try to simultaneously capture spatial patterns and cross channel patterns (e.g., mouth+nose+eyes=face), a separable conv layer makes the strong assumption that spatial patterns and cross-channel patterns can be modeled separately. Thus, it is composed of two parts: first part applies a single spatial filter for each input feature map, second part looks exclusively for cross channel patterns. </p>
+<p>Since separable conv layers only have one spatial filter per input channel, we should avoid using them after layers that have too few channels. </p>
+<h3 id="SENet"><a href="#SENet" class="headerlink" title="SENet"></a>SENet</h3><p>Squeeze and Excitation Network. The extended versions of inception networks and ResNets are called SE-Inception and SE-ResNet. </p>
+<p>An SE block analyzes the output of the unit it is attached to, focusing exclusively on the depth dimension. For example, an SE block may learn that mouths, noses, and eyes usually appear together in pictures. So, if the block sees a strong activation in the mouth and nose feature maps, but only mild activation in the eye feature map, it will boost the eye feature. (recalibrated feature maps)</p>
+<p>An SE block is composed of just 3 layers: a global average pooling layer, a hidden dense layer using ReLU, and a dense output layer using sigmoid. The first dense layer is used to reduce dim (usually 16 times fewer than the number of feature maps): using low-dim vector representation of the distribution of feature responses. Finally the output layer takes the embedding and outputs a recalibration vector containing one number per feature map (same depth as the input), each between 0 and 1. </p>
+<h3 id="Implement-ResNet-34-CNN-using-Keras"><a href="#Implement-ResNet-34-CNN-using-Keras" class="headerlink" title="Implement ResNet-34 CNN using Keras"></a>Implement ResNet-34 CNN using Keras</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ResidualUnit</span><span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Layer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> filters<span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"relu"</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>activation <span class="token operator">=</span> keras<span class="token punctuation">.</span>activations<span class="token punctuation">.</span>get<span class="token punctuation">(</span>activation<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>main_layers <span class="token operator">=</span> <span class="token punctuation">[</span>
+            Conv2D<span class="token punctuation">(</span>filters<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> strides<span class="token operator">=</span>stride<span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">,</span> use_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+            BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+            self<span class="token punctuation">.</span>activation<span class="token punctuation">,</span> 
+            Conv2D<span class="token punctuation">(</span>filters<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">,</span> use_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+            BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>skip_layers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> stride <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>
+            slef<span class="token punctuation">.</span>skip_layers <span class="token operator">=</span> <span class="token punctuation">[</span>
+                Conv2D<span class="token punctuation">(</span>filters<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> strides<span class="token operator">=</span>stride<span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">,</span> use_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+                BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">call</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> inputs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        Z <span class="token operator">=</span> inputs
+        <span class="token keyword">for</span> layer <span class="token keyword">in</span> self<span class="token punctuation">.</span>main_layers<span class="token punctuation">:</span>
+            Z <span class="token operator">=</span> layer<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+        skip_Z <span class="token operator">=</span> inputs
+        <span class="token keyword">for</span> layer <span class="token keyword">in</span> self<span class="token punctuation">.</span>skip_layers<span class="token punctuation">:</span>
+            skip_Z <span class="token operator">=</span> layer<span class="token punctuation">(</span>skip_Z<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>activation<span class="token punctuation">(</span>Z <span class="token operator">+</span> skip_Z<span class="token punctuation">)</span></code></pre>
+<p>Next, we can build ResNet 34 using Sequential model. </p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> keras<span class="token punctuation">.</span>models<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Conv2D<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> input_shape<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">224</span><span class="token punctuation">,</span> <span class="token number">224</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">,</span> use_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>BatchNormalization<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Activation<span class="token punctuation">(</span><span class="token string">"relu"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>MaxPool2D<span class="token punctuation">(</span>pool_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> strides<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token string">"same"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+prev_filters <span class="token operator">=</span> <span class="token number">64</span>
+<span class="token keyword">for</span> filters <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">3</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">4</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">6</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token number">512</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">:</span>
+    strides <span class="token operator">=</span> <span class="token number">1</span> <span class="token keyword">if</span> filters <span class="token operator">==</span> prev_filters <span class="token keyword">else</span> <span class="token number">2</span>
+    model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>ResidualUnit<span class="token punctuation">(</span>filters<span class="token punctuation">,</span> strides<span class="token operator">=</span>strides<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    prev_filters <span class="token operator">=</span> filters
+
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>GlobalAvgPool2D<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"softmax"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h1 id="Using-Pretrained-Models-from-Keras"><a href="#Using-Pretrained-Models-from-Keras" class="headerlink" title="Using Pretrained Models from Keras"></a>Using Pretrained Models from Keras</h1><p>We can load standard models from Keras. </p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> keras<span class="token punctuation">.</span>applications<span class="token punctuation">.</span>resnet50<span class="token punctuation">.</span>ResNet50<span class="token punctuation">(</span>weights<span class="token operator">=</span><span class="token string">"imagenet"</span><span class="token punctuation">)</span></code></pre>
+<p>We need to ensure our images have the right size. A ResNet-50 model expects 224*224 pixel images. </p>
+<pre class=" language-python"><code class="language-python">images_resized <span class="token operator">=</span> tf<span class="token punctuation">.</span>image<span class="token punctuation">.</span>resize<span class="token punctuation">(</span>images<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">224</span><span class="token punctuation">,</span> <span class="token number">224</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># To preserve the aspect ratio, use the following</span>
+<span class="token comment" spellcheck="true"># tf.image.crop_and_resize()</span></code></pre>
+<p>The pretrained models assume the images are preprocessed in a specific way. </p>
+<pre class=" language-python"><code class="language-python">inputs <span class="token operator">=</span> keras<span class="token punctuation">.</span>applications<span class="token punctuation">.</span>resnet50<span class="token punctuation">.</span>preprocess_input<span class="token punctuation">(</span>images_resized<span class="token operator">*</span><span class="token number">255</span><span class="token punctuation">)</span></code></pre>
+<p>Now we can use the pretrained model to make predictions. </p>
+<pre class=" language-python"><code class="language-python">y_proba <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>inputs<span class="token punctuation">)</span></code></pre>
+<p>If we want to display the top K predictions, including the class name and the estimated proba of each predicted class, use the decode_predictions() function. </p>
+<pre class=" language-python"><code class="language-python">top_K <span class="token operator">=</span> keras<span class="token punctuation">.</span>applications<span class="token punctuation">.</span>resnet50<span class="token punctuation">.</span>decode_preditions<span class="token punctuation">(</span>y_proba<span class="token punctuation">,</span> top<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> image_idx <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>images<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Image #&amp;#123;&amp;#125;"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>image_idx<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> class_id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> y_p <span class="token keyword">in</span> top_K<span class="token punctuation">[</span>image_idx<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" &amp;#123;&amp;#125; - &amp;#123;:12s&amp;#125; &amp;#123;:.2f&amp;#125;%"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>class_id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> y_p<span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Pretrained-Models-for-Transfer-Learning"><a href="#Pretrained-Models-for-Transfer-Learning" class="headerlink" title="Pretrained Models for Transfer Learning"></a>Pretrained Models for Transfer Learning</h3><p>Load dataset. If we want to get information about the dataset, set <strong>with_info</strong>=True. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow_datasets <span class="token keyword">as</span> tfds
+dataset<span class="token punctuation">,</span> info <span class="token operator">=</span> tfds<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"tf_flowers"</span><span class="token punctuation">,</span> as_supervised<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> with_info<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+dataset_size <span class="token operator">=</span> info<span class="token punctuation">.</span>splits<span class="token punctuation">[</span><span class="token string">"train"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>num_examples
+class_names <span class="token operator">=</span> info<span class="token punctuation">.</span>features<span class="token punctuation">[</span><span class="token string">"label"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>names
+n_classes <span class="token operator">=</span> info<span class="token punctuation">.</span>features<span class="token punctuation">[</span><span class="token string">"label"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>num_class</code></pre>
+<p>We want to split the training set. </p>
+<pre class=" language-python"><code class="language-python">test_split<span class="token punctuation">,</span> valid_split<span class="token punctuation">,</span> train_split <span class="token operator">=</span> tfds<span class="token punctuation">.</span>Split<span class="token punctuation">.</span>TRAIN<span class="token punctuation">.</span>subsplit<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">75</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_set <span class="token operator">=</span> tfds<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"tf_flowers"</span><span class="token punctuation">,</span> split<span class="token operator">=</span>test_split<span class="token punctuation">,</span> as_supervised<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+valid_set <span class="token operator">=</span> tfds<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"tf_flowers"</span><span class="token punctuation">,</span> split<span class="token operator">=</span>valid_split<span class="token punctuation">,</span> as_supervised<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+train_set <span class="token operator">=</span> tfds<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"tf_flowers"</span><span class="token punctuation">,</span> split<span class="token operator">=</span>train_split<span class="token punctuation">,</span> as_supervised<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
+<p>Nest, preprocess the images. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">preprocess</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> label<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    resized_image <span class="token operator">=</span> tf<span class="token punctuation">.</span>image<span class="token punctuation">.</span>resize<span class="token punctuation">(</span>img<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">224</span><span class="token punctuation">,</span> <span class="token number">224</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    final_image <span class="token operator">=</span> keras<span class="token punctuation">.</span>applications<span class="token punctuation">.</span>xception<span class="token punctuation">.</span>preprocess_input<span class="token punctuation">(</span>resized_image<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> final_image<span class="token punctuation">,</span> label</code></pre>
+<p>Apply the preprocess to all datasets. </p>
+<pre class=" language-python"><code class="language-python">batch_size <span class="token operator">=</span> <span class="token number">32</span>
+train_set <span class="token operator">=</span> train_set<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+train_set <span class="token operator">=</span> train_set<span class="token punctuation">.</span>map<span class="token punctuation">(</span>preprocess<span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span><span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+valid_set <span class="token operator">=</span> valid_set<span class="token punctuation">.</span>map<span class="token punctuation">(</span>preprocess<span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span><span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+test_set <span class="token operator">=</span> test_set<span class="token punctuation">.</span>map<span class="token punctuation">(</span>preprocess<span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span><span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre>
+<p>We can also perform data augmentation, change the preprocessing function for the training set, adding some random transformations to the training images. Use tf.image.random_crop() to randonly flip the images horizontally, and so on. The keras.preprocessing.image.ImageDataGenerator class makes it easy to do data augmentation. However, building a tf.data pipeline reads the images efficiently. </p>
+<p>Load models. We exclude the top: excludes the global average pooling layer and the dense output layer. </p>
+<pre class=" language-python"><code class="language-python">base_model <span class="token operator">=</span> keras<span class="token punctuation">.</span>applications<span class="token punctuation">.</span>xception<span class="token punctuation">.</span>Xception<span class="token punctuation">(</span>weights<span class="token operator">=</span><span class="token string">"imagenet"</span><span class="token punctuation">,</span> include_top<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+avg <span class="token operator">=</span> GlobalAveragePooling2D<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>base_model<span class="token punctuation">.</span>output<span class="token punctuation">)</span>
+out <span class="token operator">=</span> Dense<span class="token punctuation">(</span>n_classes<span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"softmax"</span><span class="token punctuation">)</span><span class="token punctuation">(</span>avg<span class="token punctuation">)</span>
+model <span class="token operator">=</span> keras<span class="token punctuation">.</span>Model<span class="token punctuation">(</span>inputs<span class="token operator">=</span>base_model<span class="token punctuation">.</span>input<span class="token punctuation">,</span> outputs<span class="token operator">=</span>out<span class="token punctuation">)</span></code></pre>
+<p>Freeze the weights. Since our model uses the base model’s layers directly, rather than the base_model object itself, setting <code>base_model.trainable = False</code> would have no effect. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> layer <span class="token keyword">in</span> base_model<span class="token punctuation">.</span>layers<span class="token punctuation">:</span>
+    layer<span class="token punctuation">.</span>trainable <span class="token operator">=</span> <span class="token boolean">False</span></code></pre>
+<p>Compile the model. </p>
+<pre class=" language-python"><code class="language-python">optm <span class="token operator">=</span> SGD<span class="token punctuation">(</span>lr<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> momentum<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span> decay<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">"sparse_categorical_crossentropy"</span><span class="token punctuation">,</span> optimizer<span class="token operator">=</span>optimizer<span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"accuracy"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+hist <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_set<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> validation_cata<span class="token operator">=</span>valid_set<span class="token punctuation">)</span></code></pre>
+<p>After training the model for a few epochs, its validation accuracy should reach about 80%. We should unfreeze all layers and continue training. Use a lower learning rate to avoid damaging the pretrained weights. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> layer <span class="token keyword">in</span> base_model<span class="token punctuation">.</span>layers<span class="token punctuation">:</span>
+    layer<span class="token punctuation">.</span>trainable <span class="token operator">=</span> <span class="token boolean">True</span>
+optm <span class="token operator">=</span> SGD<span class="token punctuation">(</span>lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> momentum<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span> decay<span class="token operator">=</span><span class="token number">0.001</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">"sparse_categorical_crossentropy"</span><span class="token punctuation">,</span> optimizer<span class="token operator">=</span>optimizer<span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"accuracy"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+hist <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_set<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> validation_cata<span class="token operator">=</span>valid_set<span class="token punctuation">)</span></code></pre>
+<h1 id="Localization"><a href="#Localization" class="headerlink" title="Localization"></a>Localization</h1><p>Can be seen as regression. Train with MSE. </p>
+<pre class=" language-python"><code class="language-python">base_model <span class="token operator">=</span> keras<span class="token punctuation">.</span>applications<span class="token punctuation">.</span>xception<span class="token punctuation">.</span>Xception<span class="token punctuation">(</span>weights<span class="token operator">=</span><span class="token string">"imagenet"</span><span class="token punctuation">,</span> include_top<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+avg <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>GlobalAveragePooling2D<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>base_model<span class="token punctuation">.</span>output<span class="token punctuation">)</span>
+class_output <span class="token operator">=</span> Dense<span class="token punctuation">(</span>n_classes<span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">"softmax"</span><span class="token punctuation">)</span><span class="token punctuation">(</span>avg<span class="token punctuation">)</span>
+loc_output <span class="token operator">=</span> Dense<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">(</span>avg<span class="token punctuation">)</span>
+model <span class="token operator">=</span> keras<span class="token punctuation">.</span>Model<span class="token punctuation">(</span>inputs<span class="token operator">=</span>base_model<span class="token punctuation">.</span>input<span class="token punctuation">,</span> outputs<span class="token operator">=</span><span class="token punctuation">[</span>class_output<span class="token punctuation">,</span> loc_output<span class="token punctuation">]</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"sparse_categorical_crossentropy"</span><span class="token punctuation">,</span> <span class="token string">"mse"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> loss_weights<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0.8</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> optimizer<span class="token operator">=</span>optm<span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"accuracy"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Sometimes, the dataset does not have bounding boxes, and we need to add them ourselves. We can use an open source image labeling tool like VGG Image Annotator, LabelImg, OpenLabeler, or ImgLab. </p>
+<p>Each item should be a tuple of the form (images, (class_labels, bounding_boxes)). The bounding boxes should be normalized so that the horizontal and vertical coordinates range from 0 to 1. Also, it is common to predict the sqrt of the height and width rather than the height and width directly: this way, a 10 pixel error for a large bounding box will not be penalized as much as a 10 pixel error for a small bounding box. </p>
+<p>The most common metric for evaluating how well the model predicts bounding boxes is the Intersection over Union (IoU): the area of overlap between the predicted bounding box and the target, divided by the area of their union. It is implemented in <code>tf.keras.metrics.MeanIoU</code>. </p>
+<h1 id="Object-Detection"><a href="#Object-Detection" class="headerlink" title="Object Detection"></a>Object Detection</h1><p>Non-max suppression</p>
+<ol>
+<li>We need to add an extra objectness output to our CNN, to estimate the prob that an object is indeed present in the image. It must use sigmoid activation (can be trained with binary cross-entropy loss). Then get rid of all bounding boxes for which the objectness score is below threshold. </li>
+<li>Find the bounding box with highest objectness score, and get rid of all other boxes that overlap a lot with it (IoU &gt;= 60%). </li>
+<li>Repeat until there are no more bounding boxes to get rid of</li>
+</ol>
+<h1 id="Fully-Conv-Networks-FCN"><a href="#Fully-Conv-Networks-FCN" class="headerlink" title="Fully Conv Networks (FCN)"></a>Fully Conv Networks (FCN)</h1><p>The idea of FCNs was introduced for semantic segmentation (classifying every pixel in an image according to the class of the object it belongs to).</p>
+<p>To convert a dense layer to a conv layer, the number of filters in the conv layer must be equal to the number of units in the dense layer, the filter size must be equal to the size of the input feature maps with “valid” padding.</p>
+<p>A dense layer expects a specific input size, whereas a conv layer will happily process images of any size. Since FCN contains only conv layers and pooling layers, it can be trained on images of any size.  </p>
+<h1 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h1><p>Yolo3</p>
+<ol>
+<li>output five bounding boxes for each grid cell (instead of one), and 20 class proba per grid cell. In total, 45 numbers per grid cell: 5 bounding boxes (*4 coordinate), plus 5 objectness scores, plus 20 class proba. </li>
+<li>predicts an offset relative to the coordinates of the grid cell. (0, 0) means the top left. </li>
+<li>Before training the NN, finds five representative bounding box dimensions, called anchor boxes, by applying K-Means to the height and width of bounding boxes. For each grid cell and each anchor box, predicts the log of the vertical and horizontal rescaling factors. </li>
+<li>trained using images of diff scales: every few batches during training, the network choose a new image dimension (330 - 608). </li>
+</ol>
+<p><strong>mAP</strong></p>
+<p>A metric used in object detection. </p>
+<p>In AUC, there may contain a few sections where precision goes up when recall increases. We can get a fair idea of the model’s performance by computing max precision we can get with at least 0% recall then 10%, 20%… Calculate the mean of these maximum precisions (AP). When there are more than two classes, calculate AP for each class, and then compute mean AP. </p>
+<h1 id="Semantic-Segmentation"><a href="#Semantic-Segmentation" class="headerlink" title="Semantic Segmentation"></a>Semantic Segmentation</h1><p>Each pixel is classified according to the class of the object it belongs to. Different objects of the same class are not distinguished. (e.g., bicycles on the right side of the segmented image end up as one big lump of pixels). The main difficulty is when images go through a CNN, they gradually lose their spatial resolution. </p>
+<p>One solution for upsampling (increasing the size of an image) is to use transposed convolutional layer. It is equivalent to first stretching the image by inserting 0s, then performing a regular conv. Use <code>Conv2DTranspose</code> layer. </p>
+<p><strong>dilation_rate</strong></p>
+<p>value&gt;=2: using a regular conv layer with a filter dilated by inserting 0s. For example, <strong>dilation_rate</strong>=4, [[1,2,3]] will be converted to  [[1,0,0,0,2,0,0,0,3]]</p>
+<p>Another solution is to add skip connections from lower layers. Sometimes, we can scale up beyond the size of the original image, called super-resolution. </p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/Blog/about" rel="external nofollow noreferrer">csy99</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://csy99.github.io/Blog/2020/07/22/hands-on-14-cnn/">http://csy99.github.io/Blog/2020/07/22/hands-on-14-cnn/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/Blog/about" target="_blank">csy99</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/Blog/tags/DL/">
+                                    <span class="chip bg-color">DL</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/Blog/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/Blog/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/Blog/2020/07/22/hands-on-09-unsupervised/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/17.jpg" class="responsive-img" alt="hands on: 09 unsupervised">
+                        
+                        <span class="card-title">hands on: 09 unsupervised</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ClusteringIdentify similar instances and assign them to clusters. 
+Application
+customer segmentation
+Cluster customers b
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/DL/">
+                        <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/Blog/2020/07/22/ml-basic-02-feature-engineering/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/5.jpg" class="responsive-img" alt="ml basic: 02 feature engineering">
+                        
+                        <span class="card-title">ml basic: 02 feature engineering</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            特征工程2.1 特征提取将原始数据转化为实向量之后，为了 让模型更好地学习规律，对特征做进一步的变换。首先，要理解业务数据和业务逻辑。 其次，要理解模型和算法，清楚模型需要什么样的输入才能有精确的结果。
+2.1.1 探索性数据分析Explo
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/Machine-Learning/" class="post-category">
+                                    Machine Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/ML/">
+                        <span class="chip bg-color">ML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/Blog/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/Blog/about" target="_blank">csy99</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/csy99" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1264629690@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1264629690" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1264629690" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/Blog/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/Blog/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/Blog/libs/materialize/materialize.min.js"></script>
+    <script src="/Blog/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/Blog/libs/aos/aos.js"></script>
+    <script src="/Blog/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/Blog/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/Blog/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/Blog/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/Blog/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/Blog/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

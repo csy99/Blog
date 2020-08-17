@@ -570,7 +570,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/Blog/libs/share/js/social-share.min.js"></script>
     
 
@@ -667,6 +667,11 @@
         color: #fff !important;
         background-color: #019FE8 !important;
     }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
 
     .reward-tabs .reward-img {
         width: 210px;
@@ -681,18 +686,22 @@
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">您的认可会让我加倍努力！</h4>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
                         <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
                     </ul>
                     <div id="alipay">
                         <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
                         <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
                     </div>
                 </div>
             </div>
@@ -727,34 +736,33 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/Blog/2020/07/21/greedy/">
+                <a href="/Blog/2020/07/21/tree/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/13.jpg" class="responsive-img" alt="greedy">
+                        <img src="/Blog/medias/featureimages/0.jpg" class="responsive-img" alt="tree">
                         
-                        <span class="card-title">greedy</span>
+                        <span class="card-title">tree</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            贪心算法
-排序！如果是内置数据结构，直接使用自定义排序。排序之后考虑能否使用binary search。
-
-Arrays.sort(arr, new Comparator&lt;int[]>() &amp;#123;
-    public 
+                            二叉树 Tree
+先问清楚是不是二叉树？二叉搜索树？子节点到父节点的指针？  
+大部分题目可以通过递归解决  
+掌握四种遍历树的方法inorder, preorder, postorder, level order  
+配合遍历的顺序，有可
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -767,7 +775,6 @@ Arrays.sort(arr, new Comparator&lt;int[]>() &amp;#123;
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -779,8 +786,20 @@ Arrays.sort(arr, new Comparator&lt;int[]>() &amp;#123;
                         <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/Blog/tags/greedy/">
-                        <span class="chip bg-color">greedy</span>
+                    <a href="/Blog/tags/tree/">
+                        <span class="chip bg-color">tree</span>
+                    </a>
+                    
+                    <a href="/Blog/tags/Trie/">
+                        <span class="chip bg-color">Trie</span>
+                    </a>
+                    
+                    <a href="/Blog/tags/Segment-Tree/">
+                        <span class="chip bg-color">Segment Tree</span>
+                    </a>
+                    
+                    <a href="/Blog/tags/BIT/">
+                        <span class="chip bg-color">BIT</span>
                     </a>
                     
                 </div>

@@ -1,0 +1,1322 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="hands on: 13 preprocess, Tech Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>hands on: 13 preprocess | Tech Blog</title>
+    <link rel="icon" type="image/jpeg" href="/Blog/medias/teemo.jpeg">
+
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/Blog/css/my.css">
+
+    <script src="/Blog/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/Blog/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/Blog/" class="waves-effect waves-light">
+                    
+                    <img src="/Blog/medias/teemo.jpeg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Tech Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Blog/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/Blog/medias/teemo.jpeg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Tech Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Blog/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/csy99/Blog" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork My Blog
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/csy99/Blog" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork My Blog" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Blog/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">hands on: 13 preprocess</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/Blog/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/Blog/tags/DL/">
+                                <span class="chip bg-color">DL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                Deep Learning
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-07-19
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Data-API"><a href="#Data-API" class="headerlink" title="Data API"></a>Data API</h1><p>Load data from disk. </p>
+<pre class=" language-python"><code class="language-python">dataset <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>Dataset<span class="token punctuation">.</span>from_tensor_slices<span class="token punctuation">(</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>values<span class="token punctuation">,</span> target<span class="token punctuation">.</span>values<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>Just use the below as an example. Easier to understand. </p>
+<pre class=" language-python"><code class="language-python">x <span class="token operator">=</span> tf<span class="token punctuation">.</span>range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>Dataset<span class="token punctuation">.</span>from_tensor_slices<span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre>
+<h3 id="Chaining-Transformation"><a href="#Chaining-Transformation" class="headerlink" title="Chaining Transformation"></a>Chaining Transformation</h3><p>Apply transformations.</p>
+<pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> data<span class="token punctuation">.</span>repeat<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span></code></pre>
+<p>We first call repeat() method, which returns a new dataset that will repeat the items of the original one three times. </p>
+<pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> data<span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> data<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>experimental<span class="token punctuation">.</span>unbatch<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> data<span class="token punctuation">.</span>filter<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span></code></pre>
+<p>Note that the function passed to map() must be convertible to a TF function. The map() method applies a transformation to each item, and the apply() method applies to the whole dataset. </p>
+<p>If we want to look at first few items in the dataset, use take().</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> item <span class="token keyword">in</span> data<span class="token punctuation">.</span>take<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span></code></pre>
+<h3 id="Shuffling"><a href="#Shuffling" class="headerlink" title="Shuffling"></a>Shuffling</h3><p>GD works best when the instances in the training set are iid. Using shuffle() to create a new dataset that will start by filling up a buffer with the first items of the source dataset. Specify the buffer size and make sure it is large enough. </p>
+<pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> data<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>buffer_size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> seed<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span></code></pre>
+<p>If the dataset is too large, this method may not be efficient. One solution is to shuffle the source data. Or, we can split the source data into multiple files, and then read them in a random order during training. To avoid the cases that instances located in the same file end up close to each other, pick multiple files randomly and read them simultaneously. </p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># train_path contains a list of training file paths</span>
+file_set <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>Dataset<span class="token punctuation">.</span>list_files<span class="token punctuation">(</span>tran_filepaths<span class="token punctuation">,</span> seed<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+n_readers <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token comment" spellcheck="true"># skip first line which is header row</span>
+data <span class="token operator">=</span> file_set<span class="token punctuation">.</span>interleave<span class="token punctuation">(</span><span class="token keyword">lambda</span> path<span class="token punctuation">:</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TextLineDataset<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">.</span>skip<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                          cycle_length<span class="token operator">=</span>n_readers<span class="token punctuation">)</span></code></pre>
+<p>For interleaving to work best, it is preferable to have files of identical length; otherwise the ends of the longest files will not be interleaved. </p>
+<h3 id="Preprocess"><a href="#Preprocess" class="headerlink" title="Preprocess"></a>Preprocess</h3><pre class=" language-python"><code class="language-python">n_inputs <span class="token operator">=</span> <span class="token number">8</span>
+
+<span class="token keyword">def</span> <span class="token function">preprocess</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    defs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span>n_input <span class="token operator">+</span> <span class="token punctuation">[</span>tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token punctuation">]</span> 
+    fields <span class="token operator">=</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>decode_csv<span class="token punctuation">(</span>line<span class="token punctuation">,</span> record_defaults<span class="token operator">=</span>defs<span class="token punctuation">)</span>
+    x <span class="token operator">=</span> tf<span class="token punctuation">.</span>stack<span class="token punctuation">(</span>fields<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    y <span class="token operator">=</span> tf<span class="token punctuation">.</span>stack<span class="token punctuation">(</span>fields<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token operator">-</span>x_mean<span class="token punctuation">)</span><span class="token operator">/</span>x_std<span class="token punctuation">,</span> y</code></pre>
+<p>tf.io.decode_csv() takes two arguments: the line to parse and an array containing the default value for each column in the csv file. For the target column, out code tells TF that this column contains floats, but that there is no default value. It will raise an exception if it encounters a missing value. This function returns a list of scalar tensors (one per column). </p>
+<p>We need to stack all tensors into a 1D array. The y is a 1D tensor array with a single value rather than a scalar tensor. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">csv_reader_dataset</span><span class="token punctuation">(</span>filepaths<span class="token punctuation">,</span> rep<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> n_reader<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> n_read_threads<span class="token operator">=</span>None<span class="token punctuation">,</span> shuffle_buf_size<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> n_parse_threads<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    data <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>Dataset<span class="token punctuation">.</span>list_files<span class="token punctuation">(</span>filepaths<span class="token punctuation">)</span>
+    data <span class="token operator">=</span> data<span class="token punctuation">.</span>interleave<span class="token punctuation">(</span><span class="token keyword">lambda</span> path<span class="token punctuation">:</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TextLineDataset<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">.</span>skip<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cycle_length<span class="token operator">=</span>n_readers<span class="token punctuation">,</span> num_parallel_calls<span class="token operator">=</span>n_read_threads<span class="token punctuation">)</span>
+    data <span class="token operator">=</span> data<span class="token punctuation">.</span>map<span class="token punctuation">(</span>preprocess<span class="token punctuation">,</span> num_parallel_calls<span class="token operator">=</span>n_parse_threads<span class="token punctuation">)</span>
+    data <span class="token operator">=</span> data<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>shuffle_buf_size<span class="token punctuation">)</span><span class="token punctuation">.</span>repeat<span class="token punctuation">(</span>rep<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> dataset<span class="token punctuation">.</span>batch<span class="token punctuation">(</span>batch_size<span class="token punctuation">)</span><span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Prefetch"><a href="#Prefetch" class="headerlink" title="Prefetch"></a>Prefetch</h3><p>While out training algorithm is working on one batch, the dataset will already be working in parallel on getting the next batch ready. </p>
+<p>If data can fit in memory, we can speed up training by using cache() method. Do this after loading and preprocessing, but before shuffling, repeating, batching, and prefetching. </p>
+<h3 id="Using-dataset"><a href="#Using-dataset" class="headerlink" title="Using dataset"></a>Using dataset</h3><pre class=" language-python"><code class="language-python">train_set <span class="token operator">=</span> csv_reader_dataset<span class="token punctuation">(</span>train_filepaths<span class="token punctuation">)</span>
+valid_set <span class="token operator">=</span> csv_reader_dataset<span class="token punctuation">(</span>valid_filepaths<span class="token punctuation">)</span>
+test_set <span class="token operator">=</span> csv_reader_dataset<span class="token punctuation">(</span>test_filepaths<span class="token punctuation">)</span>
+
+model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_set<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> validation_data<span class="token operator">=</span>valid_set<span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>evaluate<span class="token punctuation">(</span>test_set<span class="token punctuation">)</span>
+new_set <span class="token operator">=</span> test_set<span class="token punctuation">.</span>take<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> x<span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>new_set<span class="token punctuation">)</span></code></pre>
+<p>We can also create a TF function performing the whole training loop. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">train</span><span class="token punctuation">(</span>model<span class="token punctuation">,</span> optm<span class="token punctuation">,</span> loss_fn<span class="token punctuation">,</span> n_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    train_set <span class="token operator">=</span> csv_reader_dataset<span class="token punctuation">(</span>train_filepaths<span class="token punctuation">,</span> repeat<span class="token operator">=</span>n_epochs<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> x<span class="token punctuation">,</span> y <span class="token keyword">in</span> train_set<span class="token punctuation">:</span>
+        <span class="token keyword">with</span> tf<span class="token punctuation">.</span>GradientTape<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> tape<span class="token punctuation">:</span>
+            y_pred <span class="token operator">=</span> model<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+            main_loss <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>loss_fn<span class="token punctuation">(</span>y<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            loss <span class="token operator">=</span> tf<span class="token punctuation">.</span>add_n<span class="token punctuation">(</span><span class="token punctuation">[</span>main_loss<span class="token punctuation">]</span><span class="token operator">+</span>model<span class="token punctuation">.</span>losses<span class="token punctuation">)</span>
+            grads <span class="token operator">=</span> tape<span class="token punctuation">.</span>gradient<span class="token punctuation">(</span>loss<span class="token punctuation">,</span> model<span class="token punctuation">.</span>trainable_variables<span class="token punctuation">)</span>
+            optm<span class="token punctuation">.</span>apply_gradients<span class="token punctuation">(</span>zip<span class="token punctuation">(</span>grads<span class="token punctuation">,</span> model<span class="token punctuation">.</span>trainable_variables<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h1 id="TF-Record-Format"><a href="#TF-Record-Format" class="headerlink" title="TF Record Format"></a>TF Record Format</h1><p>TF’s preferred format for storing large amounts of data and reading it efficiently. Binary format. We can create and read a TFRecord file using codes below.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">with</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>TFRecordWriter<span class="token punctuation">(</span><span class="token string">"data.tfrecord"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>b<span class="token string">"this is the first"</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>b<span class="token string">"this is the second"</span><span class="token punctuation">)</span>
+
+filepaths <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"data.tfrecord"</span><span class="token punctuation">]</span>
+data <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TFRecordDataset<span class="token punctuation">(</span>filepaths<span class="token punctuation">)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span></code></pre>
+<p>We can compress them if they are large. </p>
+<pre class=" language-python"><code class="language-python">options <span class="token operator">=</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>TFRecordOptions<span class="token punctuation">(</span>compression_type<span class="token operator">=</span><span class="token string">"GZIP"</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>TFRecordWriter<span class="token punctuation">(</span><span class="token string">"data.tfrecord"</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    write<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+data <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TFRecordDataset<span class="token punctuation">(</span>filepaths<span class="token punctuation">,</span> compression_type<span class="token operator">=</span><span class="token string">"GZIP"</span><span class="token punctuation">)</span></code></pre>
+<h3 id="protocol-buffers"><a href="#protocol-buffers" class="headerlink" title="protocol buffers"></a>protocol buffers</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> perso_pb2 <span class="token keyword">import</span> Person
+p <span class="token operator">=</span> Person<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"Al"</span><span class="token punctuation">,</span> id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> email<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"a@b.com"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+person<span class="token punctuation">.</span>email<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">"c@d.com"</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>person<span class="token punctuation">.</span>SerializeToString<span class="token punctuation">(</span><span class="token punctuation">)</span>
+p2 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token punctuation">)</span>
+p2<span class="token punctuation">.</span>ParseFromString<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+p <span class="token operator">==</span> p2 <span class="token comment" spellcheck="true"># return true</span></code></pre>
+<p>The main protobuf used in TFRecord is Example protobuf. The definition is below</p>
+<pre class=" language-python"><code class="language-python">syntax <span class="token operator">=</span> <span class="token string">"proto3"</span><span class="token punctuation">;</span>
+message BytesList <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;repeated bytes value = 1;&amp;#125; </span>
+message FloatList <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;repeated float value = 1 [packed=true];&amp;#125; </span>
+message Int64List <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;repeated int64 value = 1 [packed=true];&amp;#125;</span>
+message Feature <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    oneof kind <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        BytesList bytes_list <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        FloatList float_list <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        Int64List int64_list <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;;</span>
+message Features <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;map&lt;string, Feature> feature = 1;&amp;#125;;</span>
+message Example <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;Features features = 1;&amp;#125;;</span></code></pre>
+<p>[packed=true] is used for repeated numerical fields, for a more efficient encoding. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>train <span class="token keyword">import</span> BytesList<span class="token punctuation">,</span> FloatList<span class="token punctuation">,</span> Int64List
+<span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>train <span class="token keyword">import</span> Feature<span class="token punctuation">,</span> Features<span class="token punctuation">,</span> Example
+person_example <span class="token operator">=</span> Example<span class="token punctuation">(</span>
+features<span class="token operator">=</span>Features<span class="token punctuation">(</span>
+    feature<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token string">"name"</span><span class="token punctuation">:</span> Feature<span class="token punctuation">(</span>byte_list<span class="token operator">=</span>BytesList<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">[</span>b<span class="token string">"Al"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"id"</span><span class="token punctuation">:</span> Feature<span class="token punctuation">(</span>int64_list<span class="token operator">=</span>Int64List<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">123</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"emails"</span><span class="token punctuation">:</span> Feature<span class="token punctuation">(</span>byte_list<span class="token operator">=</span>BytesList<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">[</span>b<span class="token string">"a@b.com"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;))</span></code></pre>
+<h3 id="load-and-parse-examples"><a href="#load-and-parse-examples" class="headerlink" title="load and parse examples"></a>load and parse examples</h3><p>The code below defines a description dictionary, then iterates over the TFRecordDataset and parses the serialized Example protobuf in the dataset. </p>
+<pre class=" language-python"><code class="language-python">feature_description <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FixedLenFeature<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tf<span class="token punctuation">.</span>string<span class="token punctuation">,</span> default_value<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">"id"</span><span class="token punctuation">:</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FixedLenFeature<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tf<span class="token punctuation">.</span>int64<span class="token punctuation">,</span> default_value<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">"emails"</span><span class="token punctuation">:</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>VarLenFeature<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>string<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+
+<span class="token keyword">for</span> serialized_example <span class="token keyword">in</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TFRecordDataset<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"contacts.tfrecord"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    parsed <span class="token operator">=</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>parse_single_example<span class="token punctuation">(</span>serialized_example<span class="token punctuation">,</span> feature_description<span class="token punctuation">)</span></code></pre>
+<p>We can parse batch by batch. </p>
+<pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TFRecordDataset<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"c.tfrecord"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> serialized_examples <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+    parsed <span class="token operator">=</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>parse_example<span class="token punctuation">(</span>serialized_examples<span class="token punctuation">,</span> feature_description<span class="token punctuation">)</span></code></pre>
+<h3 id="SequenceExample-protobuf"><a href="#SequenceExample-protobuf" class="headerlink" title="SequenceExample protobuf"></a>SequenceExample protobuf</h3><p>Deigned to handle lists of lists. </p>
+<p>Below is the definition. </p>
+<pre class=" language-python"><code class="language-python">message FeatureList <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;repeated Feature feature = 1;&amp;#125;</span>
+message FeatureLists <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;map&lt;string, FeatureList> feature_list = 1;&amp;#125;;</span>
+message SequenceExample <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    Features context <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    FeatureLists feature_lists <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;;</span></code></pre>
+<p>If the feature lists contain seqs of varying sizes, we may want to convert to ragged tensors. </p>
+<pre class=" language-python"><code class="language-python">parsed_context<span class="token punctuation">,</span> parsed_feature_lists <span class="token operator">=</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>parse_single_sequence_example<span class="token punctuation">(</span>
+    serialized_sequence_example<span class="token punctuation">,</span> 
+    context_feature_descriptions<span class="token punctuation">,</span> 
+    sequence_feature_descriptions<span class="token punctuation">)</span>
+parsed_content <span class="token operator">=</span> tf<span class="token punctuation">.</span>RaggedTensor<span class="token punctuation">.</span>from_sparse<span class="token punctuation">(</span>parsed_feature_lists<span class="token punctuation">[</span><span class="token string">"content"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<h1 id="Preprocess-the-Input-Features"><a href="#Preprocess-the-Input-Features" class="headerlink" title="Preprocess the Input Features"></a>Preprocess the Input Features</h1><p>Preprocessing includes converting all features into numerical features, generally normalizing them, and more. We can include a preprocessing layer. </p>
+<h3 id="standardize"><a href="#standardize" class="headerlink" title="standardize"></a>standardize</h3><pre class=" language-python"><code class="language-python">means <span class="token operator">=</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>xtrain<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+std <span class="token operator">=</span> np<span class="token punctuation">.</span>std<span class="token punctuation">(</span>xtrain<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+eps <span class="token operator">=</span> keras<span class="token punctuation">.</span>backend<span class="token punctuation">.</span>epsilon<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model <span class="token operator">=</span> Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Lambda<span class="token punctuation">(</span><span class="token keyword">lambda</span> inputs<span class="token punctuation">:</span> <span class="token punctuation">(</span>inputs<span class="token operator">-</span>means<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>std<span class="token operator">+</span>eps<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Or, we can use a nice self-contained custom layer. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Standardization</span><span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Layer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">adapt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data_sample<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>mean_ <span class="token operator">=</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>data_sample<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>std_ <span class="token operator">=</span> np<span class="token punctuation">.</span>std<span class="token punctuation">(</span>data_sample<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">call</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> inputs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>inputs<span class="token operator">-</span>self<span class="token punctuation">.</span>mean_<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>std_<span class="token operator">+</span>keras<span class="token punctuation">.</span>backend<span class="token punctuation">.</span>epsilon<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>Before we use the layer, we need to adapt it to our dataset. </p>
+<pre class=" language-python"><code class="language-python">std_layer <span class="token operator">=</span> Standardization<span class="token punctuation">(</span><span class="token punctuation">)</span>
+std_layer<span class="token punctuation">.</span>adapt<span class="token punctuation">(</span>data_sample<span class="token punctuation">)</span></code></pre>
+<p>The data sample must be large enough to be representative of our dataset, but does not need to be he full set. </p>
+<h3 id="one-hot-encoding"><a href="#one-hot-encoding" class="headerlink" title="one hot encoding"></a>one hot encoding</h3><pre class=" language-python"><code class="language-python">vocab <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"c1"</span><span class="token punctuation">,</span> <span class="token string">"c2"</span><span class="token punctuation">,</span> <span class="token string">"c3"</span><span class="token punctuation">]</span>
+indices <span class="token operator">=</span> tf<span class="token punctuation">.</span>range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>vocab<span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>tf<span class="token punctuation">.</span>int32<span class="token punctuation">)</span>
+table_init <span class="token operator">=</span> tf<span class="token punctuation">.</span>lookup<span class="token punctuation">.</span>KeyValueTensorInitializer<span class="token punctuation">(</span>vocab<span class="token punctuation">,</span> indices<span class="token punctuation">)</span>
+num_oov_buckets <span class="token operator">=</span> <span class="token number">2</span>
+table <span class="token operator">=</span> tf<span class="token punctuation">.</span>lookup<span class="token punctuation">.</span>StaticVocabularyTable<span class="token punctuation">(</span>table_init<span class="token punctuation">,</span> num_oov_buckets<span class="token punctuation">)</span></code></pre>
+<p>The reason we use oov buckets: the number of categories is large, or the dataset keeps changing. One solution is to define the vocab based on a data sample (not whole training set) and add some oov buckets for other categories that were not in the sample. </p>
+<p>We can look up in the table to encode in one-hot vectors. </p>
+<pre class=" language-python"><code class="language-python">categories <span class="token operator">=</span> tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"c3"</span><span class="token punctuation">,</span> <span class="token string">"c4"</span><span class="token punctuation">,</span> <span class="token string">"c1"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+cat_indices <span class="token operator">=</span> table<span class="token punctuation">.</span>lookup<span class="token punctuation">(</span>categories<span class="token punctuation">)</span>
+cat_one_hot <span class="token operator">=</span> tf<span class="token punctuation">.</span>one_hot<span class="token punctuation">(</span>cat_indices<span class="token punctuation">,</span> depth<span class="token operator">=</span>len<span class="token punctuation">(</span>vocab<span class="token punctuation">)</span><span class="token operator">+</span>num_oov_buckets<span class="token punctuation">)</span></code></pre>
+<h3 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h3><p>An embedding is a trainable dense vector that represents a category. Training tends to make embeddings useful representations of the categories (representation learning).</p>
+<pre class=" language-python"><code class="language-python">embedding_dim <span class="token operator">=</span> <span class="token number">2</span>
+embed_init <span class="token operator">=</span> tf<span class="token punctuation">.</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token punctuation">[</span>len<span class="token punctuation">(</span>vocab<span class="token punctuation">)</span> <span class="token operator">+</span> num_oov<span class="token punctuation">]</span><span class="token punctuation">,</span> embedding_dim<span class="token punctuation">)</span>
+embedding_matrix <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>embed_init<span class="token punctuation">)</span>
+tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>embedding_lookup<span class="token punctuation">(</span>embedding_matrix<span class="token punctuation">,</span> cat_indices<span class="token punctuation">)</span></code></pre>
+<p>Embedding layer can handle the embedding matrix. When the layer is created, it initializes the embedding matrix randomly, and then when it is called with some category indices, it returns the rows at those indices in the matrix. </p>
+<pre class=" language-python"><code class="language-python">embedding <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Embedding<span class="token punctuation">(</span>input_dim<span class="token operator">=</span>len<span class="token punctuation">(</span>vocab<span class="token punctuation">)</span> <span class="token operator">+</span> num_oov<span class="token punctuation">,</span> output_dim <span class="token operator">=</span> embedding_dim<span class="token punctuation">)</span>
+embedding<span class="token punctuation">(</span>Cat_indices<span class="token punctuation">)</span></code></pre>
+<pre class=" language-python"><code class="language-python">regular_inputs <span class="token operator">=</span> Input<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+categories <span class="token operator">=</span> Input<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>tf<span class="token punctuation">.</span>string<span class="token punctuation">)</span>
+cat_indices <span class="token operator">=</span> Lambda<span class="token punctuation">(</span><span class="token keyword">lambda</span> c<span class="token punctuation">:</span> table<span class="token punctuation">.</span>lookup<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span>categories<span class="token punctuation">)</span>
+cat_embed <span class="token operator">=</span> Embedding<span class="token punctuation">(</span>input_dim<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> output_dim<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span>cat_indices<span class="token punctuation">)</span>
+encoded_inputs <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">[</span>reular_inputs<span class="token punctuation">,</span> cat_embed<span class="token punctuation">]</span><span class="token punctuation">)</span>
+outputs <span class="token operator">=</span> Dense<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span>encoded_inputs<span class="token punctuation">)</span>
+model <span class="token operator">=</span> Model<span class="token punctuation">(</span>inputs<span class="token operator">=</span><span class="token punctuation">[</span>regular_inputs<span class="token punctuation">,</span> categories<span class="token punctuation">]</span><span class="token punctuation">,</span>
+             outputs<span class="token operator">=</span><span class="token punctuation">[</span>outputs<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>One hot encoding followed by a Dense layer without activation function and biases is equivalent to an Embedding layer. However, the latter uses fewer computations. </p>
+<h3 id="Keras-Prep-Layers"><a href="#Keras-Prep-Layers" class="headerlink" title="Keras Prep Layers"></a>Keras Prep Layers</h3><p>Normalization: standardization</p>
+<p>TextVectorization: encoding. Also have an option to output word-count vectors instead of word indices. </p>
+<p>Discretization: chop continuous data into different bins and encode each bin as a one-hot vector. </p>
+<h1 id="TF-Transform"><a href="#TF-Transform" class="headerlink" title="TF Transform"></a>TF Transform</h1><p>If preprocessing is computationally expensive, we can handle it before training. In this way, the data will be preprocessed just once per instance before training, rather than once per instance and per epoch during training. </p>
+<p>Consider the case where we wanna deploy the model to mobile and web browsers. Use TensorFlow Extended (TFX). </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow_transform <span class="token keyword">as</span> tft
+
+<span class="token keyword">def</span> <span class="token function">preprocess</span><span class="token punctuation">(</span>inputs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    median_age <span class="token operator">=</span> inputs<span class="token punctuation">[</span><span class="token string">"housing_median_age"</span><span class="token punctuation">]</span>
+    ocean_proximity <span class="token operator">=</span> inputs<span class="token punctuation">[</span><span class="token string">"ocean_proximity"</span><span class="token punctuation">]</span>
+    standardized_age <span class="token operator">=</span> tft<span class="token punctuation">.</span>scale_to_z_score<span class="token punctuation">(</span>median_age<span class="token punctuation">)</span>
+    ocean_proximity_id <span class="token operator">=</span> tft<span class="token punctuation">.</span>compute_and_apply_vocabulary<span class="token punctuation">(</span>ocean_proximity<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token string">"standadized_median_age"</span><span class="token punctuation">:</span> standardized_age<span class="token punctuation">,</span> 
+        <span class="token string">"ocean_proximity_id"</span><span class="token punctuation">:</span> ocean_proximity_id
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span></code></pre>
+<p>We can apply this function to the whole training set using Apache Beam. </p>
+<h1 id="TensorFlow-Datasets-Project"><a href="#TensorFlow-Datasets-Project" class="headerlink" title="TensorFlow Datasets Project"></a>TensorFlow Datasets Project</h1><p>TFDS is not bundled with TF. </p>
+<p>Every item in the dataset is a dictionary containing both the features and labels. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow_datasets <span class="token keyword">as</span> tfds
+dataset <span class="token operator">=</span> tfds<span class="token punctuation">.</span>load<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"mnist"</span><span class="token punctuation">)</span>
+train<span class="token punctuation">,</span> test <span class="token operator">=</span> dataset<span class="token punctuation">[</span><span class="token string">"train"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dataset<span class="token punctuation">[</span><span class="token string">"test"</span><span class="token punctuation">]</span>
+train <span class="token operator">=</span> train<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span>batch<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span>
+train <span class="token operator">=</span> train<span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> item<span class="token punctuation">:</span> <span class="token punctuation">(</span>item<span class="token punctuation">[</span><span class="token string">"image"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> item<span class="token punctuation">[</span><span class="token string">"label"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+train <span class="token operator">=</span> train<span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre>
+<p>We can also ask the load function to do this for us. </p>
+<pre class=" language-python"><code class="language-python">dataset <span class="token operator">=</span> tfds<span class="token punctuation">.</span>load<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"mnist"</span><span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">,</span> 
+                    as_supervised<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+train <span class="token operator">=</span> dataset<span class="token punctuation">[</span><span class="token string">"train"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>prefetch<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>      </code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/Blog/about" rel="external nofollow noreferrer">csy99</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://csy99.github.io/Blog/2020/07/19/hands-on-13-preprocess/">http://csy99.github.io/Blog/2020/07/19/hands-on-13-preprocess/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/Blog/about" target="_blank">csy99</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/Blog/tags/DL/">
+                                    <span class="chip bg-color">DL</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/Blog/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,qq,wechat,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/Blog/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+	
+	.reward-tabs .venmo-tab .active {
+        color: #fff !important;
+        background-color: #555555 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your recognition will motivate me!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/Blog/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+					<div id="venmo">
+                        <img src="/Blog/medias/reward/venmo.jpg" class="reward-img" alt="Venmo QR code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/Blog/2020/07/19/combination-permutation/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/1.jpg" class="responsive-img" alt="combination permutation">
+                        
+                        <span class="card-title">combination permutation</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Combination
+如果需要返回的组合长度不一样，则需要在外层调用dfs时加循环
+
+注意去重
+time: O(2^n)
+
+
+int[] nums;
+List&lt;List&lt;Integer>> res = new ArrayLis
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/algorithm/" class="post-category">
+                                    algorithm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
+                    <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/Blog/tags/combination/">
+                        <span class="chip bg-color">combination</span>
+                    </a>
+                    
+                    <a href="/Blog/tags/permutation/">
+                        <span class="chip bg-color">permutation</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/Blog/2020/07/16/hands-on-04-loss/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Blog/medias/featureimages/19.jpg" class="responsive-img" alt="hands on: 04 loss">
+                        
+                        <span class="card-title">hands on: 04 loss</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Linear RegressionThe normal equation. 
+$w = (X^TX)^{-1}X^Ty$
+from sklearn.linear_model import LinearRegression
+
+lin_reg 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Blog/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Blog/tags/DL/">
+                        <span class="chip bg-color">DL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/Blog/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/Blog/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/Blog/about" target="_blank">csy99</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/csy99" class="tooltipped" target="_blank" data-tooltip="我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1264629690@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1264629690" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1264629690" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/Blog/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/Blog/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/Blog/libs/materialize/materialize.min.js"></script>
+    <script src="/Blog/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/Blog/libs/aos/aos.js"></script>
+    <script src="/Blog/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/Blog/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/Blog/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/Blog/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/Blog/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/Blog/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
