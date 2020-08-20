@@ -583,7 +583,7 @@
             
                 <style>
     #reward {
-        margin: 40px 0;
+        margin: 30px 0;
         text-align: center;
     }
 
@@ -597,8 +597,8 @@
     }
 
     #rewardModal {
-        width: 320px;
-        height: 350px;
+        width: 520px;
+        height: 550px;
     }
 
     #rewardModal .reward-title {
@@ -607,7 +607,7 @@
     }
 
     #rewardModal .modal-content {
-        padding: 10px;
+        padding: 30px;
     }
 
     #rewardModal .close {
@@ -628,9 +628,10 @@
         -o-transform:scale(1.3);
     }
 
-    #rewardModal .reward-tabs {
+	// 调整tab距离
+    #rewardModal .reward-tabs { 
         margin: 0 auto;
-        width: 210px;
+        width: 410px;
     }
 
     .reward-tabs .tabs {
@@ -690,9 +691,9 @@
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-						<li class="tab col s6 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
+                        <li class="tab col s4 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s4 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+						<li class="tab col s4 venmo-tab waves-effect waves-light"><a href="#venmo">Venmo</a></li>
                     </ul>
                     <div id="alipay">
                         <img src="/Blog/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
@@ -736,50 +737,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/Blog/2020/08/16/sleep-wait-yield/">
+                <a href="/Blog/2020/08/20/design-pattern/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/17.jpg" class="responsive-img" alt="sleep wait yield">
+                        <img src="/Blog/medias/featureimages/8.jpg" class="responsive-img" alt="design pattern">
                         
-                        <span class="card-title">sleep wait yield</span>
+                        <span class="card-title">design pattern</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            sleep、wait和yield都是暂停线程的方法。
-定义的类sleep()和yield()方法是定义在Thread类中，而wait()方法是定义在Object类中。
-sleep在Java中Sleep方法有两个，一个只有一个毫秒参数，另一个
+                            简介软件工程中，设计模式是对软件设计中普遍存在的各种问题所提出的解决方案。
+编写代码，需要解决耦合性、内聚性、可维护性、可扩展性、重用性、灵活性的问题。
+低耦合：该是哪个模块的错误就在哪个模块报错
+高内聚：
+代码重用性：相同功能的代码，不用
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Blog/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/Blog/categories/Basic/" class="post-category">
+                                    Basic
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/thread/">
-                        <span class="chip bg-color">thread</span>
+                    <a href="/Blog/tags/design-pattern/">
+                        <span class="chip bg-color">design pattern</span>
                     </a>
                     
                 </div>
