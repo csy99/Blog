@@ -492,11 +492,11 @@
 </li>
 <li><p>邻接表 Adjacency list  </p>
 <p>space: O(|V|+|E|) = O(|V|^2) for dense graph  </p>
-<p>search: O(N)   </p>
+<p>search: O(|L|) 只和该节点的neighbor数量有关   </p>
 </li>
 <li><p>边表 Edge list  </p>
 <p>space: O(|E|)  </p>
-<p>search: O(N)   </p>
+<p>search: O(|E|)   </p>
 </li>
 </ul>
 <h2 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h2><ol>
@@ -1129,6 +1129,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
