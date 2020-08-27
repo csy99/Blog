@@ -521,8 +521,8 @@ if (res == 0) black++;&#125; END &#123;print white+black, white, black&#125;&#39
 -d/--hdd N # 孵化N个worker，死循环运行write()&unlink()
 
 stress -c 16 </code></pre>
-<h3 id="Top"><a href="#Top" class="headerlink" title="Top"></a>Top</h3><p>显示或更新排序过的进程信息，默认按照cpu占用率排序。</p>
-<h3 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h3><p>显示进程状态。默认只显示当前用户有控制终端的进程</p>
+<h3 id="Top"><a href="#Top" class="headerlink" title="Top"></a>Top</h3><p>显示或更新排序过的进程信息，默认按照cpu占用率排序。top可以持续的监视资源消耗情况。top还可以操作进程，如改变优先级(命令r)和关闭进程(命令k)。</p>
+<h3 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h3><p>显示进程状态（ps看到的是命令执行瞬间的进程信息）。默认只显示当前用户有控制终端的进程。</p>
 <pre class=" language-shell"><code class="language-shell">ps aux # 显示所有进程
 ps -l # 显示pid和ppid
 ps aux | grep Chrome | wc -l</code></pre>

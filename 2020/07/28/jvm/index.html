@@ -670,7 +670,7 @@ DriverManager<span class="token punctuation">.</span><span class="token function
 <li>new, 变形1：xx的静态方法，变形2：Factory的静态方法</li>
 <li>Class的newInstance()，反射的方式，只能调用空参的构造器，权限必须是public</li>
 <li>Constructor的newInstance(xxx)，反射的方式</li>
-<li>使用clone()，当前类需要shixianCloneable接口</li>
+<li>使用clone()，当前类需要实现Cloneable接口</li>
 <li>使用反序列化</li>
 <li>第三方库Objenesis</li>
 </ol>
@@ -698,7 +698,7 @@ DriverManager<span class="token punctuation">.</span><span class="token function
 <h3 id="机器码、指令、汇编"><a href="#机器码、指令、汇编" class="headerlink" title="机器码、指令、汇编"></a>机器码、指令、汇编</h3><p>机器码：二进制编码。与cpu紧密相关，不同种类的cpu对应的机器指令也不同。</p>
 <p>指令：可读性稍微得到改善，把特定01序列简化成指令(e.g., mov)。</p>
 <p>指令集：不同硬件平台格子支持的指令是有差别的。</p>
-<p>汇编：用助记符代替机器指令的操作吗，用地址符号或标号代替指令或操作数的地址。必须翻译成机器指令码。</p>
+<p>汇编：用助记符代替机器指令的操作码，用地址符号或标号代替指令或操作数的地址。必须翻译成机器指令码。</p>
 <p>字节码：是一种中间状态的二进制代码，比机器码更抽象，需要直译器转译后才能成为机器码。主要为了实现特定软件运行。</p>
 <h3 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h3><p>初衷是满足java程序实现跨平台特性。有两套执行器，即古老的字码解释器和现在使用的模板解释器。比较低效。</p>
 <p>响应速度快。省去编译的时间，立即执行。</p>
@@ -708,7 +708,7 @@ DriverManager<span class="token punctuation">.</span><span class="token function
 <p>热度衰减：计数器统计的不是方法被调用的绝对次数，而是相对的执行频率。当超过一定时间限度，如果方法的调用次数仍然不足以让它提交给JIT，那这个方法的调用计数器就被减少一半。这段时间被称为半衰周期。</p>
 <p>方法调用计数器：统计方法被调用的次数。默认阈值在client模式下是1500次，在server模式下是10000次。</p>
 <h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>C1：client compiler。会对字节码进行简单和可靠的优化，耗时短。以达到更快的编译速度。</p>
-<p>C2：server compiler。64位只有这种选择。C2进行耗时较长的优化，以及基金优化。</p>
+<p>C2：server compiler。64位只有这种选择。C2进行耗时较长的优化，优化效果更好。</p>
 <h1 id="String-Table"><a href="#String-Table" class="headerlink" title="String Table"></a>String Table</h1><p>String实现了Serializable接口和Comparable接口。在JDK8及以前定义了final char[] value用于存储字符串数据。JDK9改为byte[]。节省了一些空间。</p>
 <p>String的不可变性。字符串常量池中不存储相同的字符串。</p>
 <p>String的String Pool是一个固定大小的Hashtable。在JDK6中StringTable是固定的，就是1009的长度。如果常量池中字符串过多，就会导致效率下降很快（hash冲突严重，导致链表很长）。在JDK7以后，默认值是60013。</p>
@@ -746,7 +746,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 
 String s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//指向堆中String对象的地址</span>
 s3<span class="token punctuation">.</span><span class="token function">intern</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//字符串常量池中原先不存在"11"，现在生成</span>
-<span class="token comment" spellcheck="true">//jdk6创建了一个新对象”11"，也就有了新地址；jdk7记录了在堆中"11"的地址</span>
+<span class="token comment" spellcheck="true">//jdk6创建了一个新对象"11"，也就有了新地址；jdk7记录了在堆中"11"的地址</span>
 String s4 <span class="token operator">=</span> <span class="token string">"11"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//使用上一行代码在常量池中生成的"11"</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s3 <span class="token operator">==</span> s4<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//jdk6:F, jdk7/8:T</span></code></pre>
 <h1 id="垃圾回收-1"><a href="#垃圾回收-1" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>垃圾是指在运行程序中没有任何指针指向的对象。</p>
@@ -766,9 +766,9 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 </ol>
 <h3 id="查看GC-Roots"><a href="#查看GC-Roots" class="headerlink" title="查看GC Roots"></a>查看GC Roots</h3><p>MAT是memory analyzer的简称，基于eclipse开发，用于java堆内存分析。</p>
 <p>JProfiler是基于idea开发。</p>
-<h3 id="System-gc-的理解"><a href="#System-gc-的理解" class="headerlink" title="System.gc()的理解"></a>System.gc()的理解</h3><p>默认情况下，显示触发FGC。然而System.gc()调用附带一个免责声明，无法保证对垃圾收集器的调用。 使用System.runFInalization()会强制调用使用引用对象的finalization()方法。</p>
+<h3 id="System-gc-的理解"><a href="#System-gc-的理解" class="headerlink" title="System.gc()的理解"></a>System.gc()的理解</h3><p>默认情况下，显示触发FGC。然而System.gc()调用附带一个免责声明，无法保证对垃圾收集器的调用。 使用System.runFinalization()会强制调用使用引用对象的finalization()方法。</p>
 <h3 id="内存溢出和内存泄露"><a href="#内存溢出和内存泄露" class="headerlink" title="内存溢出和内存泄露"></a>内存溢出和内存泄露</h3><p>OOM指没有空闲内存，并且垃圾收集器也无法提供更多内存。原因包括堆内存设置不够，或者代码中创建了大量大对象，并且长时间不能被回收。</p>
-<p>内存泄漏是指只有对象不会再被程序用到了，但是gc有不能回收他们的情况。宽泛的讲，对象的生命周期过长(没有必要的长)，也可以算内存泄露。</p>
+<p>内存泄漏是指只有对象不会再被程序用到了，但是gc又不能回收他们的情况。宽泛的讲，对象的生命周期过长(没有必要的长)，也可以算内存泄露。</p>
 <p>举例：</p>
 <ol>
 <li><p>单例模式</p>
@@ -907,8 +907,8 @@ obj <span class="token operator">=</span> null<span class="token punctuation">;<
 <p>并发标记：从GC Roots的直接关联对象开始遍历整个对象图的过程。耗时较长，但是不需要暂停用户线程。</p>
 <p>重新标记：STW。修正并发标记期间，因为用户程序继续运作而导致的标记产生变动的那一部分。时间不会太长。</p>
 <p>并发清除：清理判断已经死亡的对象，释放内存。</p>
-<p>由于在垃圾收集阶段用户线程没有中断，在回收过程中，应该确保应用程序用户线程有足够的内存可用。要是CMS运行期间预留的内存无法满足程序需要，就会出现Concurrent Mode Failre失败，jvm会临时启用Serial Old收集器重新进行老年代的垃圾收集。</p>
-<p><em>不能使用mark compace的原因？</em></p>
+<p>由于在垃圾收集阶段用户线程没有中断，在回收过程中，应该确保应用程序用户线程有足够的内存可用。要是CMS运行期间预留的内存无法满足程序需要，就会出现Concurrent Mode Failure失败，jvm会临时启用Serial Old收集器重新进行老年代的垃圾收集。</p>
+<p><em>不能使用mark compact的原因？</em></p>
 <p>并发清除的时候，用户线程仍然在执行，使用compact整理内存会修改用户线程使用的内存。</p>
 <p>优点：</p>
 <ol>
