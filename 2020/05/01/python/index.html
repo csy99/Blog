@@ -525,7 +525,7 @@ s1<span class="token punctuation">.</span> index <span class="token comment" spe
 <h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><h3 id="打印-1"><a href="#打印-1" class="headerlink" title="打印"></a>打印</h3><pre class=" language-python"><code class="language-python">dat1 <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;‘A’:[1,2,3], ‘B’:[3,4,5], ‘C’:[5,7,9]&amp;#125;</span>
 df1 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>dat1<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>df1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 将这组数据以表格形式打印出来</span></code></pre>
-<pre><code>dat2 = &amp;#123;‘A’:1, ‘B’:2, ‘C’:3&amp;#125;
+<pre><code>dat2 = &#123;‘A’:1, ‘B’:2, ‘C’:3&#125;
 df2 = pd.DataFrame(dat2)
 print(df2) # 当数据只有一个值的时候会报错，因为不是列表形式</code></pre>
 <p>需要修改第二行代码：<br><code>df2 = pd.DataFrame(dat2, index = [0])</code><br>index是每一行的索引  </p>
@@ -938,42 +938,19 @@ data<span class="token punctuation">[</span><span class="token string">'7d'</spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/Blog/2020/05/10/nowcode/">
+                <a href="/Blog/2020/05/10/predicate-pushdown/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/15.jpg" class="responsive-img" alt="nowcode">
+                        <img src="/Blog/medias/featureimages/11.jpg" class="responsive-img" alt="predicate pushdown">
                         
-                        <span class="card-title">nowcode</span>
+                        <span class="card-title">predicate pushdown</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目录排序 3
-字符串 5
-算法/数据结构 5
-队列和栈 8
-链表 11
-二分搜索 15
-二叉树 17
-动态规划 22
-位运算 25
-排列组合 27
-大数据 31
-排序概况
-
-
-名称
-时间复杂度
-空间复杂度
-稳定排序
-备注
-
-
-
-冒泡
-O(n
+                            谓词下推(predicate pushdown)基本策略是，始终将过滤表达式尽可能移至靠近数据源的位置。在传统关系型数据库中，优化关系 SQL 查询的一项基本技术是，将外层查询块的 WHERE 子句中的谓词移入所包含的较低层查询块（例如视图
                         
                     </div>
                     <div class="publish-info">
@@ -984,8 +961,8 @@ O(n
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Blog/categories/algorithm/" class="post-category">
-                                    algorithm
+                            <a href="/Blog/categories/Database/" class="post-category">
+                                    Database
                                 </a>
                             
                             
@@ -995,12 +972,8 @@ O(n
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
-                    </a>
-                    
-                    <a href="/Blog/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/Blog/tags/db/">
+                        <span class="chip bg-color">db</span>
                     </a>
                     
                 </div>

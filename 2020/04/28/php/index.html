@@ -503,13 +503,13 @@ Error_reprting(E_ALL);</code></pre>
 <li>类型转换<br><code>getType(); </code><br><code>settype($var, “integer”);</code>直接转换了类型<br><code>$var2 = (string) $var;</code>并未直接转换该变量的类型  </li>
 <li>常量<br>定义常量不能使用=，需要使用如下方法<br>define(“MAX-WIDTH”, 980);<br>在定义后不能重新定义 </li>
 <li>比较<br>==检测值是否相等，===检测是否为同一对象  </li>
-<li>循环<br><code>foreach($var1 as $var2)&amp;#123; &amp;#125; </code></li>
+<li>循环<br><code>foreach($var1 as $var2)&#123; &#125; </code></li>
 <li>方法  </li>
 </ol>
 <pre><code>function name()&#123; 
     return $var;
 &#125;</code></pre>
-<p>e.g.<br><code>function paint($color = “red”)&amp;#123; &amp;#125; 表示如果调用该方法时没有传参数，则默认是red</code></p>
+<p>e.g.<br><code>function paint($color = “red”)&#123; &#125; 表示如果调用该方法时没有传参数，则默认是red</code></p>
 <ol start="22">
 <li>调试<br>var_dump($var); 显示变量类型和值，不需要echo<br>get_defined_vars(); 以数组形式显示开发人员和程序员自己已经定义的变量，需要使用print_r(get_defined_vars() );将它们打印出来;<br>debug_backtrace(); 在方法内调用var_dump(debug_backtrace() );会返回该方法的相关信息<br>可以使用Xdebug，DBG等第三方软件帮忙调试  </li>
 </ol>

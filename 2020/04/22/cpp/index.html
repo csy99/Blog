@@ -473,9 +473,9 @@
             <div id="articleContent">
                 <h1 id="Data-Type-and-Structure"><a href="#Data-Type-and-Structure" class="headerlink" title="Data Type and Structure"></a>Data Type and Structure</h1><h2 id="template"><a href="#template" class="headerlink" title="template"></a>template</h2><p>类似于Java的泛型<br>e.g.:</p>
 <pre><code>template &lt;typename T&gt;
-T maxof (const T &amp;a, const T &amp;b)&amp;#123;
+T maxof (const T &amp;a, const T &amp;b)&#123;
     return (a &gt; b ? a : b);
-&amp;#125;</code></pre>
+&#125;</code></pre>
 <p>使用maxof<int> (a, b)调用。// a和b均为int类型  </p>
 <p>在link阶段，如果出现build failure，就把.cpp文件中的template的实现移动到.h文件中。<br>编译器会出现argument deduction的推断，有时候可以不指名template所需要的变量类型（红色标注）。</p>
 <h2 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h2><p>系统自动适应变量类型，程序员不需要花费时间去了解一个变量声明时的类型。</p>
@@ -526,32 +526,32 @@ istream_iterator<span class="token operator">&lt;</span><span class="token keywo
     d1 <span class="token operator">=</span> <span class="token operator">*</span>iit<span class="token operator">++</span><span class="token punctuation">;</span></code></pre>
 <p>输出</p>
 <pre><code>ostream_iterator&lt;int&gt; output(cout, “ ”);
-for(int i : &amp;#123;1, 10, 100&amp;#125;) &amp;#123;
+for(int i : &#123;1, 10, 100&#125;) &#123;
     *output++ = i;
-&amp;#125; </code></pre>
+&#125; </code></pre>
 <h2 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h2><pre><code>template&lt;typename T&gt;
-class accum&amp;#123;
+class accum&#123;
     T _acc = 0;
-    accum() &amp;#123;&amp;#125;
+    accum() &#123;&#125;
 public:
-    accum(T n)  :  _acc(n)&amp;#123;&amp;#125;
-    T operator() (T y) &amp;#123;  _acc += y; return _acc; &amp;#125;
-&amp;#125;
+    accum(T n)  :  _acc(n)&#123;&#125;
+    T operator() (T y) &#123;  _acc += y; return _acc; &#125;
+&#125;
 accum&lt;int&gt; x(7); 
 cout &lt;&lt; x(7) &lt;&lt; endl;  // 此时_acc=14
-vector&lt;int&gt; v1 = &amp;#123;1,2,3,4,5&amp;#125;;
+vector&lt;int&gt; v1 = &#123;1,2,3,4,5&#125;;
 vector&lt;int&gt; v2(v1.size());
 transform(v1.begin(), v1.end(), v2.begin(), x);
-transform(v1.begin(), v1.end(), v2.begin(), [accum](int d) mutable -&gt; int &amp;#123;return accum += d; &amp;#125;);  // 效果与上同</code></pre>
+transform(v1.begin(), v1.end(), v2.begin(), [accum](int d) mutable -&gt; int &#123;return accum += d; &#125;);  // 效果与上同</code></pre>
 <pre><code>template&lt;typename T&gt;
-class embiggen &amp;#123;
+class embiggen &#123;
     T _accum = 1;
 public:
-    T operator() (const T &amp; n1, const T &amp; n2) &amp;#123; return _accum = n1 * n2 * _accum;&amp;#125;
-&amp;#125;;
-vector&lt;long&gt; v1 = &amp;#123;1,2,3,4,5&amp;#125;
-vector&lt;long&gt; v2 = &amp;#123;5,10,15,20,25&amp;#125;
-vector&lt;long&gt; v3 = &amp;#123;v1.size(), 0&amp;#125;
+    T operator() (const T &amp; n1, const T &amp; n2) &#123; return _accum = n1 * n2 * _accum;&#125;
+&#125;;
+vector&lt;long&gt; v1 = &#123;1,2,3,4,5&#125;
+vector&lt;long&gt; v2 = &#123;5,10,15,20,25&#125;
+vector&lt;long&gt; v3 = &#123;v1.size(), 0&#125;
 embiggen&lt;long&gt; fbig;
 transform(v1.begin(), v1.end(), v2.begin(), v3.begin(), fbig);  // 结果存放在第4个arg</code></pre>
 <h2 id="Functors"><a href="#Functors" class="headerlink" title="Functors"></a>Functors</h2><p>#include &lt;functional&gt;<br>可以结合transform，sort使用</p>

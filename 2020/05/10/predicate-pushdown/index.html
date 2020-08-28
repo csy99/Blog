@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="c, Tech Blog">
+    <meta name="keywords" content="predicate pushdown, Tech Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>c | Tech Blog</title>
+    <title>predicate pushdown | Tech Blog</title>
     <link rel="icon" type="image/jpeg" href="/Blog/medias/teemo.jpeg">
 
     <link rel="stylesheet" type="text/css" href="/Blog/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/Blog/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Blog/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">c</h1>
+                    <h1 class="description center-align post-title">predicate pushdown</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/Blog/tags/C/">
-                                <span class="chip bg-color">C</span>
+                            <a href="/Blog/tags/db/">
+                                <span class="chip bg-color">db</span>
                             </a>
                         
                     </div>
@@ -442,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/Blog/categories/Programming/" class="post-category">
-                                Programming
+                            <a href="/Blog/categories/Database/" class="post-category">
+                                Database
                             </a>
                         
                     </div>
@@ -455,7 +455,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-16
+                    2020-05-10
                 </div>
                 
 
@@ -471,111 +471,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="要点总结："><a href="#要点总结：" class="headerlink" title="要点总结："></a>要点总结：</h1><ol>
-<li>GNU Compiler Collection也叫gcc，是最流行的C编译器之一。可以在很多操作系统中使用。在命令提示符中使用gcc cards.c -o cards进行编译。编译过后，一个cards.exe文件将出现（Windows系统）。在gcc之后跟一个-g表示让编译器记录编译代码的行号。</li>
-<li>C语言没有内置数据结构，必须自己创建。</li>
-<li>使用栈的时候不用担心清理其中的变量，因为这个过程是自动的。但是一旦申请堆上的空间，这块空间就不再被分配出去。存储器泄露是C程序中最常见的错误且难以追踪。</li>
-<li>valgrind通过拦截malloc()和free()检查存储器泄露问题。在valgrind.org上查看最新发行版的详细信息。</li>
-<li>指针是存储器中某条数据的地址。使用指针可以避免副本并且共享数据。使用“&amp;变量名”找出变量的存储器地址。*运算符与&amp;运算符正好相反，它接收一个地址，返回地址中保存的数据。也被描述成对指针进行解引用。*运算符还可以设置存储器地址中的内容。</li>
-<li>对每种类型的数据，指针变量都有不同的类型。如果对char指针加1，指针会指向存储器中下一个地址，因为char只占1字节。如果对int指针加1，代码会对存储器地址加4，因为int占4字节。</li>
-<li>C语言不支持现成的字符串。但有很多扩展库提供字符串。字符串以数组的形式储存，定义的时候长度为n+1，因为字符串末尾需要有一个结束字符‘\0’。计算机会为字符串的每一个字符以及结束字符在栈上分配空间，并把首字符的地址和变量关联起来。</li>
-<li>一个数组变量就好比一个指针。所以在使用sizeof()运算符（不是一个函数，运算符在编译时就被分配了空间）的时候会返回奇怪的结果——只返回字符串指针的大小。我们定义一个数组d: d[0]与*d等价。</li>
-<li>如果是普通的变量声明，char d[ ] = “dump”; 就是一个数组。但如果是以函数参数的形式声明，那么d就是一个char指针，例如void test(char d[ ])。</li>
-<li>指向字符串字面值的指针变量不能用来修改字符串内容，例如char *d = “dump”; 不能用这个变量修改这个字符串。但如果用字符串字面值创建一个数组，例如char d[ ] = “dump”; 就可以修改。如果我们想把指针设成字符串字面值，必须确保使用了const关键字。若是编译器发现有代码试图修改字符串，就会提示编译错误。</li>
-<li>但是数组变量与指针不完全相同。参考以下代码：</li>
+                <p>谓词下推(predicate pushdown)<br>基本策略是，始终将过滤表达式尽可能移至靠近数据源的位置。<br>在传统关系型数据库中，优化关系 SQL 查询的一项基本技术是，<br>将外层查询块的 WHERE 子句中的谓词移入所包含的较低层查询块（例如视图），<br>从而能够提早进行数据过滤以及有可能更好地利用索引。<br>大白话解释：在进行join等后续操作之前，将数据规模减小。  </p>
+<h1 id="优化方式"><a href="#优化方式" class="headerlink" title="优化方式"></a>优化方式</h1><ul>
+<li>由谁来完成数据过滤    </li>
+<li>指何时完成数据过滤  </li>
+</ul>
+<p>优点： </p>
+<ol>
+<li>大多数表存储行为都是列存，列之间独立存储，扫描过滤只需要扫描join列数据（而不是所有列），<br>如果某一列被过滤掉了，其他对应的同一行的列就不需要扫描了，这样减少IO扫描次数。  </li>
+<li>减少了数据从存储层通过socket(甚至TPC）发送到计算层的开销。    </li>
+<li>减少了最终hash join执行的开销。  </li>
 </ol>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">char</span> s\<span class="token punctuation">[</span> \<span class="token punctuation">]</span> <span class="token operator">=</span> “How big is it<span class="token operator">?</span>”<span class="token punctuation">;</span>
-<span class="token keyword">char</span> \<span class="token operator">*</span>t <span class="token operator">=</span> s<span class="token punctuation">;</span></code></pre>
-<p>sizeof(s)会返回15，sizeof(t)会返回4或者8（取决于操作系统）。<br>数组变量不能指向其他地方。当创建指针变量时，计算机会为他分配存储空间。计算机会为数组分配存储空间，但是不会为<strong>数组变量</strong>分配任何空间，编译器会在出现它的地方把它替换成数组的起始地址。如此例中，s=t会报编译错误。</p>
-<ol start="12">
-<li>指针退化：把数组赋值给指针变量，指针变量只会包含数组的地址信息，不包含数组长度。只要把数组传递给函数，数组免不了退化为指针，所以需要记清楚代码中发生过数组退化的地方，以避免引发不易察觉的错误。</li>
-<li>bus error（总线错误），意味着程序无法更新某一块存储器空间。</li>
-<li>布尔值用数字表示，数字0代表假，其他均代表真。</li>
-<li>使用break语句可以跳出循环语句和switch语句，但是不能跳出if语句。</li>
-<li>main()函数返回类型是int，不要忘记return。main()中调用函数必须在main()之前出现。有两种main()函数，一种没有传参，另一种有传参(int argc, char *argv[ ])。</li>
-<li>可以使用链式赋值如y=x=0。</li>
-<li>程序运行时，操作系统创建三条数据流：标准输入、标准输出和标准错误。但我们可以用fopen()函数创建自己的数据流。</li>
-<li>可以在数据类型前加关键词来改变数值的意义。用unsigned修饰的数值只能是非负数。用long修饰可以保存范围更广的数字。用extern修饰表示共享变量。</li>
-<li>函数声明指告诉编译器函数会返回什么类型的语句。这是为了防止编译器假设函数的返回类型。</li>
-<li>创建头文件的步骤：创建一个扩展名为.h的文件，然后在主代码中包含头文件。用引号把文件名括起来，让编译器在本地通过相对路径查找文件。<br>示例：#include “statement.h”</li>
-<li>用结构创建结构化数据类型（把一批数据打包成一样东西）。struct是structured data type的缩写。可以按名访问结构字段（f1.name）。当把一个结构变量赋值给另一个时，只会复制结构的内容。<br>示例：</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> fish <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 保存不想修改的字符串</span>
-    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>species<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> fish f1 <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>“fish1”<span class="token punctuation">,</span> “big”<span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
-<ol start="23">
-<li>可以用typedef为结构命名。创建别名后可以不需要结构名。但是在递归结构中，需要包含一个相同类型的指针，因此必须为结构起一个名字。<br>示例：</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> fish <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 保存不想修改的字符串</span>
-    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>species<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> ff<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ff将成为struct fish的别名</span>
-ff f1 <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>“fish1”<span class="token punctuation">,</span> “big”<span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
-<ol start="24">
-<li>“指针-&gt;字段”相当于“(*指针).字段”。</li>
-<li>C语言不支持二进制字面值，但是支持十六进制字面值。</li>
-</ol>
-<h1 id="命令行操作："><a href="#命令行操作：" class="headerlink" title="命令行操作："></a>命令行操作：</h1><ol>
-<li>可以用&lt;重定向标准输入，用&gt;重定向标准输出，用2&gt;重定向标准错误。<br>示例：<br><code>program &lt; data.csv &gt; output.json</code></li>
-<li>Windows的命令提示符中输入echo %ERRORLEVEL% 可以在重定向输出的同时显示错误消息。</li>
-<li>两个独立的程序用管道连接以后就可以看成一个程序。<br>示例：<br><code>(program1 | program2) &lt; data.csv &gt; output.json</code></li>
-<li>make编译的文件叫目标。对于每个目标，需要知道它的依赖项和生成方法（合在一起构成一条规则）。生成方法必须以tab开头。<br>示例：//将make规则保存在当前目录下一个叫Makefile的文本文件中</li>
-</ol>
-<pre class=" language-shell"><code class="language-shell">launch.o: launch.c launch.h thruster.h //依赖文件
-　　gcc -c launch.c //生成方法
-thruster.o: thruster.h thruster.c
-　　gcc -c thruster.c
-launch: launch.o thruster.o
-　　gcc launch.o thruster.o -o launch</code></pre>
-<p>//在控制台输入以下指令</p>
-<pre class=" language-shell"><code class="language-shell">> make launch
-gcc -c launch.c
-gcc -c thruster.c
-gcc launch.o thruster.o -o launch</code></pre>
-<ol start="5">
-<li>在多个C项目中共享头文件的方法：把头文件保存在标准目录中（/usr/local/include）；在include语句中使用完整路径名；告诉编译器去哪里找头文件（gcc后跟-I选项）。</li>
-<li>存档命令（ar）会在存档文件中保存一批目标文件。<br>示例：<br><code>&gt; ar -rcs libsecurity.a f1.o f2.o  </code><br>r表示如果.a文件存在就更新它，c表示不反馈信息，s告诉哦ar要在.a文件开头建立索引。后面是保存在存档中的文件。<br>所有.a文件名都是libXXX.a的形式。这是命名静态库的标准方式。</li>
-<li>当存档安装在标准目录，可以使用-l编译代码。<br>示例：<code>gcc  test.c -lsecurity -o test</code><br>//security叫编译器去找libsecurity.a的存档<br>//可以设置多个-l选项来使用多个存档<br>当存档安装在其他目录，可以用-L编译代码。<br>示例：<code>gcc  test.c -L/myLib -lsecurity -o test</code><br>//存档放在了/myLib  </li>
-<li>动态库在Windows中叫动态链接库(.dll)，在Linux和Unix上交共享目标文件(.so)，在Mac上叫动态库(.dylib)。一旦用某个名字编译了库，就不能修改文件名。重命名必须用新的名字重新编译一次。<br>创建方式示例：<code>gcc -shared test.o -o C:\libs\test.dll</code></li>
-</ol>
-<h1 id="标准库："><a href="#标准库：" class="headerlink" title="标准库："></a>标准库：</h1><p>在程序开头使用#include调用C标准库。标准库分了好几个部分，每个部分独有一个头文件，列出了该部分的所有函数。示例：#include &lt;stdio.h&gt;.</p>
-<h2 id="lt-stdio-h-gt"><a href="#lt-stdio-h-gt" class="headerlink" title="&lt;stdio.h&gt;"></a>&lt;stdio.h&gt;</h2><ol>
-<li>使用puts()或者printf()函数打印。%i格式化整型，%s格式化字符串，%p格式化地址。</li>
-<li>使用fprintf()打印到数据流。<br>示例：fprintf(stderr, “message”);</li>
-<li>使用scanf(“%ns”, var)从键盘读取n个字符（自动补全结束字符），存入var这个变量中。如果忘记限制scanf()读取字符串的长度，用户可以输入远超出程序空间的数据。多余的数据会写到尚未被分配好的存储器中。运气好的话，数据会被保存。但缓冲区溢出很可能导致程序出错，通常是segmentation fault（段错误）或者abort trap。不管出现什么错误消息，程序都会崩溃。<br>scanf()允许输入多个字段，允许输入结构化数据，可以指定两个字段之间以什么字符分割。但是遇到空格就会停止。</li>
-<li>fgets()与scanf()函数类似，接受char指针，但是必须有最大长度这个参数。语法为fgets(var, sizeof(var), stdin); 最后一个参数表示数据来自键盘。<br>fgets()只允许想缓冲区输入一个字符串，不能是其他数据类型。但是fgets()不受空格的限制。</li>
-<li>fopen()函数接受两个参数：文件名和模式。共有三种模式：w(写文件)，r(读文件)，a(在文件末尾追加数据)。<br>示例：</li>
-</ol>
-<pre><code>FILE *in_file = fopen(“input.txt, “r”);</code></pre>
-<ol start="6">
-<li>fclose()函数关闭数据流。虽然所有的数据流在程序结束后会自动关闭，但是我们仍然应该自己关闭它们。</li>
-</ol>
-<h2 id="lt-string-h-gt"><a href="#lt-string-h-gt" class="headerlink" title="&lt;string.h&gt;"></a>&lt;string.h&gt;</h2><ol>
-<li>strstr(a, b)函数会返回b字符串在a字符串中的位置。</li>
-<li>strcpy()可以复制字符串。</li>
-<li>strchr()用来在字符串中找某个字符的位置。</li>
-<li>strcmp()比较字符串。</li>
-<li>strlen()返回字符串的长度。</li>
-<li>strcat()连接字符串。</li>
-<li>strdup()计算出字符串的长度，然后调用malloc()在堆上分配相应空间，然后把所有自负复制到堆上的新空间。请记得使用free()释放空间。</li>
-</ol>
-<h2 id="lt-stdlib-h-gt"><a href="#lt-stdlib-h-gt" class="headerlink" title="&lt;stdlib.h&gt;"></a>&lt;stdlib.h&gt;</h2><ol>
-<li>malloc()会要求操作系统在heap中分配空间，并返回一个指针指向这个空间。该函数接收一个参数：所需要的字节数。在不知道确切字节数的情况下，常与sizeof一起使用。<br>示例：<code>Person tmp = malloc(sizeof(Person));</code></li>
-<li>free()函数可以释放存储器。<br>示例：<code>free(tmp);</code></li>
-<li>qsort()是一个排序函数，判断两条数据的大小关系。<br><code>qsort(void *array, size_t length, size_t item_size, int (*compar) (const void *, const void *)); //void*指针可以指向任何数据。</code> </li>
-</ol>
-<p>在写comparator的时候，第一件事是从指针中提取值，因为值以指针的形式传给函数。<br>示例：第一个*拿到保存在地址中的值，第二个把void指针转换为整型指针<br><code>int a = *(int*) score_a;</code></p>
-<h2 id="lt-stdarg-h-gt"><a href="#lt-stdarg-h-gt" class="headerlink" title="&lt;stdarg.h&gt;"></a>&lt;stdarg.h&gt;</h2><p>所有处理可变参数函数的代码都在这个库中。可变参数将保存在va_list中。可以用va_start()、va_arg()和va_end()控制va_list。可变参数函数至少需要一个普通参数。读取参数时不能超过给出的参数个数，且需要知道参数类型。</p>
-<h1 id="非标准库："><a href="#非标准库：" class="headerlink" title="非标准库："></a>非标准库：</h1><p>不属于C标准库。</p>
-<h2 id="lt-unistd-h-gt-POSIX库"><a href="#lt-unistd-h-gt-POSIX库" class="headerlink" title="&lt;unistd.h&gt;POSIX库"></a>&lt;unistd.h&gt;POSIX库</h2><ol>
-<li>getopt(): 这个库函数每一次调用都会返回命令行中下一个参数。<br>程序需要两个选项，一个选项接受值，-e代表“引擎”；另一个选项代表开或关，-a代表“无敌模式”。<br>示例：<br>//最后一个参数表示选项a和e有效冒号表示e需要一个参数<br>//getopt()会用optarg变量指向这个参数<br><code>getopt(argc, argv, “ae:”)  </code><br>读完全部选项以后，应该用optind变量跳过它们。<br>示例：</li>
-</ol>
-<pre><code>argc -= optind;
-argv += optind;</code></pre>
+<h1 id="逻辑执行计划优化层面"><a href="#逻辑执行计划优化层面" class="headerlink" title="逻辑执行计划优化层面"></a>逻辑执行计划优化层面</h1><p>比如SQL语句：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token keyword">order</span><span class="token punctuation">,</span> item 
+<span class="token keyword">where</span> item<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token keyword">order</span><span class="token punctuation">.</span>item_id <span class="token operator">and</span> item<span class="token punctuation">.</span>category <span class="token operator">=</span> ‘book’</code></pre>
+<p>正常情况语法解析之后应该是先执行Join操作，再执行Filter操作。<br>通过谓词下推，可以将Filter操作下推到Join操作之前执行。<br>即将where item.category = ‘book’下推到 item.id = order.item_id之前先行执行。  </p>
+<h1 id="实现层面"><a href="#实现层面" class="headerlink" title="实现层面"></a>实现层面</h1><p>谓词下推是将过滤条件从计算进程下推到存储进程先行执行，注意这里有两种类型进程：<br>计算进程以及存储进程。<br>计算与存储分离思想，这在大数据领域相当常见，<br>比如最常见的计算进程有SparkSQL、Hive、impala等，负责SQL解析优化、数据计算聚合等，<br>存储进程有HDFS（DataNode）、Kudu、HBase，负责数据存储。<br>正常情况下应该是将所有数据从存储进程加载到计算进程，再进行过滤计算。<br>谓词下推是说将一些过滤条件下推到存储进程，直接让存储进程将数据过滤掉。<br>这样的好处是过滤的越早，数据量越少，序列化开销、网络开销、计算开销这一系列都会减少，<br>性能自然会提高。  </p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/baichoufei90/article/details/85264100">https://blog.csdn.net/baichoufei90/article/details/85264100</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5daff8edf265da5b905f0362">https://juejin.im/post/5daff8edf265da5b905f0362</a></li>
+<li><a target="_blank" rel="noopener" href="http://hbasefly.com/2017/04/10/bigdata-join-2/">http://hbasefly.com/2017/04/10/bigdata-join-2/</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -601,7 +517,7 @@ argv += optind;</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://csy99.github.io/Blog/2020/04/16/c/">http://csy99.github.io/Blog/2020/04/16/c/</a>
+                    <a href="http://csy99.github.io/Blog/2020/05/10/predicate-pushdown/">http://csy99.github.io/Blog/2020/05/10/predicate-pushdown/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -639,8 +555,8 @@ argv += optind;</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/Blog/tags/C/">
-                                    <span class="chip bg-color">C</span>
+                                <a href="/Blog/tags/db/">
+                                    <span class="chip bg-color">db</span>
                                 </a>
                             
                         </div>
@@ -822,33 +738,33 @@ argv += optind;</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/Blog/2020/04/22/cpp/">
+                <a href="/Blog/2020/05/10/normal-form/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/8.jpg" class="responsive-img" alt="cpp">
+                        <img src="/Blog/medias/featureimages/20.jpg" class="responsive-img" alt="normal form">
                         
-                        <span class="card-title">cpp</span>
+                        <span class="card-title">normal form</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Data Type and Structuretemplate类似于Java的泛型e.g.:
-template &lt;typename T&gt;
-T maxof (const T &amp;a, const T &amp;b)&#123
+                            NF: normal form，中文叫范式。实质是数据库建表的规则，旨在减少数据库存储的冗赘。
+1NF符合1NF的关系中的每个属性都不可再分。
+相当于ER-diagram中任何multiple attribute不能独立作为表中单独的一个字
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Blog/categories/Programming/" class="post-category">
-                                    Programming
+                            <a href="/Blog/categories/Database/" class="post-category">
+                                    Database
                                 </a>
                             
                             
@@ -858,8 +774,12 @@ T maxof (const T &amp;a, const T &amp;b)&#123
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/Blog/tags/db/">
+                        <span class="chip bg-color">db</span>
+                    </a>
+                    
+                    <a href="/Blog/tags/NF/">
+                        <span class="chip bg-color">NF</span>
                     </a>
                     
                 </div>
@@ -873,24 +793,29 @@ T maxof (const T &amp;a, const T &amp;b)&#123
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Blog/2020/04/01/r/">
+                <a href="/Blog/2020/05/01/python/">
                     <div class="card-image">
                         
                         
-                        <img src="/Blog/medias/featureimages/23.jpg" class="responsive-img" alt="r">
+                        <img src="/Blog/medias/featureimages/1.jpg" class="responsive-img" alt="python">
                         
-                        <span class="card-title">r</span>
+                        <span class="card-title">python</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            排序对数据集进行排序的时候，不打乱行之间的联系#sort m by using the order and keep the connections.#Don’t miss the comma after the order.sort_df
+                            变量类型及基本操作赋值方式单个赋值x=1
+y=2
+多个赋值x, y = 1,2
+用列表赋值x, y = [1, 2]
+用字符串赋值字符个数需要与对象个数相等，且赋值后对象类型为字符串x, y = ‘12’
+打印调用print()方法时，相当
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
                             </span>
                         <span class="publish-author">
                             
@@ -907,8 +832,8 @@ T maxof (const T &amp;a, const T &amp;b)&#123
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Blog/tags/R/">
-                        <span class="chip bg-color">R</span>
+                    <a href="/Blog/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
