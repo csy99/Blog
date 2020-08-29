@@ -560,34 +560,34 @@ p2<span class="token punctuation">.</span>ParseFromString<span class="token punc
 p <span class="token operator">==</span> p2 <span class="token comment" spellcheck="true"># return true</span></code></pre>
 <p>The main protobuf used in TFRecord is Example protobuf. The definition is below</p>
 <pre class=" language-python"><code class="language-python">syntax <span class="token operator">=</span> <span class="token string">"proto3"</span><span class="token punctuation">;</span>
-message BytesList <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;repeated bytes value = 1;&amp;#125; </span>
-message FloatList <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;repeated float value = 1 [packed=true];&amp;#125; </span>
-message Int64List <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;repeated int64 value = 1 [packed=true];&amp;#125;</span>
-message Feature <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    oneof kind <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+message BytesList <span class="token punctuation">{</span>repeated bytes value <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span> 
+message FloatList <span class="token punctuation">{</span>repeated float value <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">[</span>packed<span class="token operator">=</span>true<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token punctuation">}</span> 
+message Int64List <span class="token punctuation">{</span>repeated int64 value <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">[</span>packed<span class="token operator">=</span>true<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+message Feature <span class="token punctuation">{</span>
+    oneof kind <span class="token punctuation">{</span>
         BytesList bytes_list <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
         FloatList float_list <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
         Int64List int64_list <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;;</span>
-message Features <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;map&lt;string, Feature> feature = 1;&amp;#125;;</span>
-message Example <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;Features features = 1;&amp;#125;;</span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+message Features <span class="token punctuation">{</span>map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> Feature<span class="token operator">></span> feature <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+message Example <span class="token punctuation">{</span>Features features <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>[packed=true] is used for repeated numerical fields, for a more efficient encoding. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>train <span class="token keyword">import</span> BytesList<span class="token punctuation">,</span> FloatList<span class="token punctuation">,</span> Int64List
 <span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>train <span class="token keyword">import</span> Feature<span class="token punctuation">,</span> Features<span class="token punctuation">,</span> Example
 person_example <span class="token operator">=</span> Example<span class="token punctuation">(</span>
 features<span class="token operator">=</span>Features<span class="token punctuation">(</span>
-    feature<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    feature<span class="token operator">=</span><span class="token punctuation">{</span>
         <span class="token string">"name"</span><span class="token punctuation">:</span> Feature<span class="token punctuation">(</span>byte_list<span class="token operator">=</span>BytesList<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">[</span>b<span class="token string">"Al"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         <span class="token string">"id"</span><span class="token punctuation">:</span> Feature<span class="token punctuation">(</span>int64_list<span class="token operator">=</span>Int64List<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">123</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         <span class="token string">"emails"</span><span class="token punctuation">:</span> Feature<span class="token punctuation">(</span>byte_list<span class="token operator">=</span>BytesList<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">[</span>b<span class="token string">"a@b.com"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;))</span></code></pre>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
 <h3 id="load-and-parse-examples"><a href="#load-and-parse-examples" class="headerlink" title="load and parse examples"></a>load and parse examples</h3><p>The code below defines a description dictionary, then iterates over the TFRecordDataset and parses the serialized Example protobuf in the dataset. </p>
-<pre class=" language-python"><code class="language-python">feature_description <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+<pre class=" language-python"><code class="language-python">feature_description <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token string">"name"</span><span class="token punctuation">:</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FixedLenFeature<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tf<span class="token punctuation">.</span>string<span class="token punctuation">,</span> default_value<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token string">"id"</span><span class="token punctuation">:</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FixedLenFeature<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tf<span class="token punctuation">.</span>int64<span class="token punctuation">,</span> default_value<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token string">"emails"</span><span class="token punctuation">:</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>VarLenFeature<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>string<span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 
 <span class="token keyword">for</span> serialized_example <span class="token keyword">in</span> tf<span class="token punctuation">.</span>data<span class="token punctuation">.</span>TFRecordDataset<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"contacts.tfrecord"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     parsed <span class="token operator">=</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>parse_single_example<span class="token punctuation">(</span>serialized_example<span class="token punctuation">,</span> feature_description<span class="token punctuation">)</span></code></pre>
@@ -597,12 +597,12 @@ features<span class="token operator">=</span>Features<span class="token punctuat
     parsed <span class="token operator">=</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>parse_example<span class="token punctuation">(</span>serialized_examples<span class="token punctuation">,</span> feature_description<span class="token punctuation">)</span></code></pre>
 <h3 id="SequenceExample-protobuf"><a href="#SequenceExample-protobuf" class="headerlink" title="SequenceExample protobuf"></a>SequenceExample protobuf</h3><p>Deigned to handle lists of lists. </p>
 <p>Below is the definition. </p>
-<pre class=" language-python"><code class="language-python">message FeatureList <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;repeated Feature feature = 1;&amp;#125;</span>
-message FeatureLists <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;map&lt;string, FeatureList> feature_list = 1;&amp;#125;;</span>
-message SequenceExample <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+<pre class=" language-python"><code class="language-python">message FeatureList <span class="token punctuation">{</span>repeated Feature feature <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+message FeatureLists <span class="token punctuation">{</span>map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> FeatureList<span class="token operator">></span> feature_list <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+message SequenceExample <span class="token punctuation">{</span>
     Features context <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
     FeatureLists feature_lists <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;;</span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>If the feature lists contain seqs of varying sizes, we may want to convert to ragged tensors. </p>
 <pre class=" language-python"><code class="language-python">parsed_context<span class="token punctuation">,</span> parsed_feature_lists <span class="token operator">=</span> tf<span class="token punctuation">.</span>io<span class="token punctuation">.</span>parse_single_sequence_example<span class="token punctuation">(</span>
     serialized_sequence_example<span class="token punctuation">,</span> 
@@ -667,10 +667,10 @@ model <span class="token operator">=</span> Model<span class="token punctuation"
     ocean_proximity <span class="token operator">=</span> inputs<span class="token punctuation">[</span><span class="token string">"ocean_proximity"</span><span class="token punctuation">]</span>
     standardized_age <span class="token operator">=</span> tft<span class="token punctuation">.</span>scale_to_z_score<span class="token punctuation">(</span>median_age<span class="token punctuation">)</span>
     ocean_proximity_id <span class="token operator">=</span> tft<span class="token punctuation">.</span>compute_and_apply_vocabulary<span class="token punctuation">(</span>ocean_proximity<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
         <span class="token string">"standadized_median_age"</span><span class="token punctuation">:</span> standardized_age<span class="token punctuation">,</span> 
         <span class="token string">"ocean_proximity_id"</span><span class="token punctuation">:</span> ocean_proximity_id
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span></code></pre>
+    <span class="token punctuation">}</span></code></pre>
 <p>We can apply this function to the whole training set using Apache Beam. </p>
 <h1 id="TensorFlow-Datasets-Project"><a href="#TensorFlow-Datasets-Project" class="headerlink" title="TensorFlow Datasets Project"></a>TensorFlow Datasets Project</h1><p>TFDS is not bundled with TF. </p>
 <p>Every item in the dataset is a dictionary containing both the features and labels. </p>

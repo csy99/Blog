@@ -483,22 +483,22 @@
 <h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="putVal"><a href="#putVal" class="headerlink" title="putVal"></a>putVal</h4><p>求数组下标并没有采用hash%size，而是(n-1)&amp;hash。得到效果一模一样，效率大幅度提升。</p>
 <h4 id="resize"><a href="#resize" class="headerlink" title="resize"></a>resize</h4><p>initialize or double table size. <code>new HashMap()</code>的时候并没有创建数组，是在putVal()中调用resize()的时候才创建。</p>
 <p>工作包括扩容和复制。复制的时候有一段代码，判断e的哈希值与原容量的是否等于0，体现了容量为2的n次幂的好处。如果值为0，说明该元素在新数组中的下标不变，否则下标为当前下标加上原数组容量。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">do</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">do</span> <span class="token punctuation">{</span>
     next <span class="token operator">=</span> e<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>hash <span class="token operator">&amp;</span> oldCap<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>hash <span class="token operator">&amp;</span> oldCap<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>loTail <span class="token operator">==</span> null<span class="token punctuation">)</span>
             loHead <span class="token operator">=</span> e<span class="token punctuation">;</span>
         <span class="token keyword">else</span>
             loTail<span class="token punctuation">.</span>next <span class="token operator">=</span> e<span class="token punctuation">;</span>
         loTail <span class="token operator">=</span> e<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>hiTail <span class="token operator">==</span> null<span class="token punctuation">)</span>
             hiHead <span class="token operator">=</span> e<span class="token punctuation">;</span>
         <span class="token keyword">else</span>
             hiTail<span class="token punctuation">.</span>next <span class="token operator">=</span> e<span class="token punctuation">;</span>
         hiTail <span class="token operator">=</span> e<span class="token punctuation">;</span>        
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>e <span class="token operator">=</span> next<span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>e <span class="token operator">=</span> next<span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h3 id="死循环问题"><a href="#死循环问题" class="headerlink" title="死循环问题"></a>死循环问题</h3><p>jdk1.7的hashmap中链表采用头插法。是多线程产生的问题。</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
 <li>你不知道的HashMap中的秘密 by 马士兵 （<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ja4y1J7d7?p=3%EF%BC%89">https://www.bilibili.com/video/BV1Ja4y1J7d7?p=3）</a></li>

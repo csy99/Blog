@@ -482,17 +482,17 @@ echo The name is $name</code></pre>
 <h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>Separate each element with space, not comma.  </p>
 <pre class=" language-shell"><code class="language-shell">os=('ubuntu' 'windowns' 'mac')
 os[3]='kali'  # add/set an element
-echo "$&#123;os[@]&#125;"  # print all elements
-echo "$&#123;!os[@]&#125;"  # print the indices (may not be consecutive)
-echo "$&#123;#os[@]&#125;"  # print the length of array
+echo "${os[@]}"  # print all elements
+echo "${!os[@]}"  # print the indices (may not be consecutive)
+echo "${#os[@]}"  # print the length of array
 unset os[3]  # remove an element 
 
 # string
 string=dasfsd
 ## the following all prints the full string
-echo "$&#123;os[@]&#125;"
-echo "$&#123;os[0]&#125;"
-echo "$&#123;os[1]&#125;"</code></pre>
+echo "${os[@]}"
+echo "${os[0]}"
+echo "${os[1]}"</code></pre>
 <h2 id="Logical-Operator"><a href="#Logical-Operator" class="headerlink" title="Logical Operator"></a>Logical Operator</h2><p><strong>And</strong></p>
 <pre class=" language-shell"><code class="language-shell">age=25
 if [ $age -gt 18 ] && [ $age -lt 30 ]
@@ -572,7 +572,7 @@ do
     xterminal
 done</code></pre>
 <h3 id="Until"><a href="#Until" class="headerlink" title="Until"></a>Until</h3><p>Equivalent to while (!condition).</p>
-<h3 id="For"><a href="#For" class="headerlink" title="For"></a>For</h3><pre class=" language-shell"><code class="language-shell">for var in 1 2 3 4 5  # in &#123;1..5..1&#125;, start, end, step
+<h3 id="For"><a href="#For" class="headerlink" title="For"></a>For</h3><pre class=" language-shell"><code class="language-shell">for var in 1 2 3 4 5  # in {1..5..1}, start, end, step
 for var in file1 file2 file3
 for (( exp1; exp2; exp3 ))</code></pre>
 <h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><p>Iterate the list and give user a menu-like prompt. </p>
@@ -595,32 +595,32 @@ do
     esac
 done</code></pre>
 <h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p>When we call the function, no parenthesis is needed. </p>
-<pre class=" language-shell"><code class="language-shell">function name()&#123;
+<pre class=" language-shell"><code class="language-shell">function name(){
     command
-&#125;
+}
 
-function print()&#123;
+function print(){
     echo $1 $2 $3
-&#125;
+}
 print Hello World Again</code></pre>
 <p>Default, the variable is global. If we want to declare local variable, use local keyword. </p>
-<pre class=" language-shell"><code class="language-shell">function print()&#123;
+<pre class=" language-shell"><code class="language-shell">function print(){
     name=$1
     # local name=$1
     echo "the name is $name"
-&#125;
+}
 name="Tom"
 print Max
 echo "The name is $name: After"
 # will be Tom if local keyword is used; Max if not. </code></pre>
-<pre class=" language-shell"><code class="language-shell">usage() &#123;
+<pre class=" language-shell"><code class="language-shell">usage() {
     echo "You need to provide an argumet"
     echo "usage: $0 file_name"
-&#125;
-file_exist() &#123;
+}
+file_exist() {
     local file="$1"
     [[ -f "$file" ]] && return 0 || return 1
-&#125;
+}
 [[ $# eq 0 ]] && usage
 if ( file_exist "$1" )
 then
@@ -641,7 +641,7 @@ echo 'password is' $pw</code></pre>
 <p>We can save all inputs in an array. </p>
 <pre class=" language-shell"><code class="language-shell">echo "enter names:"
 read -a names 
-echo "Names include: $&#123;names[0]&#125;, $&#123;names[1]&#125;"</code></pre>
+echo "Names include: ${names[0]}, ${names[1]}"</code></pre>
 <p>Using while loop. </p>
 <pre class=" language-shell"><code class="language-shell">while read line
 do 
@@ -661,7 +661,7 @@ done < content.txt</code></pre>
 <pre class=" language-shell"><code class="language-shell">echo $1 $2 $3</code></pre>
 <p>We can store the arguments in an array. The shell script name will not be parsed into the array, thus ${args[0]} is in fact $1.</p>
 <pre class=" language-shell"><code class="language-shell">args=("$@")
-echo $&#123;args[0]&#125;
+echo ${args[0]}
 echo $@  # print out all arguments 
 echo $#  # print out the number of arguments </code></pre>
 <h3 id="File-test-operators"><a href="#File-test-operators" class="headerlink" title="File test operators"></a>File test operators</h3><p>-e check whether the file exists</p>

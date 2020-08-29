@@ -500,21 +500,21 @@
 <li>创建头文件的步骤：创建一个扩展名为.h的文件，然后在主代码中包含头文件。用引号把文件名括起来，让编译器在本地通过相对路径查找文件。<br>示例：#include “statement.h”</li>
 <li>用结构创建结构化数据类型（把一批数据打包成一样东西）。struct是structured data type的缩写。可以按名访问结构字段（f1.name）。当把一个结构变量赋值给另一个时，只会复制结构的内容。<br>示例：</li>
 </ol>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> fish <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> fish <span class="token punctuation">{</span>
     <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 保存不想修改的字符串</span>
     <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>species<span class="token punctuation">;</span>
     <span class="token keyword">int</span> age<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> fish f1 <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>“fish1”<span class="token punctuation">,</span> “big”<span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span>
+<span class="token keyword">struct</span> fish f1 <span class="token operator">=</span> <span class="token punctuation">{</span>“fish1”<span class="token punctuation">,</span> “big”<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <ol start="23">
 <li>可以用typedef为结构命名。创建别名后可以不需要结构名。但是在递归结构中，需要包含一个相同类型的指针，因此必须为结构起一个名字。<br>示例：</li>
 </ol>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> fish <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> fish <span class="token punctuation">{</span>  
     <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>name<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 保存不想修改的字符串</span>
     <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>species<span class="token punctuation">;</span>
     <span class="token keyword">int</span> age<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> ff<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ff将成为struct fish的别名</span>
-ff f1 <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>“fish1”<span class="token punctuation">,</span> “big”<span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span> ff<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ff将成为struct fish的别名</span>
+ff f1 <span class="token operator">=</span> <span class="token punctuation">{</span>“fish1”<span class="token punctuation">,</span> “big”<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <ol start="24">
 <li>“指针-&gt;字段”相当于“(*指针).字段”。</li>
 <li>C语言不支持二进制字面值，但是支持十六进制字面值。</li>

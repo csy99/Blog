@@ -677,7 +677,7 @@
 
     <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> params<span class="token punctuation">,</span> grads<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">if</span> self<span class="token punctuation">.</span>v <span class="token keyword">is</span> None<span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>v <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
+            self<span class="token punctuation">.</span>v <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
         <span class="token keyword">for</span> key<span class="token punctuation">,</span> val <span class="token keyword">in</span> params<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             self<span class="token punctuation">.</span>v<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>val<span class="token punctuation">)</span>
         <span class="token keyword">for</span> key <span class="token keyword">in</span> params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>

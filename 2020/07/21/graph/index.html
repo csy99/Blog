@@ -514,27 +514,27 @@
 </ol>
 <pre class=" language-java"><code class="language-java">visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token operator">|</span>V<span class="token operator">|</span><span class="token punctuation">;</span>
 
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>Node v<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>Node v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     visited<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span>Node child<span class="token operator">:</span> v<span class="token punctuation">.</span>neighbors<span class="token punctuation">)</span>
         <span class="token function">dfs</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="广度优先-BFS"><a href="#广度优先-BFS" class="headerlink" title="广度优先 BFS"></a>广度优先 BFS</h2><ol>
 <li>找最短路径，首先考虑BFS   </li>
 <li>类似 level order traversal  </li>
 </ol>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bfs</span><span class="token punctuation">(</span>Node v<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bfs</span><span class="token punctuation">(</span>Node v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     Queue q <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     visited<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
     q<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Node cur <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>Node child<span class="token operator">:</span> cur<span class="token punctuation">.</span>neighbors<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Node child<span class="token operator">:</span> cur<span class="token punctuation">.</span>neighbors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             visited<span class="token punctuation">[</span>child<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
             q<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="Spanning-Tree"><a href="#Spanning-Tree" class="headerlink" title="Spanning Tree"></a>Spanning Tree</h2><p>If tree T is a subgraph of G, and it contains all vertices of G<br>设Spanning Tree的顶点和边分别是V’和E’  </p>
 <p>|V’| = |V|, |E’| = |V| - 1, E’ $\subset$ E  </p>
 <h3 id="最小生成树-Minimum-Spanning-Tree"><a href="#最小生成树-Minimum-Spanning-Tree" class="headerlink" title="最小生成树 Minimum Spanning Tree"></a>最小生成树 Minimum Spanning Tree</h3><p>每一条边都有权重，使权重之后最小<br>Prim’s  alg: pick a start vertex, treat it as root;  at each iteration, choose lowest weighted edge that connects a vertex without creating any cycles.  本质上是先形成一棵树，慢慢添加节点，向外扩展。   </p>
@@ -555,64 +555,64 @@ cost <span class="token operator">=</span> <span class="token number">0</span>
     cost <span class="token operator">+=</span> w
 <span class="token keyword">return</span> cost</code></pre>
 <h2 id="拓扑排序-Topological-Order"><a href="#拓扑排序-Topological-Order" class="headerlink" title="拓扑排序 Topological Order"></a>拓扑排序 Topological Order</h2><p>BFS或者DFS都可解 </p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">toporder</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>Node<span class="token operator">></span> nodes<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">toporder</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>Node<span class="token operator">></span> nodes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">int</span> n <span class="token operator">=</span> nodes<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
     Stack st <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">boolean</span><span class="token punctuation">[</span><span class="token punctuation">]</span> visited <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">boolean</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
     Node<span class="token punctuation">[</span><span class="token punctuation">]</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> idx <span class="token operator">=</span> n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>Node v<span class="token operator">:</span> nodes<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">hasPredecessor</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>Node v<span class="token operator">:</span> nodes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">hasPredecessor</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             visited<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
             st<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>st<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>st<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Node cur <span class="token operator">=</span> st<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">boolean</span> childrenVisited <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
         Node unvisitedChild <span class="token operator">=</span> null<span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>Node child<span class="token operator">:</span> cur<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>child<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Node child<span class="token operator">:</span> cur<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>child<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 unvisitedChild <span class="token operator">=</span> child<span class="token punctuation">;</span>
                 childrenVisited <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>childrenVisited<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>childrenVisited<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             res<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> cur<span class="token punctuation">;</span>
             idx<span class="token operator">--</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
             visited<span class="token punctuation">[</span>unvisitedChild<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
             st<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>unvisitedChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="并查集-Union-Find"><a href="#并查集-Union-Find" class="headerlink" title="并查集 Union Find"></a>并查集 Union Find</h2><ol>
 <li>找一个共同的祖先或者连接，可以使用并查集  </li>
 <li>如果题目没有给出一个明确的n，很可能是并查集的变体  </li>
 </ol>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">UFS</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">UFS</span> <span class="token punctuation">{</span>  
     <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> parents<span class="token punctuation">;</span>  
     <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ranks<span class="token punctuation">;</span>  
 
-    <span class="token keyword">public</span> <span class="token function">UFS</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+    <span class="token keyword">public</span> <span class="token function">UFS</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
         parents <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
         ranks <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
             parents<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>  
             ranks<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>  
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
 
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>u <span class="token operator">!=</span> parents<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>u <span class="token operator">!=</span> parents<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
             parents<span class="token punctuation">[</span>u<span class="token punctuation">]</span> <span class="token operator">=</span> parents<span class="token punctuation">[</span>parents<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  
             u <span class="token operator">=</span> parents<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">;</span>  
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
         <span class="token keyword">return</span> u<span class="token punctuation">;</span>  
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
 
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">union</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">,</span> <span class="token keyword">int</span> v<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">union</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">,</span> <span class="token keyword">int</span> v<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
         <span class="token keyword">int</span> ru <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>  
         <span class="token keyword">int</span> rv <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>  
         <span class="token keyword">if</span> <span class="token punctuation">(</span>ru <span class="token operator">==</span> rv<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>  
@@ -621,13 +621,13 @@ cost <span class="token operator">=</span> <span class="token number">0</span>
             parents<span class="token punctuation">[</span>rv<span class="token punctuation">]</span> <span class="token operator">=</span> ru<span class="token punctuation">;</span>  
         <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>ranks<span class="token punctuation">[</span>rv<span class="token punctuation">]</span> <span class="token operator">></span> ranks<span class="token punctuation">[</span>ru<span class="token punctuation">]</span><span class="token punctuation">)</span>  
             parents<span class="token punctuation">[</span>ru<span class="token punctuation">]</span> <span class="token operator">=</span> rv<span class="token punctuation">;</span>  
-        <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>  
             parents<span class="token punctuation">[</span>ru<span class="token punctuation">]</span> <span class="token operator">=</span> rv<span class="token punctuation">;</span>  
             ranks<span class="token punctuation">[</span>rv<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>  
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>   
+        <span class="token punctuation">}</span>   
         <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>      
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>  
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>  </code></pre>
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  </code></pre>
 
             </div>
             <hr/>
