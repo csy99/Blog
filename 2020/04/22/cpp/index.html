@@ -793,6 +793,33 @@ transform(v1.begin(), v1.end(), v2.begin(), v3.begin(), fbig);  // 结果存放�
     </div>
 
     
+        <link rel="stylesheet" href="/Blog/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/Blog/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/Blog/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'aecfa0a3613bd862ed5f',
+        clientSecret: '7bd4e6a082f93ffb388a540481f5be3c59151255',
+        repo: 'csy99.github.io',
+        owner: 'csy99',
+        admin: "csy99",
+        id: '2020-04-22T21-46-40',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
 
     
 
